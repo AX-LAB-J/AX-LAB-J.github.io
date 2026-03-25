@@ -9,5 +9,4 @@ author_profile: true
 
 - [ML](/study/ai-engineering/ml/)
 - [DL](/study/ai-engineering/dl/)
-- [LLM](/study/ai-engineering/llm/)
 - [Agent](/study/ai-engineering/agent/)
