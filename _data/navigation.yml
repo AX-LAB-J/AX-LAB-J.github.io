@@ -8,3 +8,9 @@ main:
 
   - title: "Project"
     url: /project/
+
+  - title: "Insight Report"
+    url: /insight-report/
+
+  - title: "Corporate Analysis"
+    url: /corporate-analysis/
