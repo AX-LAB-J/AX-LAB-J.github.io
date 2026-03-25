@@ -1,7 +1,11 @@
 ---
 title: "Dev & Infra"
 permalink: /study/dev/
-layout: archive
-taxonomy: categories
-taxonomy_term: Dev
+layout: single
+author_profile: true
 ---
+
+## Subcategories
+
+- [FastAPI](/study/dev/fastapi/)
+- [Docker](/study/dev/docker/)
