@@ -1,0 +1,2830 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://ax-lab-j.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ax-lab-j.github.io/" rel="alternate" type="text/html" /><updated>2026-09-14T21:41:01+09:00</updated><id>https://ax-lab-j.github.io/feed.xml</id><title type="html">AX LAB</title><subtitle></subtitle><author><name>JIBAEK JANG</name><email>jjb6904@mail.hongik.ac.kr</email></author><entry><title type="html">NH농협은행 AI 기획/운영 기업분석</title><link href="https://ax-lab-j.github.io/corporate-analysis/nh-nonghyup-bank-ai-planning-operations-analysis/" rel="alternate" type="text/html" title="NH농협은행 AI 기획/운영 기업분석" /><published>2026-09-13T23:00:00+09:00</published><updated>2026-09-13T23:00:00+09:00</updated><id>https://ax-lab-j.github.io/corporate-analysis/nh-nonghyup-bank-ai-planning-operations-analysis</id><content type="html" xml:base="https://ax-lab-j.github.io/corporate-analysis/nh-nonghyup-bank-ai-planning-operations-analysis/"><![CDATA[<p><strong>정보 기준일: 2026년 9월 13일</strong> · 이미지: <a href="https://www.nhbank.com/goSubPage.do?srchGb=KO_NHPR_10">NH농협은행 공식 CI 자료</a></p>
+
+<p>이 글은 2026년 하반기 전문분야 신규직원 채용의 <strong>AI 기획/운영</strong> 지원을 위한 기업분석이다. DART, 은행 경영공시, 금융지주 IR, 공식 사업 발표를 우선 사용하고, 증권사·금융연구소 보고서와 담당 임원 인터뷰를 보완했다. 숫자는 집계 범위를 표시하고, 사업은 <strong>운영 중·개발/추진 중·향후 목표</strong>를 구분했다. 아래의 직무 해석과 기여 과제는 자료에 근거한 분석자의 제안이며, 은행 내부 계획을 확인한 내용은 아니다.</p>
+
+<h2 id="1-먼저-알아둘-핵심-판단">1. 먼저 알아둘 핵심 판단</h2>
+
+<p><strong>농협은행은 금융 업무를 이해하는 사람이 AI를 직접 만들고, 조직 전체가 안정적으로 쓰는 체계로 전환하려는 단계에 있다.</strong> 따라서 이 직무는 아이디어와 기획서 작성에 그치지 않는다. 업무를 발굴하고, 데이터·기존 시스템에 연결하고, 서비스의 품질과 운영을 책임지는 역할로 읽어야 한다.</p>
+
+<p>판단의 근거는 세 가지다. 채용공고가 Agent 개발과 프라이빗 클라우드 운영을 함께 요구한다. 2026년 비전은 직원의 Agent 제작과 전 금융업무 확장을 제시한다. 실제 사례에는 상품 추천, 내부 지식 검색, 회의록 등 서로 다른 성격의 업무가 등장한다. <a href="https://nhbank.incruit.com/hire/viewhire.asp?projectid=102">채용공고</a>, <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5871509&amp;command=view&amp;framePath=unknownboard&amp;siteId=nhfngroup">6월 9일 비전 발표</a></p>
+
+<p>지원자가 답해야 할 질문도 구체적이다. <strong>어떤 업무를 왜 선택했는가, 어떤 데이터와 도구를 연결했는가, 잘못되었을 때 어떻게 발견하고 되돌릴 것인가, 실제로 사용되었는가.</strong></p>
+
+<h2 id="2-농협은행과-농협은-어떻게-다른가">2. 농협은행과 농협은 어떻게 다른가</h2>
+
+<p>NH농협은행은 2012년 3월 2일 농협중앙회의 사업구조 개편으로 설립된 은행이다. 농협금융지주가 지분 100%를 보유하며, 기준일 은행장은 강태영이다. <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003539">DART 2025년 연결감사보고서, 주석 1</a>, <a href="https://www.nhfngroup.com/user/indexSub.do?codyMenuSeq=884088734&amp;siteId=nhfngroup">금융지주 자회사 소개</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>기업분석에서의 의미</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>농협중앙회</td>
+      <td>농업·농촌 및 회원 조합 지원과 연결되는 조직</td>
+    </tr>
+    <tr>
+      <td>NH농협금융지주</td>
+      <td>은행·보험·증권 등 금융 자회사를 포괄하는 지주회사</td>
+    </tr>
+    <tr>
+      <td>NH농협은행</td>
+      <td>이번 지원 대상. 은행의 업무·실적·AI 사업이 분석의 중심</td>
+    </tr>
+    <tr>
+      <td>지역 농·축협</td>
+      <td>개별 조합. 농협은행의 지점이나 연결 자회사로 간주하면 안 됨</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>이 구분은 특히 데이터와 실적에서 중요하다. NH투자증권의 이익을 은행 실적으로 쓰거나, 지역 농·축협의 모든 고객 정보를 은행이 자유롭게 활용할 수 있다고 가정하면 분석이 틀어진다. 농협이라는 연결 관계는 협업 기회가 될 수 있지만, 실제 데이터 활용에는 보유 주체·목적·권한 확인이 필요하다.</p>
+
+<h2 id="3-무엇으로-돈을-버는-은행인가">3. 무엇으로 돈을 버는 은행인가</h2>
+
+<p>은행의 출발점은 자금 중개다. 예금 등으로 자금을 조달해 가계·기업 등에 대출하고, 이자수익에서 조달 비용을 뺀 이익을 얻는다. 자산관리·퇴직연금·카드·외환 등의 수수료와 유가증권 운용도 손익에 영향을 준다.</p>
+
+<p>농협은행의 원화대출은 2026년 6월 말 약 <strong>312.85조원</strong>, 원화예수금은 약 <strong>339.75조원</strong>이다. 원화대출 구성은 가계 약 148.56조원, 기업 118.56조원, 공공·기타 12.72조원, 정책자금 33.02조원이다. 별도 기준이며 반올림으로 합계에 차이가 날 수 있다. <a href="https://www.nhfngroup.com/user/disclosureDown.do?disclosureSeq=336&amp;siteId=nhfngroup">상반기 IR 17쪽</a></p>
+
+<p><strong>농협은행을 농업대출만 하는 은행으로 이해하면 안 된다.</strong> 동시에 일반 시중은행과 완전히 같은 고객 구조로 봐서도 안 된다. 가계·기업이라는 큰 시장 안에 농업·지역·공공업무라는 특성이 더해져 있다.</p>
+
+<p>AI 과제를 생각할 때도 범용 챗봇 하나보다 고객과 업무를 나눠야 한다. 기업 담당자는 재무정보와 심사자료가, 공공업무 담당자는 기관별 절차와 정산 기준이, 농업인 상담 담당자는 정책자금 조건과 제출서류가 중요할 수 있다. 이는 후보 과제의 예시이며, 각 서비스가 이미 도입됐다는 뜻은 아니다.</p>
+
+<h2 id="4-최근-3년-실적-순이익-유지와-수익의-질을-함께-봐야-한다">4. 최근 3년 실적: 순이익 유지와 수익의 질을 함께 봐야 한다</h2>
+
+<p>다음은 농협은행 <strong>연결 기준</strong>, 단위는 억원이다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th style="text-align: right">2023년</th>
+      <th style="text-align: right">2024년</th>
+      <th style="text-align: right">2025년</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>이자이익</td>
+      <td style="text-align: right">77,616</td>
+      <td style="text-align: right">76,579</td>
+      <td style="text-align: right">74,594</td>
+    </tr>
+    <tr>
+      <td>수수료이익</td>
+      <td style="text-align: right">7,480</td>
+      <td style="text-align: right">7,454</td>
+      <td style="text-align: right">7,599</td>
+    </tr>
+    <tr>
+      <td>일반관리비</td>
+      <td style="text-align: right">35,752</td>
+      <td style="text-align: right">38,428</td>
+      <td style="text-align: right">40,424</td>
+    </tr>
+    <tr>
+      <td>신용손실충당금 전입액</td>
+      <td style="text-align: right">16,843</td>
+      <td style="text-align: right">9,696</td>
+      <td style="text-align: right">3,644</td>
+    </tr>
+    <tr>
+      <td>당기순이익</td>
+      <td style="text-align: right">17,805</td>
+      <td style="text-align: right">18,070</td>
+      <td style="text-align: right">18,140</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>출처: <a href="https://www.nhfngroup.com/user/disclosureDown.do?disclosureSeq=290&amp;siteId=nhfngroup">2024년 IR, 농협은행 현황</a>, <a href="https://www.nhfngroup.com/user/disclosureDown.do?disclosureSeq=317&amp;siteId=nhfngroup">2025년 IR, 농협은행 현황</a>. 2025·2024년 순이익은 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003539">DART 연결감사보고서</a>의 백만원 수치를 억원으로 환산·반올림해 대조했다.</p>
+
+<p>순이익만 보면 완만한 증가다. 그러나 같은 기간 이자이익은 줄고 관리비는 늘었다. 충당금 전입액 감소가 이익을 지지했다는 점을 함께 봐야 한다. 충당금은 예상되는 신용손실을 반영하는 비용이므로 매년 같은 속도로 줄일 수 있는 생산성 성과와는 성격이 다르다.</p>
+
+<p>여기서 도출할 수 있는 과제는 <strong>지속적으로 반복되는 업무의 효율과 고객 접점의 수익성을 높이는 것</strong>이다. 다만 이 표만으로 AI가 비용 증가의 원인이라거나, AI 투자로 순이익이 늘었다는 인과관계를 주장할 수는 없다.</p>
+
+<h2 id="5-2026년-상반기-이자-회복이-순이익-증가로-바로-이어지지-않았다">5. 2026년 상반기: 이자 회복이 순이익 증가로 바로 이어지지 않았다</h2>
+
+<p>그룹 IR에 실린 <strong>농협은행 연결 손익</strong>, 단위는 억원이다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th style="text-align: right">2025년 상반기</th>
+      <th style="text-align: right">2026년 상반기</th>
+      <th style="text-align: right">전년 동기 대비</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>총영업이익</td>
+      <td style="text-align: right">38,589</td>
+      <td style="text-align: right">40,214</td>
+      <td style="text-align: right">+4.2%</td>
+    </tr>
+    <tr>
+      <td>이자이익</td>
+      <td style="text-align: right">36,548</td>
+      <td style="text-align: right">39,755</td>
+      <td style="text-align: right">+8.8%</td>
+    </tr>
+    <tr>
+      <td>수수료이익</td>
+      <td style="text-align: right">3,789</td>
+      <td style="text-align: right">4,404</td>
+      <td style="text-align: right">+16.2%</td>
+    </tr>
+    <tr>
+      <td>신용손실충당금 전입액</td>
+      <td style="text-align: right">1,882</td>
+      <td style="text-align: right">2,972</td>
+      <td style="text-align: right">+57.9%</td>
+    </tr>
+    <tr>
+      <td>일반관리비</td>
+      <td style="text-align: right">18,077</td>
+      <td style="text-align: right">19,415</td>
+      <td style="text-align: right">+7.4%</td>
+    </tr>
+    <tr>
+      <td>영업이익</td>
+      <td style="text-align: right">18,630</td>
+      <td style="text-align: right">17,827</td>
+      <td style="text-align: right">-4.3%</td>
+    </tr>
+    <tr>
+      <td>연결당기순이익</td>
+      <td style="text-align: right">11,879</td>
+      <td style="text-align: right">11,629</td>
+      <td style="text-align: right">-2.1%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>출처: <a href="https://www.nhfngroup.com/user/disclosureDown.do?disclosureSeq=336&amp;siteId=nhfngroup">2026년 상반기 IR 12쪽</a>. 총영업이익에는 기타영업손익도 포함되므로 이자이익과 수수료이익의 합계와 다르다.</p>
+
+<p>좋아진 수입이 비용·신용손실·시장 관련 손익을 거쳐 최종 이익으로 남는 과정이 중요하다. AI 서비스도 같은 방식으로 봐야 한다. 사용량이나 추천 횟수가 늘었다고 사업 성과가 완성되는 것은 아니다. 오류 확인과 수정에 드는 시간, 실제 업무 완료, 운영비까지 측정해야 한다.</p>
+
+<h3 id="같은-순이익인데-숫자가-다른-이유를-먼저-확인한다">같은 순이익인데 숫자가 다른 이유를 먼저 확인한다</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>자료·집계 범위</th>
+      <th style="text-align: right">2025년 상반기</th>
+      <th style="text-align: right">2026년 상반기</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>그룹 IR의 농협은행 연결당기순이익</td>
+      <td style="text-align: right">11,879억원</td>
+      <td style="text-align: right">11,629억원</td>
+    </tr>
+    <tr>
+      <td>은행 경영공시의 은행계정 반기순이익</td>
+      <td style="text-align: right">11,681억원</td>
+      <td style="text-align: right">11,808억원</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>은행계정은 약 1.1% 증가한다. 연결 실적과 방향도 다르다. 따라서 “농협은행 상반기 순이익은 감소했다”라고 쓰려면 <strong>그룹 IR의 은행 연결 기준</strong>이라는 범위를 붙여야 한다. 차액 전체를 특정 자회사 손실로 추정하지도 않는다. <a href="https://www.nhbank.com/goSubPage.do?srchGb=KO_NHIR_02">은행 상반기 경영공시 5·89쪽</a></p>
+
+<p>그룹 전체 순이익과 은행 자체 실적 역시 별개다. 이 글에서는 그룹의 증권·보험 실적 호조를 은행 AI 성과로 연결하지 않는다.</p>
+
+<h2 id="6-농업지원사업비는-농협은행의-정체성과-연결된다">6. 농업지원사업비는 농협은행의 정체성과 연결된다</h2>
+
+<p>농협은행은 농업지원사업비를 부담한다. 은행 경영공시는 이를 농협중앙회의 회원·조합원 지원 및 지도사업 재원을 위한 비용으로 설명하며, 직전 3개년 평균영업수익에 부과율 2.30%를 적용한다고 명시한다. 2026년 상반기 금액은 <strong>2,525억원</strong>이다. <a href="https://www.nhbank.com/goSubPage.do?srchGb=KO_NHIR_02">상반기 경영공시 5쪽</a></p>
+
+<p>이 구조는 수익성과 농업·농촌 기여를 함께 봐야 하는 이유다. 다만 비용을 단순히 “손해”로 평가하거나, 공익성이 있으니 수익성을 고려하지 않아도 된다고 이해해서는 안 된다. 지속 가능한 영업 기반이 있어야 지원 기능도 이어갈 수 있다.</p>
+
+<p>회사가 공시하는 ‘부담 전 순이익’은 세금 효과가 반영된 값이다. 사업비를 세후 순이익에 그대로 더해 새 순이익을 만들면 안 된다.</p>
+
+<p><strong>지원동기에서는 농업·농촌이라는 목적과 업무 개선이라는 실행을 연결하는 편이 설득력 있다.</strong> 예를 들어 복잡한 상담 기준을 직원이 빠르고 정확하게 확인하도록 돕는 일은 생산성과 접근성을 함께 개선할 수 있다. 이는 기여 방향에 대한 제안이다.</p>
+
+<h2 id="7-건전성과-자본-ai의-성과-지표에-위험을-넣어야-하는-이유">7. 건전성과 자본: AI의 성과 지표에 위험을 넣어야 하는 이유</h2>
+
+<p>2026년 6월 말 은행 공시의 고정이하여신비율은 <strong>0.52%</strong>로 전년 동기 0.47%보다 높아졌고, 대손충당금적립률은 <strong>172.07%</strong>로 214.26%보다 낮아졌다. 고정이하여신은 부실 위험이 높은 여신의 규모를, 적립률은 그에 대한 충당금 수준을 살피는 지표다. <a href="https://www.nhbank.com/goSubPage.do?srchGb=KO_NHIR_02">상반기 경영공시 7쪽</a></p>
+
+<p>자본은 최신 은행 경영공시 34쪽의 보통주자본비율 <strong>15.83%</strong>, 총자본비율 <strong>18.79%</strong>를 사용한다. 초기 상반기 IR의 추정치 15.77%·18.72%와 구별했다. 이 수치는 지주회사의 자본비율이 아니다. <a href="https://www.nhbank.com/goSubPage.do?srchGb=KO_NHIR_02">은행 경영공시</a>, <a href="https://www.nhfngroup.com/user/disclosureDown.do?disclosureSeq=336&amp;siteId=nhfngroup">IR 20쪽의 추정치</a></p>
+
+<p>이 변화만으로 은행 전체를 위험하다고 단정할 수는 없다. 직무와의 연결점은 명확하다. <strong>AI가 대출이나 상품 추천을 더 빠르게 하더라도 오류·편향·부적합한 권유를 늘리면 좋은 성과가 아니다.</strong> 속도와 전환율 외에 검토자의 수정률, 근거 누락, 예외 처리와 고객 불편을 함께 봐야 한다.</p>
+
+<h2 id="8-애널리스트-보고서는-어떤-관점으로-활용했나">8. 애널리스트 보고서는 어떤 관점으로 활용했나</h2>
+
+<p>한국투자증권 백두산의 2026년 1월 7일 「은행: 4Q25 Preview: 핵심은 배당」은 이자이익이 양호해도 비이자이익 부진과 일회성 비용으로 순이익이 기대를 밑돌 수 있다고 분석한다. 이 보고서에서 가져올 것은 <strong>NIM·대출 성장·비이자손익·대손비용을 나눠 보는 방법</strong>이다. 상장 은행주의 배당 투자 논리를 비상장 농협은행의 채용 분석에 그대로 적용하지 않는다. 이 자료는 2025년 4분기 전망이며, 농협은행의 2026년 실적을 예측한 보고서가 아니다. <a href="https://www.truefriend.com/main/research/research/StrategyDetail.jsp?id=151123&amp;jkGubun=6">한국투자증권 원문</a></p>
+
+<p>AI 투자 측면에서는 하나금융연구소 신상희의 2026년 4월 24일 「AI 생산성 역설: 조직 내 성공적인 AI 전환을 위한 요건」을 참고했다. 보고서는 개인 차원의 효과가 조직 성과로 자동 전환되지 않으며 목표·업무 절차·운영의 변화가 필요하다고 본다. <a href="https://www.hanaif.re.kr/boardDetail.do?hmpeSeqNo=36907">연구소 원문</a></p>
+
+<p>이를 농협은행에 적용한 <strong>분석자의 질문</strong>은 “Agent를 몇 개 만들었는가”보다 “어느 업무의 전체 처리시간과 품질이 개선되었는가”다. 두 자료 모두 농협은행 내부 ROI를 검증한 자료로 인용하지 않았다.</p>
+
+<h2 id="9-20252026년-ai-전략은-어떻게-발전했나">9. 2025~2026년 AI 전략은 어떻게 발전했나</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>시점</th>
+      <th>확인한 내용</th>
+      <th>기준일의 해석</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025년 2월</td>
+      <td>AI추천 어시스턴트 출시</td>
+      <td>상품 추천과 상담 보조 적용 사례</td>
+    </tr>
+    <tr>
+      <td>2025년 활동을 담은 ESG 보고서</td>
+      <td>생성형 AI 플랫폼 구축, 직원용 AI 포털 개방</td>
+      <td>지식정보검색·업무비서 제공 사실 확인</td>
+    </tr>
+    <tr>
+      <td>2026년 1월 29일</td>
+      <td>Agentic AI Bank 도약 선언</td>
+      <td>조직의 추진 방향</td>
+    </tr>
+    <tr>
+      <td>2026년 4월 30일</td>
+      <td>LG CNS와 Agentic AI Discovery 프로그램 완료 발표</td>
+      <td>현업·테크·AI가 함께 과제와 업무 흐름 구체화</td>
+    </tr>
+    <tr>
+      <td>2026년 5월 4일</td>
+      <td>NH AI회의록 도입 발표</td>
+      <td>음성의 텍스트 변환·요약 등 내부업무 서비스</td>
+    </tr>
+    <tr>
+      <td>2026년 5월 28일</td>
+      <td>애자일소다와 직접투자·사업협력 MOU</td>
+      <td>투자 및 협력 추진</td>
+    </tr>
+    <tr>
+      <td>2026년 6월 9일</td>
+      <td>NHAIS·AI Full-Banking·외부 생태계 등 비전 발표</td>
+      <td>플랫폼 확장과 실행체계 구축 전략</td>
+    </tr>
+    <tr>
+      <td>2026년 7월 16일</td>
+      <td>NH 크레딧 온 협약 발표</td>
+      <td>대안신용평가 공동연구·사전검증 과제</td>
+    </tr>
+    <tr>
+      <td>2026년 7월 28일 인터뷰</td>
+      <td>NHAIS 연말 전 직원 개방 및 2030년 Full-Banking 목표 설명</td>
+      <td>향후 일정. 완료 실적으로 표현하지 않음</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>출처: <a href="https://www.nhfngroup.com/user/nhfngroup/download/sub05/0818/2025%20NH%EB%86%8D%ED%98%91%EA%B8%88%EC%9C%B5%20ESG.pdf">ESG 보고서 인쇄 105쪽/PDF 104쪽</a>, <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5814939&amp;command=view&amp;framePath=unknownboard&amp;siteId=nhfngroup">1월 선언</a>, <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5858843&amp;command=view&amp;framePath=unknownboard&amp;siteId=nhfngroup">4월 프로그램</a>, <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5859573&amp;command=albumView&amp;framePath=unknownboard&amp;siteId=nhfngroup">5월 회의록</a>, <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5868339&amp;command=view&amp;framePath=unknownboard&amp;siteId=nhfngroup">5월 투자 MOU</a>, <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5871509&amp;command=view&amp;framePath=unknownboard&amp;siteId=nhfngroup">6월 비전</a>, <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5884319&amp;command=albumView&amp;framePath=unknownboard&amp;siteId=nhfngroup">7월 신용평가 협약</a>, <a href="https://news.bizwatch.co.kr/special/2026/view/202607260001">담당 임원 인터뷰</a>.</p>
+
+<p>이 흐름은 개별 AI 기능에서 공통 플랫폼과 업무 실행으로 범위가 넓어지고 있다는 해석을 뒷받침한다. 다만 발표가 많다는 사실만으로 서비스 성숙도나 경쟁 우위를 증명하지는 못한다.</p>
+
+<h2 id="10-기존-ai-포털과-nhais는-구분해야-한다">10. 기존 AI 포털과 NHAIS는 구분해야 한다</h2>
+
+<p>ESG 보고서는 생성형 AI 플랫폼을 구축하고 직원용 AI 포털을 열었다고 설명한다. 반면 7월 김주식 AI데이터부문 부행장 인터뷰에서는 <strong>직원이 Agent를 직접 만드는 NHAIS를 연말까지 완성·개방할 계획</strong>이라고 설명한다. 따라서 기존 업무지원 서비스의 존재와 차세대 제작 플랫폼의 전 직원 개방을 같은 사건으로 취급할 수 없다. <a href="https://www.nhfngroup.com/user/nhfngroup/download/sub05/0818/2025%20NH%EB%86%8D%ED%98%91%EA%B8%88%EC%9C%B5%20ESG.pdf">ESG 보고서 인쇄 105쪽</a>, <a href="https://news.bizwatch.co.kr/special/2026/view/202607260001">7월 28일 인터뷰</a></p>
+
+<p><strong>직무상 의미는 제작자의 확대가 운영의 복잡성도 확대한다는 점이다.</strong> 여러 부서가 Agent를 만들면 비슷한 기능의 중복, 데이터 접근권한, 담당자 변경, 모델 교체 후 품질 저하 같은 문제가 생길 수 있다. 누구나 쉽게 만드는 화면과 함께 등록·검증·배포·중단의 기준을 설계해야 한다.</p>
+
+<p>이는 공고의 ‘기획’과 ‘운영’이 붙어 있는 이유를 설명하는 가설이다. 해당 채용 인력이 NHAIS의 어느 팀에 배치되는지는 공개공고만으로 확정할 수 없다.</p>
+
+<h2 id="11-사례-1--ai추천-어시스턴트의-성과를-어떻게-읽을까">11. 사례 1 — AI추천 어시스턴트의 성과를 어떻게 읽을까</h2>
+
+<p>공식 ESG 보고서에 따르면 이 서비스는 예측형 AI로 상품 수요를 판단하고 생성형 AI로 추천 이유를 제공하는 상담 도구다. 회사는 비대면 테스트 마케팅에서 개인형 IRP 가입 전환율 <strong>25%p 향상</strong>, e사장님담보대출 실행 건수 <strong>18배 증가</strong>를 제시한다. <a href="https://www.nhfngroup.com/user/nhfngroup/download/sub05/0818/2025%20NH%EB%86%8D%ED%98%91%EA%B8%88%EC%9C%B5%20ESG.pdf">ESG 보고서 인쇄 105쪽</a></p>
+
+<p>이는 회사가 발표한 특정 테스트 결과다. 해당 설명에는 전체 고객 대상의 실험 설계·표본 수·원래 전환율이 충분히 제시되지 않으므로, 전행 매출이 같은 비율로 늘었다거나 AI의 순수 인과효과가 확정됐다고 쓰지 않는다. 25%p와 25%도 다르다.</p>
+
+<p><strong>얻을 수 있는 인사이트는 ‘누구에게 무엇을 추천할지’와 ‘왜 적합한지 설명하기’가 다른 문제라는 것</strong>이다. 생성형 모델 하나로 모든 판단을 해결하기보다 예측·규칙·설명을 역할에 맞게 연결할 여지가 있다.</p>
+
+<p>지원자는 모델 이름보다 판단의 분업을 설명하면 좋다. 후보를 고르는 기준, 추천을 제외할 조건, 설명의 근거, 담당자가 확인할 화면을 함께 설계하는 방식이다.</p>
+
+<h2 id="12-사례-2--회의록과-지식-검색은-작은-업무지만-운영의-기본을-드러낸다">12. 사례 2 — 회의록과 지식 검색은 작은 업무지만 운영의 기본을 드러낸다</h2>
+
+<p>NH AI회의록은 음성을 텍스트로 바꾸고, 주요 내용과 결정사항 등을 정리하는 서비스로 발표됐다. <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5859573&amp;command=albumView&amp;framePath=unknownboard&amp;siteId=nhfngroup">2026년 5월 4일 공식 발표</a></p>
+
+<p>분석자가 제안하는 평가 기준은 요약의 유창함보다 <strong>결정사항·담당자·기한의 누락과 수정 부담</strong>이다. 잘못 요약한 문장이 후속 업무에 사용되면 처음에 절약한 시간보다 큰 재작업이 생길 수 있다. 녹음·원문·요약의 접근 범위와 보존 기준도 함께 정해야 한다.</p>
+
+<p>지식 검색에서는 최신 규정인지, 폐기된 문서가 섞였는지, 질문자가 볼 수 있는 문서인지가 중요하다. RAG는 필요한 문서를 찾아 답변에 참고시키는 방식이지만, 검색을 붙였다는 사실 자체가 정확성을 보증하지는 않는다.</p>
+
+<p>두 사례의 공통 과제는 <strong>업무 결과를 검증할 수 있도록 원문·근거·수정 이력을 남기는 것</strong>이다. 이는 제안하는 설계 원칙이며 농협은행의 내부 구현을 확인했다는 뜻은 아니다.</p>
+
+<h2 id="13-사례-3--nh-크레딧-온은-확장-가능성과-검증-부담을-함께-보여준다">13. 사례 3 — NH 크레딧 온은 확장 가능성과 검증 부담을 함께 보여준다</h2>
+
+<p>2026년 7월 발표한 NH 크레딧 온은 금융이력이 부족한 고객 등을 위한 대안신용평가 협력이다. 비금융 정보 활용과 AI를 통한 비정형 정보의 정량화 등을 공동 과제로 제시했다. <strong>협약과 사전검증 단계</strong>로 읽어야 하며, 새 모형이 이미 전 고객의 대출 심사를 대체했다고 표현하지 않는다. <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5884319&amp;command=albumView&amp;framePath=unknownboard&amp;siteId=nhfngroup">7월 16일 공식 발표</a></p>
+
+<p>기회는 기존 금융정보만으로 파악하기 어려운 고객을 더 이해하는 데 있다. 동시에 데이터가 없는 고객을 새 기준에서도 불리하게 만들거나, 생활 정보를 신용위험과 잘못 연결할 수 있다는 평가 과제가 생긴다.</p>
+
+<p>이 영역에 기여를 제안한다면 승인율 하나보다 <strong>동일 위험 수준에서의 접근성, 정보 부족 집단별 성능, 추후 연체 결과, 설명과 이의 제기 가능성</strong>을 함께 검토하는 접근이 좋다. 실제 대출판단 권한을 신입 AI 개발자가 독자적으로 갖는다는 의미는 아니다.</p>
+
+<h2 id="14-lg-cns-협력과-애자일소다-투자는-모순이-아니다">14. LG CNS 협력과 애자일소다 투자는 모순이 아니다</h2>
+
+<p>LG CNS와의 Discovery 프로그램은 현업·테크·AI가 함께 기존 업무와 Agent의 역할을 구체화하는 방식이다. 6월 비전 행사에서는 애자일소다 직접투자계약 서명식과 인수 세리머니, AX프런티어 77명 발대식이 함께 진행됐다. <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5858843&amp;command=view&amp;framePath=unknownboard&amp;siteId=nhfngroup">4월 공식 발표</a>, <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5871509&amp;command=view&amp;framePath=unknownboard&amp;siteId=nhfngroup">6월 공식 발표</a></p>
+
+<p>외부 구축 역량을 활용하면서, 업무 지식과 지속적인 개선 능력을 내부에 축적하려는 방향으로 해석할 수 있다. 인수라는 표현을 보았다고 지분 100% 확보나 모든 거래절차의 완료를 임의로 덧붙이지 않는다.</p>
+
+<p><strong>내재화의 실질은 “우리 직원이 처음부터 코드를 전부 썼다”에만 있지 않다.</strong> 은행이 요구사항, 데이터 정의, 평가 기준, 운영 책임을 소유하고 다음 변경을 판단할 수 있는지가 중요하다. 외부 전문가가 구현해도 이 역량은 내부에 필요하다.</p>
+
+<p>이 때문에 기술 커뮤니케이션은 부가 역량이 아니다. 현업의 모호한 요청을 개발 가능한 입력·출력으로 바꾸고, 외부 업체·내부 개발팀·데이터 담당자가 같은 기준으로 검수하도록 만드는 일이 직무의 핵심이 될 수 있다.</p>
+
+<h2 id="15-경쟁사와-비교하면-무엇이-농협은행만의-과제인가">15. 경쟁사와 비교하면 무엇이 농협은행만의 과제인가</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>비교 대상</th>
+      <th>확인한 사례</th>
+      <th>농협은행 지원에 주는 질문</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KB국민은행</td>
+      <td>2025년 AI 거버넌스 도입, AI윤리위원회 및 생애주기별 위험관리 체계</td>
+      <td>공통 플랫폼에 검증과 책임을 어떻게 포함할 것인가</td>
+    </tr>
+    <tr>
+      <td>하나은행</td>
+      <td>2026년 3월 기업 신용평가 심사의견 초안 생성 시스템 전 영업점 도입 발표</td>
+      <td>직원이 실제로 끝내는 업무와 초안 품질을 어떻게 측정할 것인가</td>
+    </tr>
+    <tr>
+      <td>NH농협은행</td>
+      <td>직원 Agent 제작 확대, 외부 기술기업과 결합, 농업·지역·공공업무 기반</td>
+      <td>도메인 차이를 반영하면서 여러 부서가 재사용할 체계를 어떻게 만들 것인가</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>출처: <a href="https://omoney.kbstar.com/quics?articleId=142221&amp;bbsMode=view&amp;boardId=647&amp;compId=b031438&amp;page=C017648&amp;searchCondition=title&amp;viewPage=1">KB국민은행 2025년 12월 9일 공식 발표</a>, <a href="https://press1.newswire.co.kr/newsRead.php?no=1030500">하나은행 제공 보도자료, 2026년 3월 18일</a>, <a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5871509&amp;command=view&amp;framePath=unknownboard&amp;siteId=nhfngroup">농협은행 비전</a>.</p>
+
+<p>이 비교는 사례의 방향을 비교한 것이며 종합적인 기술 순위를 매긴 것이 아니다. 하나은행의 초안 생성 시간 단축 발표도 여신 심사 전체가 그 시간에 끝난다는 뜻이 아니다.</p>
+
+<p><strong>AI를 쓴다는 사실이나 RAG·Agent라는 기술 이름 자체는 독점적인 차별점이 되기 어렵다.</strong> 농협은행의 차별화 가능성은 고유한 업무를 정확하게 이해하고 현장에 확산하는 능력에 있다. 다만 고유한 고객 접점이 곧 고품질 데이터와 AI 우위로 전환되는 것은 아니다.</p>
+
+<p>관련 글: <a href="/corporate-analysis/kb-kookmin-bank-ai-platform-analysis/">KB국민은행 AI 플랫폼 기업분석</a>, <a href="/corporate-analysis/lg-cns-ai-ax-analysis/">LG CNS AI(AX) 기업분석</a>.</p>
+
+<h2 id="16-전국-영업망은-ai-확산의-기회이자-과제다">16. 전국 영업망은 AI 확산의 기회이자 과제다</h2>
+
+<p>최신 은행 경영공시상 2026년 6월 말 국내 영업점은 <strong>1,065개</strong>다. 시군지부·지점 779개와 출장소 286개를 합친 값이며, 지역 농·축협 전체 점포 수가 아니다. <a href="https://www.nhbank.com/goSubPage.do?srchGb=KO_NHIR_02">상반기 경영공시 4쪽</a></p>
+
+<p>많은 접점은 좋은 업무 도구의 효과가 확산될 기회다. 동시에 담당 업무·지역·숙련도에 따라 사용 조건이 달라질 수 있다. 본부의 시연에서 잘 작동하는 것과 여러 영업점에서 반복해서 사용하는 것은 다른 검증이다.</p>
+
+<p>예를 들어 상담 보조를 도입한다면 신입·숙련 직원, 업무 유형, 자료가 충분한 사례·부족한 사례를 나눠 확인하는 방식이 유용하다. 낮은 사용률이 모델 성능 문제인지, 화면 이동이 번거로운지, 업무 책임이 불명확해서인지도 구분해야 한다.</p>
+
+<p><strong>이 은행에서 사용자 인터뷰와 운영 피드백은 기술 개발 이후의 홍보 활동이 아니라 개발 입력값</strong>으로 볼 수 있다.</p>
+
+<h2 id="17-ai-기획운영-jd를-실제-일로-번역하기">17. AI 기획/운영 JD를 실제 일로 번역하기</h2>
+
+<p>다음은 공식 공고의 업무와 기술 요건을 묶어 해석한 것이다. 설명 열은 예상 업무이며 구체적인 배치나 평가 기준은 아니다. <a href="https://nhbank.incruit.com/hire/viewhire.asp?projectid=102">전문분야 채용공고</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>공고의 요구</th>
+      <th>실제로 설명할 수 있어야 할 일</th>
+      <th>준비할 증거</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AX 과제 발굴·기획</td>
+      <td>업무 빈도·불편·데이터·예외를 파악하고 우선순위 설정</td>
+      <td>사용자 인터뷰, 기존 흐름, 대안 비교</td>
+    </tr>
+    <tr>
+      <td>생성형 AI·Agent 기획 및 개발</td>
+      <td>질문을 검색·조회·행동으로 연결</td>
+      <td>본인 구현, 상태 흐름, 실패 사례</td>
+    </tr>
+    <tr>
+      <td>금융서비스 연계 개발, HTTP·MCP 인터페이스</td>
+      <td>기존 기능과 AI의 입력·출력·권한 연결</td>
+      <td>API 명세, 오류 응답, 통합 과정</td>
+    </tr>
+    <tr>
+      <td>Python·SQL</td>
+      <td>데이터 처리와 검증, 조회 로직 구현</td>
+      <td>직접 작성한 코드와 판단 이유</td>
+    </tr>
+    <tr>
+      <td>오픈웨이트 LLM·서빙 프레임워크</td>
+      <td>모델을 서비스로 제공하고 품질·속도·자원 사용 비교</td>
+      <td>실행 환경, 평가 결과, 설정 근거</td>
+    </tr>
+    <tr>
+      <td>프라이빗 클라우드·클러스터·Kubernetes</td>
+      <td>여러 서비스의 배포·자원·장애·복구 관리</td>
+      <td>실제 수행 범위와 운영/실습 기록</td>
+    </tr>
+    <tr>
+      <td>개발자·데이터 엔지니어·현업과 소통</td>
+      <td>서로 다른 요구를 실행 가능한 명세로 합의</td>
+      <td>변경 이력, 검수 기준, 인수인계</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>직무명에 ‘기획’이 들어 있어도 기술 요구는 구체적이다. 반대로 기술 이름을 나열해도 어떤 업무를 개선할지 설명하지 못하면 기획 역량이 드러나지 않는다.</p>
+
+<p>직접 해보지 않은 운영 기술은 학습 중인 범위로 구분해야 한다. REST 기반 서비스 연동 경험이 있다고 MCP 표준을 구현했다고 표현하거나, 로컬 컨테이너 실행을 대규모 클러스터 운영이라고 쓰지 않는다.</p>
+
+<h2 id="18-은행의-ai-윤리를-운영-항목으로-바꾸면">18. 은행의 AI 윤리를 운영 항목으로 바꾸면</h2>
+
+<p>농협은행의 공식 AI 윤리기준은 농업인·고객의 행복, 개인정보와 보안, 다양성과 공정성, 투명성과 신뢰, 책임과 안전을 제시한다. <a href="https://www.nhbank.com/goSubPage.do?srchGb=KO_NHEM_17">공식 AI 윤리기준</a></p>
+
+<p>아래는 이를 업무 설계로 연결한 <strong>제안</strong>이다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>원칙</th>
+      <th>서비스 설계에서 확인할 질문</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>고객의 행복</td>
+      <td>상담이 어려운 고객에게도 이해 가능한 설명과 사람 연결이 있는가</td>
+    </tr>
+    <tr>
+      <td>개인정보·보안</td>
+      <td>문서 검색과 도구 호출 모두 사용자 권한을 따르는가</td>
+    </tr>
+    <tr>
+      <td>공정성</td>
+      <td>특정 고객군에서 실패가 집중되는지 확인하는가</td>
+    </tr>
+    <tr>
+      <td>투명성·신뢰</td>
+      <td>답변의 근거·기준일·불확실성을 확인할 수 있는가</td>
+    </tr>
+    <tr>
+      <td>책임·안전</td>
+      <td>실행 전 확인, 중단, 복구, 담당자의 책임이 정해져 있는가</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>이렇게 접근하면 윤리를 추상적인 태도에서 검수 가능한 조건으로 바꿀 수 있다. 법률 전체의 준수 여부를 이 표만으로 판정할 수 있다는 뜻은 아니다.</p>
+
+<h2 id="19-인사이트-1--다음-병목은-agent-수보다-공통-운영-기준일-수-있다">19. 인사이트 1 — 다음 병목은 Agent 수보다 공통 운영 기준일 수 있다</h2>
+
+<p><strong>근거:</strong> 직원 제작 확대 전략과 클라우드·클러스터 운영을 요구하는 JD가 동시에 존재한다.</p>
+
+<p><strong>해석:</strong> 제작자가 늘면 개별 기능을 빠르게 만드는 능력에 더해, 여러 기능을 등록하고 안전하게 배포하는 공통 체계의 가치가 커진다. 조직 규모에서는 담당자가 떠난 Agent, 오래된 문서를 쓰는 Agent, 다른 팀과 같은 데이터를 중복 가공하는 Agent도 관리해야 한다.</p>
+
+<p><strong>한계:</strong> 내부에서 이런 문제가 이미 발생했다고 확인한 것은 아니다. 공개자료로 식별한 확장 시나리오다.</p>
+
+<p><strong>기여 방향:</strong> 업무 소유자·사용 데이터·모델 버전·평가셋·배포일·중단 조건을 묶은 서비스 등록 양식을 제안할 수 있다. 지원 경험에서는 한 번의 데모보다 다른 사람이 이어서 개발할 수 있게 남긴 API·오류처리·설명서가 좋은 증거다.</p>
+
+<h2 id="20-인사이트-2--기획의-단위는-답변에서-업무-완료로-커진다">20. 인사이트 2 — 기획의 단위는 ‘답변’에서 ‘업무 완료’로 커진다</h2>
+
+<p><strong>근거:</strong> Discovery 프로그램은 현업 업무와 Agent 역할·흐름을 함께 다룬다. 비전은 금융업무 실행의 확장이다.</p>
+
+<p><strong>해석:</strong> 상품을 설명하는 답변과 고객의 다음 절차를 돕는 업무는 다르다. 업무에는 누락 정보의 보완, 도구 호출, 승인 대기, 예외와 담당자 이관이 있다. 모델의 답변 정확도가 높아도 그 사이에서 멈추면 현장 가치는 작을 수 있다.</p>
+
+<p><strong>한계:</strong> 모든 금융행위를 완전 자율로 실행하자는 결론은 아니다. 거래의 영향과 책임에 따라 사람이 판단할 구간을 남겨야 한다.</p>
+
+<p><strong>기여 방향:</strong> 업무 시작·완료 조건과 사람이 개입할 지점을 먼저 그린다. 성과는 응답시간뿐 아니라 전체 처리시간, 완료율, 수정률, 중단 후 재개 성공 여부로 측정한다. 상태와 승인 흐름을 구현한 경험을 연결하기 좋다.</p>
+
+<h2 id="21-인사이트-3--농업지역이라는-차별성은-데이터-해석에서-실현된다">21. 인사이트 3 — 농업·지역이라는 차별성은 데이터 해석에서 실현된다</h2>
+
+<p><strong>근거:</strong> 농협은행의 정책자금·공공업무 기반과 농업지원 구조, 전국 영업망이다. 담당 임원은 농업과 금융을 연결하는 서비스 구상도 설명했다. <a href="https://news.bizwatch.co.kr/special/2026/view/202607260001">7월 인터뷰</a></p>
+
+<p><strong>해석:</strong> 범용 AI에 ‘농협’이라는 이름을 붙이는 것보다 지역·시점·지원 조건·고객의 상황을 구분하는 일이 차별화에 가깝다. 예를 들어 정책자금 안내에서는 같은 표현이라도 적용 기간과 자격 조건이 다를 수 있다.</p>
+
+<p><strong>한계:</strong> 중앙회와 조합의 정보를 즉시 통합할 수 있다고 가정할 수 없다. 농업 특화 서비스의 구상을 출시 완료로 바꾸어 쓰지도 않는다.</p>
+
+<p><strong>기여 방향:</strong> 현업 용어와 데이터 항목의 매핑, 문서의 유효기간, 서로 충돌하는 지침, 답할 수 없는 질문을 먼저 정리한다. SQL·RAG를 사용했다는 설명보다 “같은 단어가 다른 의미로 쓰여 어떤 오류가 생겼고 어떻게 줄였는가”라는 경험이 강하다.</p>
+
+<h2 id="22-인사이트-4--효율화의-성공-조건은-검수-비용까지-줄이는-것이다">22. 인사이트 4 — 효율화의 성공 조건은 검수 비용까지 줄이는 것이다</h2>
+
+<p><strong>근거:</strong> 재무에서 비용·신용위험이 중요하고, AI 실적은 특정 테스트·초안 생성 등의 범위로 발표된다. 연구소 보고서도 조직 차원의 전환을 강조한다.</p>
+
+<p><strong>해석:</strong> AI가 초안을 빨리 만들어도 사람이 전부 다시 확인해야 하면 절약 효과가 작다. 잘못된 결과를 발견하지 못하면 더 큰 비용이 생긴다. 은행에서는 이 두 문제를 함께 해결해야 한다.</p>
+
+<p><strong>한계:</strong> 은행 전체의 비용을 AI 한 서비스가 줄인다고 연결할 수 없다. 개별 업무에서 비교 가능한 조건으로 검증해야 한다.</p>
+
+<p><strong>기여 방향:</strong> 품질 기준을 먼저 통과시킨 후, 검토·수정 시간을 포함한 순절감시간과 성공한 업무 한 건당 운영비를 본다. 실패 사례를 유형별로 모아 모델 변경 전후 동일하게 평가하면 개선의 근거가 남는다.</p>
+
+<h2 id="23-인사이트-5--내재화는-협업-결과를-조직-자산으로-만드는-능력이다">23. 인사이트 5 — 내재화는 협업 결과를 조직 자산으로 만드는 능력이다</h2>
+
+<p><strong>근거:</strong> 외부 기술기업과의 협력·투자와 내부 실행조직을 함께 강화한다.</p>
+
+<p><strong>해석:</strong> 금융 현업, AI 개발, 데이터, 인프라의 언어를 연결하는 사람이 필요하다. 이 연결이 약하면 요구가 자주 바뀌고, 업체와 은행이 서로 다른 완료 기준을 갖게 될 수 있다.</p>
+
+<p><strong>한계:</strong> 외부 협력이 줄어든다거나 모든 개발을 은행이 직접 수행한다고 단정할 근거는 없다.</p>
+
+<p><strong>기여 방향:</strong> 입력·출력·오류·책임자를 문서화하고, 검수 사례와 인수인계 자료를 남긴다. 신입 지원자는 전사 전략을 바꾸겠다는 약속보다 작은 업무 하나를 다른 담당자와 안정적으로 연결한 경험으로 증명할 수 있다.</p>
+
+<h2 id="24-제안할-만한-첫-과제와-검증-지표">24. 제안할 만한 첫 과제와 검증 지표</h2>
+
+<p>다음은 공개자료를 바탕으로 만든 <strong>지원자 관점의 과제 후보</strong>다. 회사의 실제 미공개 과제나 확정 로드맵은 아니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>후보</th>
+      <th>먼저 좁힐 범위</th>
+      <th>성과 지표</th>
+      <th>중단·재검토 조건</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>직원용 규정 검색 개선</td>
+      <td>특정 업무·문서군과 권한을 가진 담당자</td>
+      <td>근거 정확도, 최신 문서 비율, 확인 포함 처리시간</td>
+      <td>권한 밖 노출, 유효기간 오류</td>
+    </tr>
+    <tr>
+      <td>회의 후속업무 보조</td>
+      <td>회의록 초안의 결정·담당·기한 추출</td>
+      <td>중요 항목 누락률, 직원 수정시간</td>
+      <td>없는 결정사항 생성, 담당자 오인</td>
+    </tr>
+    <tr>
+      <td>업무 Agent 공통 검증</td>
+      <td>한 부서의 소수 Agent</td>
+      <td>회귀평가 통과율, 중단·복구 시간, 재사용</td>
+      <td>모델 변경 후 핵심 과제 성능 하락</td>
+    </tr>
+    <tr>
+      <td>정책자금 상담 준비</td>
+      <td>공개된 한 상품의 조건·서류 안내</td>
+      <td>조건 확인 정확도, 답변 보류의 적절성</td>
+      <td>자격을 잘못 확정하거나 신청을 보장</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>우선순위는 <strong>업무 가치 × 반복 빈도 × 데이터 준비도</strong>를 보고, 실행 위험·검수 부담·연계 난이도로 조정하는 방식이 적절하다. 단순 합산 점수만으로 위험이 큰 과제를 정당화해서는 안 된다.</p>
+
+<h2 id="25-인재상과-자소서에서-보여줄-행동">25. 인재상과 자소서에서 보여줄 행동</h2>
+
+<p>공식 인재상은 금융 전문성, 소통·협력, 사회적 책임, 변화 선도, 고객 우선의 다섯 축이다. <a href="https://www.nhbank.com/goSubPage.do?srchGb=KO_NHJB_02">공식 인재상</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>인재상</th>
+      <th>경험에서 찾아볼 행동</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최고의 금융전문가</td>
+      <td>업무·데이터·위험을 공부하고 모르는 부분을 확인한 과정</td>
+    </tr>
+    <tr>
+      <td>소통하고 협력하는 사람</td>
+      <td>사용자와 개발자의 다른 요구를 명세와 검수 기준으로 합의</td>
+    </tr>
+    <tr>
+      <td>사회적 책임을 실천하는 사람</td>
+      <td>성과와 한계를 정확히 기록하고 결과에 책임진 경험</td>
+    </tr>
+    <tr>
+      <td>변화를 선도하는 사람</td>
+      <td>기존 방식을 관찰하고 대안을 비교해 실제 개선</td>
+    </tr>
+    <tr>
+      <td>고객을 먼저 생각하는 사람</td>
+      <td>사용자의 불편과 피드백에 따라 설계를 바꾼 경험</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>지원동기는 <strong>회사 고유의 과제 → 본인이 경험한 문제 → 직접 한 판단과 검증 → 작고 구체적인 기여</strong>로 연결하면 좋다. 회사 발표를 길게 요약하는 것보다 본인의 판단을 확인할 수 있는 사건 하나가 중요하다.</p>
+
+<p>기획 역량에는 사용자 인터뷰와 과제 선정, 개발 역량에는 데이터·도구·상태 연결, 운영 역량에는 평가·오류·문서화 경험을 배치할 수 있다. 같은 프로젝트라도 모든 문항에서 같은 수치만 반복하지 않는다.</p>
+
+<h2 id="26-채용-일정과-지원-전에-확인할-사항">26. 채용 일정과 지원 전에 확인할 사항</h2>
+
+<p>분석 대상은 공고 번호 <strong>projectid=102</strong>, 전문분야 중 AI 기획/운영이다. 일반 금융영업 공고와 전형을 섞지 않는다. 5급 신규직원 채용이며 입사 전 경력은 인정하지 않는다고 안내한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>공고 기준</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>지원 마감</td>
+      <td>2026년 9월 17일 17:00</td>
+    </tr>
+    <tr>
+      <td>온라인 인·적성평가(Level 1)</td>
+      <td>9월 19일 10:00~9월 21일 17:00</td>
+    </tr>
+    <tr>
+      <td>AI·디지털 분야 온라인 코딩테스트</td>
+      <td>10월 24일</td>
+    </tr>
+    <tr>
+      <td>집합 인·적성평가(Level 2)</td>
+      <td>10월 25일</td>
+    </tr>
+    <tr>
+      <td>면접 준비</td>
+      <td>포트폴리오 및 조직문화 적합성 관련 평가에 대비</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>일정과 세부 대상은 <a href="https://nhbank.incruit.com/hire/viewhire.asp?projectid=102">공식 공고</a>의 변경 공지를 우선한다. 공고는 자기소개서의 <strong>AI 활용 작성에 불이익이 있을 수 있음</strong>을 명시한다. 이 글은 기업 이해와 근거 정리를 위한 연구자료이며, 제출할 경험과 문장은 지원자가 공고 기준에 맞게 직접 작성·확인해야 한다. 블라인드 작성 유의사항도 함께 확인한다.</p>
+
+<h2 id="27-자료를-읽을-때-남겨둔-불확실성">27. 자료를 읽을 때 남겨둔 불확실성</h2>
+
+<ul>
+  <li>NHAIS 전 직원 개방, AI Full-Banking은 기준일에 확인한 자료상 향후 계획이다. 후속 완료 발표를 확인하지 못한 부분을 성과로 바꾸지 않았다.</li>
+  <li>실제 운영 모델의 전체 목록, GPU·클러스터 규모, 서비스별 예산·사용률·ROI, 내부 장애 이력은 공개자료만으로 확인되지 않았다.</li>
+  <li>애자일소다 직접투자와 행사 사실은 확인했지만, 이 글에서 최종 지분율이나 연결 편입을 추정하지 않았다.</li>
+  <li>마케팅 성과 수치는 회사가 공개한 특정 테스트 결과다. 통제집단·기간·표본이 충분히 공개되지 않은 경우 전행 성과나 인과효과로 일반화하지 않았다.</li>
+  <li>2026년 반기 실적은 공식 IR와 은행 경영공시를 사용했다. DART에 농협은행의 상장회사식 반기보고서가 있다고 가정하지 않았다.</li>
+</ul>
+
+<h2 id="28-핵심-출처와-다시-확인할-위치">28. 핵심 출처와 다시 확인할 위치</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>자료</th>
+      <th>기준·발표 시점</th>
+      <th>주로 확인한 내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003539">DART 농협은행 연결감사보고서</a></td>
+      <td>2025년 결산 / 2026.03.31 공시</td>
+      <td>소유 구조, 연결 손익, 주석</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.nhbank.com/goSubPage.do?srchGb=KO_NHIR_02">농협은행 경영공시</a></td>
+      <td>2026년 상반기</td>
+      <td>4쪽 영업점, 5쪽 수익성, 7쪽 건전성, 34쪽 자본, 89쪽 은행계정 손익</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.nhfngroup.com/user/disclosureDown.do?disclosureSeq=290&amp;siteId=nhfngroup">2024년 IR</a> / <a href="https://www.nhfngroup.com/user/disclosureDown.do?disclosureSeq=317&amp;siteId=nhfngroup">2025년 IR</a></td>
+      <td>각 연간 실적</td>
+      <td>농협은행 3년 손익 추세</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.nhfngroup.com/user/disclosureDown.do?disclosureSeq=336&amp;siteId=nhfngroup">2026년 상반기 IR</a></td>
+      <td>2026년 상반기</td>
+      <td>12쪽 은행 연결 손익, 17쪽 원화대출·예수금</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.nhfngroup.com/user/nhfngroup/download/sub05/0818/2025%20NH%EB%86%8D%ED%98%91%EA%B8%88%EC%9C%B5%20ESG.pdf">2025 ESG경영보고서</a></td>
+      <td>2025년 활동 중심, 일부 2026년 포함</td>
+      <td>인쇄 105쪽의 은행 AI 사례. 보고서 제목과 사건 연도를 구별</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.nhfngroup.com/user/indexSub.do?boardId=4998475&amp;boardSeq=5871509&amp;command=view&amp;framePath=unknownboard&amp;siteId=nhfngroup">NH AGENTIC AI BANK 비전 발표</a></td>
+      <td>2026.06.09</td>
+      <td>NHAIS·Full-Banking·투자·AX프런티어</td>
+    </tr>
+    <tr>
+      <td><a href="https://news.bizwatch.co.kr/special/2026/view/202607260001">김주식 부행장 인터뷰</a></td>
+      <td>2026.07.28, 인터뷰 7월 20일</td>
+      <td>NHAIS 개방 일정과 장기 목표</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.truefriend.com/main/research/research/StrategyDetail.jsp?id=151123&amp;jkGubun=6">한국투자증권 은행 보고서</a></td>
+      <td>2026.01.07</td>
+      <td>은행업 손익 분해 관점</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.hanaif.re.kr/boardDetail.do?hmpeSeqNo=36907">하나금융연구소 AI 생산성 보고서</a></td>
+      <td>2026.04.24</td>
+      <td>개인 생산성과 조직 성과의 차이</td>
+    </tr>
+    <tr>
+      <td><a href="https://nhbank.incruit.com/hire/viewhire.asp?projectid=102">채용공고</a></td>
+      <td>2026년 하반기</td>
+      <td>AI 기획/운영 업무·기술·일정·작성 유의사항</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>자료의 사실과 그로부터 도출한 제안을 구분하는 것이 이 분석의 기본 원칙이다. 지원 준비에서는 회사의 표현을 외우기보다, 근거가 있는 과제 하나와 본인이 직접 수행한 경험 하나를 연결해 설명하는 데 활용한다.</p>]]></content><author><name>JIBAEK JANG</name><email>jjb6904@mail.hongik.ac.kr</email></author><category term="Corporate-Analysis" /><category term="NH농협은행" /><category term="기업분석" /><category term="AI" /><category term="AX" /><category term="Agentic-AI" /><category term="금융AI" /><category term="채용" /><category term="AI운영" /><summary type="html"><![CDATA[농협은행의 수익 구조와 Agentic AI 전략을 실제 도입 단계로 구분하고, AI 기획/운영 직무의 과제와 지원 인사이트를 분석한다.]]></summary></entry><entry><title type="html">LG CNS AI(AX) 기업분석</title><link href="https://ax-lab-j.github.io/corporate-analysis/lg-cns-ai-ax-analysis/" rel="alternate" type="text/html" title="LG CNS AI(AX) 기업분석" /><published>2026-09-13T18:00:00+09:00</published><updated>2026-09-13T18:00:00+09:00</updated><id>https://ax-lab-j.github.io/corporate-analysis/lg-cns-ai-ax-analysis</id><content type="html" xml:base="https://ax-lab-j.github.io/corporate-analysis/lg-cns-ai-ax-analysis/"><![CDATA[<p><strong>2026년 9월 13일 기준</strong> · 이미지: <a href="https://www.lgcns.com/kr">LG CNS 공식 홈페이지</a></p>
+
+<h2 id="1-lg-cns는-어떤-회사인가">1. LG CNS는 어떤 회사인가</h2>
+
+<p><strong>LG CNS는 다른 기업이 일을 더 잘할 수 있도록 IT 시스템을 만들고 운영하는 회사다.</strong></p>
+
+<p>은행에는 금융 업무 시스템을, 공장에는 생산·품질 관리 시스템을, 물류센터에는 상품을 분류하고 이동시키는 시스템을 제공한다. 고객사가 이미 사용하던 시스템을 새롭게 바꾸거나, 문제가 생기지 않도록 계속 관리하는 일도 한다.</p>
+
+<p>예를 들어 공장이 “불량품이 왜 늘어나는지 알고 싶다”고 하면, 설비와 검사 데이터를 모으고 원인을 찾는 시스템을 만든다. 은행이 “직원들이 복잡한 규정을 더 빨리 찾게 하고 싶다”고 하면, 내부 문서를 검색하고 답변하는 AI 서비스를 연결할 수 있다. 이처럼 <strong>기업의 실제 업무를 기술로 개선하는 것</strong>이 LG CNS의 사업을 이해하는 출발점이다.</p>
+
+<p>1987년 설립됐으며, 대표이사는 현신균이다. 공식 비전은 <strong>Digital Business Innovator</strong>, 즉 디지털 기술로 고객의 사업을 혁신하는 기업이다. 현재는 이를 AI 중심으로 확장하는 ‘글로벌 AX Company’를 지향한다. <a href="https://www.lgcns.com/kr/company/about/vision">공식 비전</a>, <a href="https://www.lgcns.com/content/dam/lgcns/resources/company/sm/LGCNS_Sustainability_Report_2025_2026.pdf">지속가능경영보고서 6·8쪽</a></p>
+
+<p>이 회사에서 AI 개발자는 모델을 만드는 능력과 함께 <strong>고객이 어떤 일을 하고, 어디에서 불편을 겪는지 이해하는 능력</strong>이 필요하다.</p>
+
+<h2 id="2-ax는-기존-it-사업과-무엇이-다른가">2. AX는 기존 IT 사업과 무엇이 다른가</h2>
+
+<p>AX는 AI Transformation의 약자로, <strong>AI를 활용해 일하는 방식을 바꾸는 것</strong>을 뜻한다.</p>
+
+<p>기존에 사람이 시스템에 조건을 입력하고 결과를 확인했다면, AI를 붙인 뒤에는 자연어로 요청하고 필요한 정보를 찾거나 다음 업무까지 이어갈 수 있다.</p>
+
+<p>물류 현장을 예로 들면 다음과 같다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>기존 업무
+담당자가 여러 화면에서 주문과 작업량을 조회
+→ 데이터를 따로 정리
+→ 생산·작업 순서를 검토
+
+AI를 적용한 업무의 예
+“오늘 지연될 가능성이 큰 주문을 찾아줘”라고 요청
+→ AI가 관련 데이터를 조회
+→ 지연 원인과 대응안을 정리
+→ 담당자가 확인하고 다음 작업 진행
+</code></pre></div></div>
+
+<p>여기서 어려운 부분은 질문에 그럴듯하게 대답하는 기능만이 아니다. ‘지연 주문’의 기준을 알아야 하고, 주문 데이터가 어디에 있는지도 알아야 한다. 담당자가 볼 수 있는 정보의 범위, 잘못된 결과가 나왔을 때 처리 방법도 정해야 한다.</p>
+
+<p><strong>LG CNS의 기회는 기존 고객의 업무와 시스템을 이해해 온 경험에 AI를 연결하는 데 있다.</strong> 공식 채용 발표도 AI 직무를 고객 비즈니스에 맞는 모델과 서비스를 설계·구현하는 역할로 설명한다. <a href="https://lg.co.kr/media/release/30555">2026년 하반기 채용 발표</a></p>
+
+<h2 id="3-lg-cns는-무엇으로-돈을-버는가">3. LG CNS는 무엇으로 돈을 버는가</h2>
+
+<p>사업은 크게 세 가지로 나눠 볼 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>사업</th>
+      <th>쉽게 말하면</th>
+      <th>대표적인 일</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cloud &amp; AI</td>
+      <td>기업이 데이터를 저장하고 AI를 사용할 기반을 만드는 사업</td>
+      <td>클라우드 전환·운영, 데이터 분석, AI 서비스, 인프라</td>
+    </tr>
+    <tr>
+      <td>Smart Engineering</td>
+      <td>공장과 물류센터 등 실제 현장을 더 효율적으로 만드는 사업</td>
+      <td>생산·품질 관리, 물류 자동화, 로봇 연결, 스마트시티</td>
+    </tr>
+    <tr>
+      <td>DBS</td>
+      <td>기업의 핵심 업무 시스템을 만들고 관리하는 사업</td>
+      <td>은행·공공기관 등의 시스템 구축, 유지보수, 현대화</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>클라우드는 필요한 서버와 저장 공간 등을 네트워크를 통해 사용하는 방식이다. DBS는 Digital Business Service의 약자다. 여기서 자주 등장하는 <strong>SI는 시스템 구축, SM은 시스템 운영·관리</strong>를 뜻한다. <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814002448">반기보고서 사업의 내용</a></p>
+
+<p>이 사업들은 서로 연결된다. 은행의 핵심 시스템을 새로 만들면서 클라우드로 옮길 수도 있고, 공장의 생산관리 시스템에 AI 검사 기능을 추가할 수도 있다.</p>
+
+<p><strong>AI 사업이 커진다는 것은 기존 사업이 사라진다는 뜻이 아니다. 기존 고객의 시스템을 AI로 개선할 일이 늘어난다는 의미도 크다.</strong> 따라서 AI(AX) 직무에서도 데이터베이스와 기존 시스템의 연결을 이해하는 것이 중요하다. 이때 API는 프로그램끼리 데이터와 기능을 주고받는 연결 통로라고 생각하면 된다.</p>
+
+<h2 id="4-매출-규모와-현재-실적">4. 매출 규모와 현재 실적</h2>
+
+<h3 id="연간-실적">연간 실적</h3>
+
+<p>금액은 연결 기준, 억원 단위다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th style="text-align: right">2024년</th>
+      <th style="text-align: right">2025년</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>매출</td>
+      <td style="text-align: right">59,826</td>
+      <td style="text-align: right">61,295</td>
+    </tr>
+    <tr>
+      <td>영업이익</td>
+      <td style="text-align: right">5,129</td>
+      <td style="text-align: right">5,518</td>
+    </tr>
+    <tr>
+      <td>영업이익률</td>
+      <td style="text-align: right">8.57%</td>
+      <td style="text-align: right">9.00%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2025년에는 <strong>약 6.13조원의 매출과 5,518억원의 영업이익</strong>을 냈다. 영업이익률 9%는 매출 100원당 영업이익 약 9원을 남겼다는 뜻이다. <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814002448">2026년 반기보고서 요약재무정보의 전년도 수치</a></p>
+
+<p>2025년 초기 잠정 발표의 영업이익은 약 5,558억원이었으며, 위 표는 이후 공시된 5,518억원을 기준으로 한다. <a href="https://connect.lgcns.com/content/dam/lgcns/resources/company/ir/investors-activity/earnings-announcement/LG-CNS_4Q25_Earnings_KR.pdf">2025년 4분기 잠정 IR</a></p>
+
+<h3 id="2026년-상반기-실적">2026년 상반기 실적</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th style="text-align: right">2025년 상반기</th>
+      <th style="text-align: right">2026년 상반기</th>
+      <th style="text-align: right">변화</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>매출</td>
+      <td style="text-align: right">26,715억원</td>
+      <td style="text-align: right">28,358억원</td>
+      <td style="text-align: right">6.1% 증가</td>
+    </tr>
+    <tr>
+      <td>영업이익</td>
+      <td style="text-align: right">2,197억원</td>
+      <td style="text-align: right">2,221억원</td>
+      <td style="text-align: right">1.1% 증가</td>
+    </tr>
+    <tr>
+      <td>영업이익률</td>
+      <td style="text-align: right">8.2%</td>
+      <td style="text-align: right">7.8%</td>
+      <td style="text-align: right">0.4%p 하락</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>매출은 늘었지만, 이익은 그만큼 늘지 않았다.</strong> 2분기만 보면 매출은 4.2% 증가한 반면 영업이익은 9.2% 감소했다. <a href="https://connect.lgcns.com/content/dam/lgcns/resources/company/ir/investors-activity/earnings-announcement/LG%20CNS_2Q26_Earnings_KR.pdf">2026년 2분기 IR, PDF 4쪽</a></p>
+
+<p>이 숫자는 LG CNS가 앞으로 풀어야 할 과제를 보여준다. 새 사업을 키우는 동시에, 프로젝트를 더 효율적으로 수행해야 한다. AI로 개발 시간을 줄이거나 공통 기능을 재사용하려는 움직임도 이 과제와 연결된다.</p>
+
+<p><strong>직무와 연결하면, 좋은 AI 서비스는 잘 작동하면서 개발·운영 비용도 감당할 수 있어야 한다.</strong> 응답 정확도만큼 속도, 사용 비용, 유지보수도 중요해지는 이유다.</p>
+
+<h2 id="5-어떤-사업이-가장-큰가">5. 어떤 사업이 가장 큰가</h2>
+
+<p>2026년 상반기 매출 구성은 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>사업</th>
+      <th style="text-align: right">매출</th>
+      <th style="text-align: right">전체 비중</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cloud &amp; AI</td>
+      <td style="text-align: right">1조 6,714억원</td>
+      <td style="text-align: right">약 59%</td>
+    </tr>
+    <tr>
+      <td>Smart Engineering</td>
+      <td style="text-align: right">5,024억원</td>
+      <td style="text-align: right">약 18%</td>
+    </tr>
+    <tr>
+      <td>DBS</td>
+      <td style="text-align: right">6,621억원</td>
+      <td style="text-align: right">약 23%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814002448">반기보고서 사업별 매출</a></p>
+
+<p>가장 큰 사업은 Cloud &amp; AI다. 다만 이 안에는 클라우드와 인프라도 포함된다. <strong>매출의 59%가 생성형 AI에서 나온다는 뜻은 아니다.</strong> AgenticWorks와 같은 개별 AI 제품이 얼마를 벌고 있는지는 위 숫자로 알 수 없다.</p>
+
+<p>세 사업 모두 전년 상반기보다 매출이 늘었다. 증가율은 Cloud &amp; AI 약 5.1%, Smart Engineering 약 6.2%, DBS 약 8.8%다.</p>
+
+<p>이 점에서 LG CNS의 성장은 AI 신제품 하나에만 달려 있지 않다. 금융 시스템 교체, 클라우드 수요, 제조·물류 자동화 등 여러 사업의 움직임을 함께 봐야 한다.</p>
+
+<h2 id="6-고객과-수주-앞으로-수행할-일이-얼마나-있는가">6. 고객과 수주: 앞으로 수행할 일이 얼마나 있는가</h2>
+
+<h3 id="lg-계열사가-중요한-고객이다">LG 계열사가 중요한 고객이다</h3>
+
+<p>반기보고서에 제시된 주요 고객 비중은 LG전자 17.6%, LG화학 16.0%, LG유플러스 5.3%다. 각 고객의 자회사 거래를 포함한 ‘매출 등’ 기준이다. <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814002448">반기보고서 주요 매출처</a></p>
+
+<p>계열 고객 기반은 사업 기회와 경험을 제공한다. 공장, 배터리, 통신 등 복잡한 현장의 문제를 다룰 수 있기 때문이다. 반면 이 고객들이 투자를 늦추거나 사업 일정을 바꾸면 LG CNS에도 영향을 줄 수 있다.</p>
+
+<p><strong>장기적으로 중요한 것은 계열사에서 쌓은 경험을 외부 고객에게도 판매하는 능력이다.</strong> 특정 회사에서만 쓰이는 기능을 넘어 다른 기업에서도 활용할 수 있어야 사업이 더 커진다.</p>
+
+<h3 id="외부-사업의-수주잔고가-늘었다">외부 사업의 수주잔고가 늘었다</h3>
+
+<p>수주잔고는 <strong>계약은 맺었지만 아직 수행하고 매출로 반영할 일이 남아 있는 금액</strong>이다.</p>
+
+<p>반기보고서의 시스템 구축·운영 수주잔고는 2025년 말 약 3.95조원에서 2026년 6월 말 <strong>약 5.35조원</strong>으로 늘었다. 증가율은 약 35.2%다. 이 집계에서는 계열회사 사업과 일부 B2C 사업 등이 제외된다. <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814002448">반기보고서 수주상황</a></p>
+
+<p>앞으로 수행할 계약이 늘었다는 점은 긍정적이다. 다만 계약마다 기간이 다르기 때문에 5.35조원 전체가 올해 매출이 되는 것은 아니다. 약속한 일정과 품질을 지키면서 이익을 남기는지가 다음 과제다.</p>
+
+<h2 id="7-현금과-투자-여력">7. 현금과 투자 여력</h2>
+
+<p>2026년 상반기 영업활동으로 들어온 현금은 약 <strong>3,260억원</strong>이다. 6월 말 현금및현금성자산은 약 5,650억원, 유동 예치금은 약 1조 469억원이다. 예치금은 금융기관 등에 맡겨 둔 돈으로, 현금성자산과는 다른 항목이다. <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814002448">반기보고서 연결재무제표·현금흐름표</a></p>
+
+<p>투자활동현금흐름은 약 5,217억원의 유출이지만, 이 중 큰 부분은 예치금의 순증가와 관련된다. 현금이 줄었다는 숫자만 보고 전부 설비투자에 썼다고 볼 수는 없다.</p>
+
+<p>회사 IR도 현금·예치금이 차입금보다 많은 상태를 제시한다. 단, 해당 차입금 계산에서는 리스부채를 제외한다. <a href="https://connect.lgcns.com/content/dam/lgcns/resources/company/ir/investors-activity/earnings-announcement/LG%20CNS_2Q26_Earnings_KR.pdf">2분기 IR, PDF 5쪽</a></p>
+
+<p><strong>회사의 자금 여력과 새로운 사업이 돈을 벌 수 있는지는 별개의 문제다.</strong> 투자할 수 있는 여력이 있더라도, AI 플랫폼과 인프라에 들어간 돈이 고객 매출과 이익으로 이어져야 한다.</p>
+
+<h2 id="8-agenticworks-기업용-ai를-만드는-공통-기반">8. AgenticWorks: 기업용 AI를 만드는 공통 기반</h2>
+
+<p>기업마다 AI 서비스를 처음부터 만들면 비슷한 작업을 반복하게 된다.</p>
+
+<ul>
+  <li>사내 문서를 읽을 수 있게 정리한다.</li>
+  <li>질문에 맞는 자료를 찾는다.</li>
+  <li>적절한 AI 모델을 선택한다.</li>
+  <li>기존 업무 시스템과 연결한다.</li>
+  <li>실행 결과를 확인하고 관리한다.</li>
+</ul>
+
+<p><strong>AgenticWorks는 이런 작업을 한곳에서 구성하고 관리할 수 있도록 LG CNS가 제공하는 플랫폼이다.</strong> 공식 페이지는 다음 여섯 모듈을 소개한다. <a href="https://www.lgcns.com/en/service/ai/agentic-ai">AgenticWorks 공식 소개</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>모듈</th>
+      <th>하는 일</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Refiner</td>
+      <td>AI 모델을 목적에 맞게 최적화</td>
+    </tr>
+    <tr>
+      <td>Knowledge Lake</td>
+      <td>내부 자료를 AI가 활용할 수 있도록 준비</td>
+    </tr>
+    <tr>
+      <td>Router</td>
+      <td>요청에 맞는 AI 모델을 선택</td>
+    </tr>
+    <tr>
+      <td>Builder</td>
+      <td>AI 에이전트 개발을 지원</td>
+    </tr>
+    <tr>
+      <td>Hub</td>
+      <td>여러 에이전트를 통합 관리</td>
+    </tr>
+    <tr>
+      <td>Studio</td>
+      <td>코딩 부담을 줄여 에이전트를 구성</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>예를 들어 사내 규정을 알려주는 AI를 만든다면, 규정 문서를 준비하고 필요한 내용을 검색한 뒤 답변에 연결해야 한다. 문서가 바뀌면 새 내용을 반영하고, 잘못된 답변이 나오는지도 확인해야 한다.</p>
+
+<p>이런 공통 작업을 재사용할 수 있으면 고객 프로젝트마다 드는 시간을 줄일 가능성이 있다. 동시에 고객마다 다른 문서, 권한, 승인 절차를 맞추는 개발은 여전히 필요하다.</p>
+
+<p><strong>AI(AX) 직무에서는 이 연결 부분이 중요하다.</strong> RAG는 AI가 답변하기 전에 필요한 자료를 찾아 참고하게 하는 방식이다. 이를 구현했다면 검색 기능 자체뿐 아니라 자료가 오래됐을 때, 질문이 모호할 때, 근거가 부족할 때 어떻게 처리했는지 설명할 수 있어야 한다.</p>
+
+<p>2025년 출시 발표에는 업무용 서비스 a:xink와 LG디스플레이 적용 사례도 포함됐다. 제시된 생산성·비용 효과는 해당 사례에 대한 회사 발표다. <a href="https://connect.lgcns.com/language-masters/ko/newsroom/press/detail.250825001">AgenticWorks 출시 발표</a></p>
+
+<h2 id="9-ax-컨설팅-무엇을-ai로-바꿀지부터-정한다">9. AX 컨설팅: 무엇을 AI로 바꿀지부터 정한다</h2>
+
+<p>기업이 AI 도입에 관심을 보여도, 실제로 어디에 적용해야 할지 명확하지 않은 경우가 있다.</p>
+
+<p>“우리도 챗봇을 만들자”는 요청만으로는 성공 기준이 모호하다. 직원이 정보를 찾는 시간을 줄이려는 것인지, 고객 문의를 더 많이 처리하려는 것인지부터 정해야 한다.</p>
+
+<p>LG CNS는 <strong>AX Master Plan</strong>과 <strong>AX PI</strong>를 통해 이 문제를 다룬다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>쉽게 말하면</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AX Master Plan</td>
+      <td>기업의 목표를 보고 어떤 업무에 AI를 적용할지 정하는 큰 계획</td>
+    </tr>
+    <tr>
+      <td>AX PI</td>
+      <td>선택한 업무에서 사람과 AI가 각각 무엇을 할지 구체적으로 설계하는 일</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://www.lgcns.com/kr/moa/insight/detail.agenticai-ax-master-plan-2603-4">AX Master Plan 공식 설명</a></p>
+
+<p>행정업무를 예로 들면, 담당자가 매뉴얼을 찾는 데 오래 걸린다는 사실을 먼저 확인한다. 다음으로 자주 묻는 질문과 필요한 문서를 파악한다. AI가 답변을 만들게 한 뒤, 실제로 검색 시간과 재확인 부담이 줄었는지 확인한다.</p>
+
+<p><strong>이 과정에서 중요한 역량은 현업의 말을 개발할 수 있는 요구사항으로 바꾸는 능력이다.</strong> 사용자에게 직접 물어보고, 불편의 원인을 찾고, 피드백에 따라 설계를 수정한 경험이 LG CNS의 업무와 연결되는 이유다.</p>
+
+<h2 id="10-글로벌-ai-기업들과-왜-협력하는가">10. 글로벌 AI 기업들과 왜 협력하는가</h2>
+
+<p>LG CNS는 여러 AI·클라우드 기업과 협력하고 있다. 역할을 나눠 보면 이해하기 쉽다. 파트너가 모델이나 플랫폼을 제공하면, LG CNS는 고객의 데이터와 업무 환경에 맞춰 적용하는 역할을 할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>파트너</th>
+      <th>발표된 협력·활용</th>
+      <th>사업적으로 의미하는 것</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Palantir</td>
+      <td>Foundry·AIP 협업, 전담 FDE 조직</td>
+      <td>고객의 데이터와 실제 업무를 연결하는 사업 확대</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>ChatGPT Enterprise 고객 확보와 협업</td>
+      <td>기업이 생성형 AI를 도입하고 업무에 활용하도록 지원</td>
+    </tr>
+    <tr>
+      <td>Anthropic</td>
+      <td>Claude Enterprise 도입 계약</td>
+      <td>내부 활용과 향후 고객 확대의 기반</td>
+    </tr>
+    <tr>
+      <td>Google Cloud</td>
+      <td>클라우드·AI 역량과 파트너 협력</td>
+      <td>고객이 클라우드에서 AI를 활용할 수 있도록 지원</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://www.lg.co.kr/media/release/29938">Palantir 협업</a>, <a href="https://connect.lgcns.com/language-masters/ko/newsroom/press/detail.IR-2604-7">1분기 발표의 OpenAI 관련 내용</a>, <a href="https://www.lg.co.kr/media/release/30236">Claude Enterprise</a>, <a href="https://www.lgcns.com/kr/newsroom/press/detail.ax-2604-5">Google Cloud 파트너 발표</a></p>
+
+<p>FDE는 Forward Deployed Engineer의 약자로, 고객 가까이에서 업무를 이해하고 기술을 적용하는 개발 역할을 뜻한다. Palantir 협업 발표에는 익명 LG 계열사의 품질 관련 시험 프로젝트가 본계약으로 이어진 사례가 소개됐다.</p>
+
+<p>여러 파트너와 협력하면 고객의 상황에 맞는 선택지가 넓어진다. 어떤 고객은 내부 서버에서 AI를 사용해야 하고, 어떤 고객은 비용이나 처리 속도를 더 중요하게 볼 수 있다.</p>
+
+<p><strong>개발자에게도 “어떤 모델을 썼는가”와 함께 “왜 그 모델이 이 업무에 맞았는가”를 설명하는 능력이 중요해진다.</strong> 특정 파트너와의 협업이 AI(AX) 신입의 해당 프로젝트 배치를 보장하는 것은 아니다.</p>
+
+<h2 id="11-aind-lg-cns-자신의-개발-업무에도-ai를-적용한다">11. AIND: LG CNS 자신의 개발 업무에도 AI를 적용한다</h2>
+
+<p>LG CNS는 고객에게 AI를 제공하는 동시에, 자사 프로젝트의 개발 방식에도 AI를 적용하고 있다. 이를 <strong>AIND, AI Native Development</strong>라고 부른다.</p>
+
+<p>쉽게 말하면 AI를 코드 작성 보조에만 쓰는 것이 아니라, 요구사항 분석부터 설계·개발·테스트까지 활용하는 방식이다. 2026년 6월 공개된 DevOn Agentic AIND는 프로젝트 지식과 개발 기준을 활용하며, 국내 은행의 COBOL 코드를 Java로 전환하는 적용 사례도 소개했다. <a href="https://www.lg.co.kr/media/release/30232">DevOn Agentic AIND 발표</a></p>
+
+<p>별도의 회사 발표에서는 26개 실제 프로젝트를 대상으로 평균 개발 생산성 개선율 26.1%를 제시했다. 범용 도구 비교값은 14.1%다. 이 수치는 <strong>개선율을 비교한 것이며 전체 개발 생산성이 두 배가 됐다는 뜻은 아니다.</strong> <a href="https://connect.lgcns.com/us/newsroom/press/detail.aicoding-2603-1">AIND 생산성 연구에 대한 회사 발표</a></p>
+
+<p>LG CNS는 프로젝트를 수행하는 회사이므로 개발에 드는 시간과 비용이 중요하다. 같은 품질을 더 적은 시간에 만들면 더 많은 일을 수행하거나 이익을 높일 여지가 생긴다.</p>
+
+<p>다만 AI가 코드를 빨리 만들어도 오류를 고치는 시간이 더 길어지면 효과가 줄어든다. <strong>AI로 결과물을 만드는 능력과 그 결과가 맞는지 확인하는 능력이 함께 필요하다.</strong></p>
+
+<p>자신의 프로젝트에서도 AI가 제안한 코드를 검토하고, 잘못된 가정을 수정하고, 테스트로 결과를 확인한 경험이 있다면 이 변화와 연결할 수 있다.</p>
+
+<h2 id="12-physicalworks-로봇이-현장에서-일을-하도록-만든다">12. PhysicalWorks: 로봇이 현장에서 일을 하도록 만든다</h2>
+
+<p>LG CNS는 2026년 5월 로봇 학습·운영 플랫폼 <strong>PhysicalWorks</strong>를 공개했다.</p>
+
+<p>공장이나 물류센터에 로봇을 들여오는 것만으로 자동화가 완성되지는 않는다. 로봇이 어떤 물건을 어떻게 다뤄야 하는지 학습해야 하고, 여러 로봇이 동시에 움직일 때 작업을 나누고 충돌도 피해야 한다.</p>
+
+<p>PhysicalWorks의 두 축은 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>구성</th>
+      <th>역할</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Forge</td>
+      <td>로봇을 학습시키고 현장에 투입할 수 있는지 검증</td>
+    </tr>
+    <tr>
+      <td>Baton</td>
+      <td>제조사가 다른 여러 로봇에 작업을 배분하고 운영·관리</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>발표 당시 Forge는 20곳 이상의 고객사와 PoC를 진행 중이었다. <strong>PoC는 본격 도입 전에 실제로 쓸 수 있는지 시험하는 단계</strong>다. Baton은 부산 스마트시티에서 여러 종류의 로봇을 통합 관리하는 활용 사례가 제시됐다. <a href="https://www.lgcns.com/kr/newsroom/press/detail.rx-2605-1">PhysicalWorks 공식 발표</a></p>
+
+<p>이 사업은 LG CNS의 제조·물류 시스템 경험과 연결된다. 로봇이 창고에서 일을 하려면 주문, 재고, 작업 순서, 설비 상태를 함께 알아야 하기 때문이다.</p>
+
+<p><strong>앞으로 볼 부분은 시험 프로젝트가 실제 계약과 지속적인 사용으로 얼마나 이어지는가다.</strong> AI(AX) 직무의 비전·멀티모달 업무와도 접점이 있지만, 이번 채용에는 로보틱스 직무가 별도로 있다.</p>
+
+<h2 id="13-gpu-투자-ai-서비스를-돌릴-기반도-확대한다">13. GPU 투자: AI 서비스를 돌릴 기반도 확대한다</h2>
+
+<p>AI 모델을 사용하려면 계산을 수행할 서버가 필요하다. GPU는 이런 AI 계산에 활용되는 핵심 장치다.</p>
+
+<p>LG CNS는 2026년 9월 11일 <strong>GPU와 관련 인프라 3,814억원어치의 취득을 결정</strong>했다. 목적은 AI Factory 구축이며, NVIDIA Vera Rubin 등이 포함됐다. 취득 예정일은 <strong>2027년 6월 30일</strong>이다. <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260911800638">DART 유형자산취득결정</a></p>
+
+<p>또한 XPUWorks를 통해 GPU 자원과 관련 인프라·운영 서비스를 소개하고 있다. <a href="https://www.lgcns.com/en/service/modern-it-infra-on-cloud/infrastructure">공식 인프라 서비스</a></p>
+
+<p>이 투자는 AI 서비스를 제공할 기반을 확대한다는 의미가 있다. 동시에 비싼 장비를 얼마나 많이 활용하고, 운영비를 감당하면서 고객 매출로 연결할지도 중요하다. 공시된 것은 취득 결정으로, 해당 장비가 이미 모두 가동 중인 것은 아니다.</p>
+
+<p><strong>AI 서비스 개발과 인프라 비용은 연결돼 있다.</strong> 간단한 질문에도 큰 모델을 계속 호출하거나 불필요하게 여러 번 실행하면 비용이 커질 수 있다. 업무에 필요한 품질을 확보하면서 효율적으로 처리하는 설계가 중요해진다.</p>
+
+<h2 id="14-고객-산업마다-필요한-ai가-다르다">14. 고객 산업마다 필요한 AI가 다르다</h2>
+
+<p>같은 AI 기술이라도 은행, 공장, 물류센터가 원하는 결과는 다르다. 다음은 각 산업에서 생각할 수 있는 적용 예시다.</p>
+
+<h3 id="금융-정확한-정보와-업무-연결">금융: 정확한 정보와 업무 연결</h3>
+
+<p>은행 직원이 규정을 묻는다면 최신 문서에서 정확한 근거를 찾아야 한다. 고객정보나 내부자료를 다룰 때는 누가 어떤 자료를 볼 수 있는지도 중요하다.</p>
+
+<p>LG CNS는 금융 핵심 시스템 사업도 수행한다. 2026년 실적 발표 관련 보도에는 NH농협은행·KB국민은행 등의 차세대 사업 진행 상황이 등장한다. <a href="https://zdnet.co.kr/view/?no=20260731114738">금융권 사업 관련 보도</a></p>
+
+<p>여기서 기회는 <strong>기존 금융 시스템을 이해하면서 그 위에 AI 기능을 연결하는 것</strong>이다. 차세대 시스템 사업 전체가 생성형 AI 사업이라는 뜻은 아니다.</p>
+
+<h3 id="제조-현장의-용어와-데이터-이해">제조: 현장의 용어와 데이터 이해</h3>
+
+<p>공장에서는 ‘불량’, ‘정상’, ‘지연’의 기준이 제품과 공정마다 다를 수 있다. AI를 적용하려면 설비·품목·검사 결과가 어떻게 연결되는지 이해해야 한다.</p>
+
+<p>따라서 모델 성능뿐 아니라 <strong>현장의 표현을 데이터의 항목과 조건으로 정확하게 바꾸는 능력</strong>이 중요하다. 비전 모델을 쓴다면 불량을 놓치는 경우와 정상 제품을 불량으로 판단하는 경우를 나눠 봐야 한다.</p>
+
+<h3 id="물류-여러-작업을-하나의-흐름으로-연결">물류: 여러 작업을 하나의 흐름으로 연결</h3>
+
+<p>물류센터에서는 주문 조회, 재고 확인, 작업 배분, 상품 이동이 이어진다. 한 기능만 잘돼도 앞뒤 작업과 연결되지 않으면 담당자가 다시 수작업을 해야 한다.</p>
+
+<p>이 분야에서는 <strong>서로 다른 시스템과 서비스를 연결하는 API, 공통 데이터 형식, 오류 처리</strong>가 중요한 개발 과제가 된다.</p>
+
+<h3 id="사내-업무-실제로-편해져야-사용한다">사내 업무: 실제로 편해져야 사용한다</h3>
+
+<p>문서 검색 AI가 답을 빨리 줘도 담당자가 결과를 다시 찾고 검토하는 데 오래 걸리면 효과가 작다. 기존 업무 화면과 너무 달라 배우기 어렵다면 사용이 줄어들 수 있다.</p>
+
+<p>속도만큼 <strong>근거 확인, 수정 가능성, 익숙한 업무 흐름</strong>이 중요하다. 사용자의 피드백을 받아 화면이나 기능을 바꾼 경험이 의미 있는 이유다.</p>
+
+<h2 id="15-증권사들은-무엇을-기대하고-있는가">15. 증권사들은 무엇을 기대하고 있는가</h2>
+
+<p>증권사 자료에서 반복되는 기대는 세 가지다. <strong>AI 수요 확대, 금융권 시스템 교체, 개발 생산성 개선</strong>이다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>자료</th>
+      <th>주목하는 내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>유안타, 2026.01.28</td>
+      <td>제조·물류 경험을 바탕으로 로봇과 외부 고객 사업이 커질 가능성</td>
+    </tr>
+    <tr>
+      <td>KB, 2026.07.08</td>
+      <td>AI 사업화와 진행 중인 사업의 성장 가능성</td>
+    </tr>
+    <tr>
+      <td>KB, 2026.07.31</td>
+      <td>금융권 차세대 사업, AIND 적용에 따른 비용 개선 기대</td>
+    </tr>
+    <tr>
+      <td>LS, 2026.08.03·08.19</td>
+      <td>전 사업의 성장 기회와 인프라·플랫폼·피지컬 AI의 조합</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://file.myasset.com/sitemanager/upload/2026/0128/084231/20260128084231600_0_ko.pdf">유안타 보고서 원문</a>, <a href="https://kbthink.com/securities-view.html?docId=20260708190754080K">KB 7월 8일</a>, <a href="https://kbthink.com/securities-view.html?docId=20260731144847693K">KB 7월 31일</a>, <a href="https://www.newspim.com/news/view/20260803000757">LS 8월 3일 보고서 소개</a>, <a href="https://www.newspim.com/news/view/20260819000760">LS 8월 19일 보고서 소개</a></p>
+
+<p>KB는 2분기 수익성 둔화에 대해 일부 프로젝트 일정 지연과 AI 플랫폼 관련 비용이 영향을 줬다고 해석했다. 이후 AIND가 원가를 낮추고 금융권 사업이 실적에 기여할 것으로 기대했다. LS 관련 내용은 보고서 소개 기사 기준이다.</p>
+
+<p><strong>핵심은 기대가 실제 이익으로 이어지는지다.</strong> 프로젝트가 늘어도 수행 비용이 더 빨리 늘면 수익성은 좋아지지 않는다. AI를 활용해 일을 더 효율적으로 수행하는 능력이 회사의 성장과 연결된다.</p>
+
+<h2 id="16-삼성sdssk-ax와-비교하면">16. 삼성SDS·SK AX와 비교하면</h2>
+
+<p>세 회사 모두 기업 고객에게 AI와 IT 서비스를 제공한다. ‘RAG를 한다’, ‘여러 AI 모델을 쓴다’, ‘업무를 자동화한다’는 설명만으로 LG CNS를 구분하기는 어렵다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>회사</th>
+      <th>주요 공개 제품·방향</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LG CNS</td>
+      <td>AgenticWorks, AIND, PhysicalWorks를 통한 업무·개발·현장 AI 적용</td>
+    </tr>
+    <tr>
+      <td>삼성SDS</td>
+      <td>FabriX, Brity 계열 등을 통한 기업용 AI와 협업·업무 자동화</td>
+    </tr>
+    <tr>
+      <td>SK AX</td>
+      <td>AXgenticWire 등을 통한 기업 전반의 에이전트 연결과 업무 변화</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://www.lgcns.com/en/service/ai/agentic-ai">LG CNS</a>, <a href="https://www.samsungsds.com/us/news/as-260602.html">삼성SDS AX Summit</a>, <a href="https://www.samsungsds.com/kr/ai-agent/ai-agent.html">삼성SDS AI Agent</a>, <a href="https://www.skax.co.kr/insight/trend/3676">SK AX AXgenticWire</a></p>
+
+<p>LG CNS에서 눈여겨볼 조합은 다음과 같다.</p>
+
+<ol>
+  <li><strong>제조·물류 현장을 다뤄 온 경험</strong>과 로봇·비전 AI의 연결</li>
+  <li><strong>금융 등 핵심 업무 시스템 경험</strong>과 기업용 에이전트의 연결</li>
+  <li><strong>고객에게 제공하는 AI 서비스</strong>와 <strong>내부 개발에 쓰는 AI</strong>의 동시 확대</li>
+  <li>AI 모델·플랫폼뿐 아니라 이를 운영할 인프라까지 포함하는 사업 범위</li>
+</ol>
+
+<p>이 조합이 곧 독점적인 우위를 뜻하지는 않는다. 다만 지원자에게는 <strong>자신이 어떤 문제를 해결하고 싶은지에 따라 회사를 선택할 구체적인 이유</strong>가 된다.</p>
+
+<p>예를 들어 현장 용어와 데이터베이스를 연결한 경험이 있다면, 제조·물류 고객의 업무에 AI를 적용하는 일을 지원 이유로 설명할 수 있다. 사용자 인터뷰와 승인 흐름 설계 경험이 있다면 기업용 에이전트를 실제 업무에 정착시키는 일과 연결할 수 있다.</p>
+
+<h2 id="17-성장-가능성과-함께-봐야-할-과제">17. 성장 가능성과 함께 봐야 할 과제</h2>
+
+<h3 id="투자한-만큼-고객이-사용하는가">투자한 만큼 고객이 사용하는가</h3>
+
+<p>플랫폼을 출시하거나 시험 프로젝트를 시작하는 것과, 고객이 비용을 지불하며 계속 사용하는 것은 다르다. AgenticWorks와 PhysicalWorks의 적용 확대, GPU 서비스 수요가 중요하다.</p>
+
+<h3 id="매출-증가가-이익-증가로-이어지는가">매출 증가가 이익 증가로 이어지는가</h3>
+
+<p>2026년 상반기에는 매출보다 영업이익 증가율이 낮았다. AIND와 공통 기능 재사용이 실제 수행 비용을 낮추는지 봐야 한다.</p>
+
+<h3 id="고객의-투자-일정에-대응할-수-있는가">고객의 투자 일정에 대응할 수 있는가</h3>
+
+<p>큰 시스템 사업은 고객의 투자 계획과 일정에 영향을 받는다. 계열사의 설비투자, 금융권의 시스템 교체가 늦어지면 매출 반영 시기도 바뀔 수 있다.</p>
+
+<h3 id="ai를-실제-업무에서-믿고-쓸-수-있는가">AI를 실제 업무에서 믿고 쓸 수 있는가</h3>
+
+<p>AI가 잘못된 자료를 참고하거나 엉뚱한 도구를 실행하면 업무에 영향을 준다. 답변의 근거, 사용자의 권한, 실행 전 승인, 오류 기록과 복구 방법이 필요하다.</p>
+
+<p>LG CNS의 AI 윤리 방향도 사람의 책임과 신뢰를 강조한다. 중요한 판단과 최종 산출물 검토에서 사람의 역할을 명시한다. <a href="https://www.lgcns.com/content/dam/lgcns/resources/company/sm/LGCNS_Sustainability_Report_2025_2026.pdf">지속가능경영보고서 11쪽</a></p>
+
+<p><strong>이 과제들은 AI(AX) 개발자가 어떤 역량을 갖춰야 하는지 보여준다.</strong> 좋은 결과를 한 번 만드는 데서 더 나아가, 여러 사용자가 반복해서 사용할 수 있도록 만드는 능력이 필요하다.</p>
+
+<h2 id="18-aiax-직무에서-실제로-하는-일">18. AI(AX) 직무에서 실제로 하는 일</h2>
+
+<p>공식 JD를 풀어보면 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>업무</th>
+      <th>실제로 생각해 볼 작업</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>고객 비즈니스에 맞는 AI 서비스 개발</td>
+      <td>고객의 문제를 파악하고 기능·데이터·화면으로 구현</td>
+    </tr>
+    <tr>
+      <td>LLM(대규모 언어모델) 기반 서비스·에이전트 개발</td>
+      <td>질문에 답하거나 필요한 도구를 실행하는 서비스 구성</td>
+    </tr>
+    <tr>
+      <td>RAG·검색 시스템</td>
+      <td>내부 자료를 찾아 근거가 있는 답변 제공</td>
+    </tr>
+    <tr>
+      <td>LangChain·LangGraph·Vector DB 활용</td>
+      <td>검색과 도구 실행을 연결하고 작업 순서·상태 관리</td>
+    </tr>
+    <tr>
+      <td>모델 검증·최적화</td>
+      <td>어떤 조건에서 틀리는지 평가하고 개선</td>
+    </tr>
+    <tr>
+      <td>언어·비전·멀티모달 AI</td>
+      <td>문서·대화·이미지·영상에 맞는 AI 적용</td>
+    </tr>
+    <tr>
+      <td>데이터 수집·가공</td>
+      <td>원천 데이터를 서비스에 사용할 수 있도록 정리·연결</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://careers.lg.com/apply/detail?id=1002127">LG Careers AI(AX) 공고</a></p>
+
+<p>필요한 기술 용어도 업무와 연결하면 이해하기 쉽다.</p>
+
+<ul>
+  <li><strong>RAG:</strong> AI가 답변하기 전에 필요한 자료를 찾아 참고하게 하는 방식</li>
+  <li><strong>Function Calling:</strong> AI가 데이터 조회 등 미리 정해진 기능을 호출하는 방식</li>
+  <li><strong>MCP:</strong> AI와 외부 도구·데이터를 연결하기 위한 공통 규약</li>
+  <li><strong>Multi-Agent:</strong> 역할이 다른 여러 에이전트가 나눠서 처리하는 구조</li>
+  <li><strong>VLM:</strong> 이미지와 언어를 함께 다루는 모델</li>
+</ul>
+
+<p>공고는 LLM 서비스·Agent 프로젝트, ML/DL 이해와 관련 경험, 고객 업무에 AI를 적용하려는 관심을 요구한다. 텍스트·비전 전처리와 모델링·최적화, Git·Docker·Kubernetes 등의 기본 지식은 우대사항으로 제시한다. <a href="https://careers.lg.com/apply/detail?id=1002127">지원 공고</a></p>
+
+<p><strong>지원자가 보여줄 중심은 “이 기술들을 안다”보다 “이 기술로 어떤 문제를 해결했는가”다.</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>사용자에게 필요한 일을 파악
+→ 필요한 데이터 확인
+→ 모델·검색·도구를 선택
+→ 하나의 서비스로 연결
+→ 정확도·속도·오류 확인
+→ 사용자 피드백으로 개선
+</code></pre></div></div>
+
+<p>채용 홍보 페이지에는 다양한 기술 키워드가 등장하지만, 모두를 같은 수준으로 경험해야 한다는 뜻은 아니다. 자신의 주력 경험은 깊게 설명하고, 다른 영역은 기초 이해와 학습 방향을 준비하는 편이 좋다. <a href="https://careers-lgcns2026.com/">채용 홍보 페이지</a></p>
+
+<h2 id="19-인재상-어떤-방식으로-일하는-사람을-원하는가">19. 인재상: 어떤 방식으로 일하는 사람을 원하는가</h2>
+
+<p>LG CNS의 인재상은 여섯 가지다. 최신 지속가능경영보고서는 이 가치들을 채용 기준과 면접에 반영한다고 설명한다. <a href="https://www.lgcns.com/content/dam/lgcns/resources/company/sm/LGCNS_Sustainability_Report_2025_2026.pdf">지속가능경영보고서 41쪽</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>인재상</th>
+      <th>경험으로 보여주는 방법</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전문성</td>
+      <td>문제가 생긴 원인을 좁히고 기술적 근거로 해결한 경험</td>
+    </tr>
+    <tr>
+      <td>혁신</td>
+      <td>사용자의 불편을 발견하고 기존 방법을 바꾼 경험</td>
+    </tr>
+    <tr>
+      <td>자율과 책임</td>
+      <td>맡은 기능을 완성하고 테스트·문서·인계까지 마친 경험</td>
+    </tr>
+    <tr>
+      <td>성장</td>
+      <td>부족한 지식을 배우고 실제 프로젝트에 적용한 경험</td>
+    </tr>
+    <tr>
+      <td>협업</td>
+      <td>서로 다른 역할과 기준을 맞춰 전체 결과를 개선한 경험</td>
+    </tr>
+    <tr>
+      <td>존중</td>
+      <td>다른 사람의 의견을 듣고 자신의 생각이나 설계를 수정한 경험</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>예를 들어 두 개발자가 만든 기능이 연결되지 않았을 때, 공통 요청·응답 형식을 정하고 오류 처리 기준을 맞췄다면 협업의 근거가 된다. 사용자가 새 화면을 어려워해 기존 업무 흐름에 맞게 바꿨다면 존중과 혁신을 함께 보여줄 수 있다.</p>
+
+<p>여섯 가치를 모두 갖췄다고 선언할 필요는 없다. <strong>어떤 상황에서 무엇을 판단하고 어떻게 행동했는지</strong>가 가치관을 드러낸다.</p>
+
+<p>LG그룹의 LG Way 역시 고객을 위한 가치창조, 인간존중, 정도경영을 강조한다. <a href="https://lg.co.kr/about/lgway/1">LG Way</a></p>
+
+<h2 id="20-조직과-성장-환경">20. 조직과 성장 환경</h2>
+
+<p>2026년 6월 말 직원 현황 표의 인원은 <strong>6,937명</strong>이며, 최대주주 LG의 보통주 지분율은 <strong>44.96%</strong>다. 직원 수는 연결 자회사 전체를 합한 수치와 구분해야 한다. <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814002448">반기보고서 주주·임직원 현황</a></p>
+
+<p>연구 조직에는 정보기술연구소, AI선행기술연구소, Future Robotics LAB 등이 있다. 2026년 상반기 연구개발비용은 정부보조금 차감 전 약 <strong>268억원</strong>으로, AI 외에도 클라우드·보안·로보틱스·산업별 솔루션 등을 포함한다. <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814002448">반기보고서 연구개발활동</a></p>
+
+<p>인재 육성 방향에는 AX 전문가 육성, AI를 활용한 개발, 해외 구성원과의 협업이 포함된다. <a href="https://www.lgcns.com/content/dam/lgcns/resources/company/sm/LGCNS_Sustainability_Report_2025_2026.pdf">지속가능경영보고서 40–42쪽</a></p>
+
+<p>지원자가 기대할 수 있는 성장 방향은 <strong>기술을 고객 프로젝트에 적용하면서 산업 지식까지 넓히는 것</strong>이다. 자신의 코드만 이해하는 데서 더 나아가, 고객 업무와 다른 시스템, 팀 간 협업을 함께 이해해야 하는 환경이다. 실제 담당 업무와 배치는 프로젝트와 조직에 따라 달라질 수 있다.</p>
+
+<h2 id="21-이번-채용에서-준비할-것">21. 이번 채용에서 준비할 것</h2>
+
+<p>2026년 하반기 신입 공고의 마감은 <strong>9월 14일 18:00</strong>다. 학사 이상 졸업자 또는 2027년 2월 졸업예정자 중 2027년 1월부터 풀타임 근무가 가능한 지원자를 대상으로 한다. <a href="https://careers.lg.com/apply/detail?id=1002127">지원 공고</a></p>
+
+<p>전형은 서류, 필기, 실무면접, 최종면접 순이다. 필기에는 인적성검사와 CNS 특화 검사가 포함된다. 기술·산업 트렌드 이해와 함께, 직무에 따라 코딩형 또는 기획형으로 생성형 AI 활용 역량을 평가한다고 발표했다. <a href="https://lg.co.kr/media/release/30555">공식 채용 발표</a></p>
+
+<p>따라서 프로젝트 결과뿐 아니라 <strong>AI를 어떻게 사용했고, 어떤 오류를 발견했으며, 결과를 어떻게 검증했는지</strong>도 정리해 둘 필요가 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>준비할 질문</th>
+      <th>답변에 들어갈 내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>왜 이 문제를 해결했는가?</td>
+      <td>실제 사용자와 업무의 불편</td>
+    </tr>
+    <tr>
+      <td>왜 이 기술을 선택했는가?</td>
+      <td>다른 방법과 비교한 이유</td>
+    </tr>
+    <tr>
+      <td>무엇을 직접 맡았는가?</td>
+      <td>팀 전체 결과와 본인 기여의 구분</td>
+    </tr>
+    <tr>
+      <td>결과가 좋아졌다는 근거는?</td>
+      <td>비교 기준과 측정 범위</td>
+    </tr>
+    <tr>
+      <td>잘못된 결과는 어떻게 처리했는가?</td>
+      <td>오류·예외·승인·복구 방법</td>
+    </tr>
+    <tr>
+      <td>사용자 의견으로 무엇이 바뀌었는가?</td>
+      <td>피드백과 설계 수정</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>세부 검사 방식과 허용 도구는 실제 전형 안내를 확인해야 한다.</p>
+
+<h2 id="22-자소서로-연결되는-핵심-인사이트">22. 자소서로 연결되는 핵심 인사이트</h2>
+
+<h3 id="고객의-언어를-기술로-바꾸는-경험">고객의 언어를 기술로 바꾸는 경험</h3>
+
+<p>LG CNS의 고객은 “LangGraph를 써 달라”보다 “이 일을 더 빨리, 정확하게 처리하고 싶다”고 요청한다. 현업 표현을 데이터 구조와 기능으로 바꿔 본 경험이 중요하다.</p>
+
+<p>사용자 인터뷰, 질문 유형 정리, 현업 용어와 DB 컬럼의 연결처럼 겉으로 화려하지 않은 작업도 좋은 소재다. <strong>그 작업이 없었을 때 어떤 문제가 생겼고, 이후 무엇이 달라졌는지</strong>를 보여주면 된다.</p>
+
+<h3 id="기능들을-연결해-업무를-끝내는-경험">기능들을 연결해 업무를 끝내는 경험</h3>
+
+<p>조회, 검색, 알고리즘, 화면이 따로 동작하면 사용자는 여전히 중간 작업을 해야 한다. 이들을 API와 공통 데이터 형식으로 연결한 경험은 기업용 AI 서비스와 직접 맞닿는다.</p>
+
+<p>여러 기술을 사용했다는 나열보다 <strong>어느 지점에서 흐름이 끊겼고, 이를 어떻게 연결했는지</strong>가 중요하다.</p>
+
+<h3 id="사람이-믿고-사용할-수-있게-만든-경험">사람이 믿고 사용할 수 있게 만든 경험</h3>
+
+<p>이메일을 보내기 전에 사용자가 확인하게 하거나, 답변에 출처를 표시하거나, 수정 후 다시 검증하도록 만든 설계는 업무 적용을 생각했다는 증거다.</p>
+
+<p>다만 구현한 범위를 정확하게 설명해야 한다. 시험 프로젝트를 정식 운영이라고 쓰거나, 프롬프트에 적은 제한을 시스템 권한으로 강제한 것처럼 표현하면 안 된다.</p>
+
+<h3 id="회사의-구체적인-사업과-자신의-경험을-연결">회사의 구체적인 사업과 자신의 경험을 연결</h3>
+
+<p>지원동기는 다음과 같이 구성할 수 있다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>내가 경험한 업무 문제
+→ 그 문제를 해결하며 중요하다고 느낀 점
+→ LG CNS의 구체적인 사업과의 접점
+→ 내가 먼저 기여할 수 있는 일
+</code></pre></div></div>
+
+<p>AgenticWorks, AX 컨설팅, 금융·제조·물류 중 자신의 경험과 가장 가까운 것을 선택하면 된다. <strong>“AI로 고객의 일을 실제로 개선하고 싶고, 그 과정에서 내가 해 본 일은 이것이다”</strong>가 글의 중심이 될 수 있다.</p>
+
+<h2 id="주요-자료">주요 자료</h2>
+
+<h3 id="공시실적기업-정보">공시·실적·기업 정보</h3>
+
+<ul>
+  <li><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260814002448">2026년 반기보고서 — 사업, 재무, 수주, 연구개발, 임직원</a></li>
+  <li><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260911800638">2026.09.11 GPU 등 유형자산 취득 결정</a></li>
+  <li><a href="https://connect.lgcns.com/content/dam/lgcns/resources/company/ir/investors-activity/earnings-announcement/LG%20CNS_2Q26_Earnings_KR.pdf">2026년 2분기 실적 IR</a></li>
+  <li><a href="https://connect.lgcns.com/content/dam/lgcns/resources/company/ir/investors-activity/earnings-announcement/LG-CNS_4Q25_Earnings_KR.pdf">2025년 4분기 잠정 실적 IR</a></li>
+  <li><a href="https://www.lgcns.com/content/dam/lgcns/resources/company/sm/LGCNS_Sustainability_Report_2025_2026.pdf">2025–2026 지속가능경영보고서 — 비전, 인재상, AI 윤리, 육성</a></li>
+  <li><a href="https://www.lgcns.com/kr/company/about/vision">LG CNS 비전</a> · <a href="https://lg.co.kr/about/lgway/1">LG Way</a></li>
+  <li><a href="https://connect.lgcns.com/language-masters/ko/newsroom/press/detail.IR-2604-7">2026년 1분기 발표</a> · <a href="https://connect.lgcns.com/kr/newsroom/press/detail.ir-2607-3">2026년 2분기 발표</a></li>
+</ul>
+
+<h3 id="사업제품채용">사업·제품·채용</h3>
+
+<ul>
+  <li><a href="https://careers.lg.com/apply/detail?id=1002127">AI(AX) 채용공고</a> · <a href="https://careers-lgcns2026.com/">채용 홍보 페이지</a> · <a href="https://lg.co.kr/media/release/30555">9월 10일 공식 채용 발표</a></li>
+  <li><a href="https://www.lgcns.com/en/service/ai/agentic-ai">AgenticWorks 제품 소개</a> · <a href="https://connect.lgcns.com/language-masters/ko/newsroom/press/detail.250825001">출시 발표</a></li>
+  <li><a href="https://www.lgcns.com/kr/moa/insight/detail.agenticai-ax-master-plan-2603-4">AX Master Plan과 AX PI</a></li>
+  <li><a href="https://www.lg.co.kr/media/release/29938">Palantir 협업</a> · <a href="https://www.lg.co.kr/media/release/30236">Claude Enterprise</a> · <a href="https://www.lgcns.com/kr/newsroom/press/detail.ax-2604-5">Google Cloud</a></li>
+  <li><a href="https://www.lg.co.kr/media/release/30232">DevOn Agentic AIND</a> · <a href="https://connect.lgcns.com/us/newsroom/press/detail.aicoding-2603-1">AIND 생산성 관련 회사 발표</a></li>
+  <li><a href="https://www.lgcns.com/kr/newsroom/press/detail.rx-2605-1">PhysicalWorks</a></li>
+  <li><a href="https://www.lgcns.com/en/service/modern-it-infra-on-cloud/infrastructure">XPUWorks·인프라 서비스</a> · <a href="https://www.lgcns.com/kr/service/modern-it-infra-on-cloud/data-center">데이터센터 서비스</a></li>
+</ul>
+
+<h3 id="증권사경쟁사보도">증권사·경쟁사·보도</h3>
+
+<ul>
+  <li><a href="https://file.myasset.com/sitemanager/upload/2026/0128/084231/20260128084231600_0_ko.pdf">유안타, 2026.01.28, 로봇이 이끌어갈 미래 성장 — PDF 원문</a></li>
+  <li><a href="https://kbthink.com/securities-view.html?docId=20260708190754080K">KB, 2026.07.08, 실적 부합, AI 사업화 진행 중</a></li>
+  <li><a href="https://kbthink.com/securities-view.html?docId=20260731144847693K">KB, 2026.07.31, 플랫폼과 금융권 차세대</a></li>
+  <li><a href="https://www.newspim.com/news/view/20260803000757">LS 8월 3일 보고서 소개 기사</a> · <a href="https://www.newspim.com/news/view/20260819000760">LS 8월 19일 보고서 소개 기사</a></li>
+  <li><a href="https://zdnet.co.kr/view/?no=20260731114738">금융권 프로젝트 관련 보도</a></li>
+  <li><a href="https://www.samsungsds.com/us/news/as-260602.html">삼성SDS AX Summit</a> · <a href="https://www.samsungsds.com/kr/ai-agent/ai-agent.html">삼성SDS AI Agent</a></li>
+  <li><a href="https://www.skax.co.kr/insight/trend/3676">SK AX AXgenticWire</a></li>
+</ul>]]></content><author><name>JIBAEK JANG</name><email>jjb6904@mail.hongik.ac.kr</email></author><category term="Corporate-Analysis" /><category term="LG-CNS" /><category term="AI" /><category term="AX" /><category term="Agentic-AI" /><category term="기업분석" /><category term="채용" /><category term="RAG" /><summary type="html"><![CDATA[LG CNS는 무엇으로 돈을 벌고, AI로 무엇을 바꾸고 있을까? 주요 사업부터 AI(AX) 직무와 인재상까지.]]></summary></entry><entry><title type="html">KB국민은행 AI·플랫폼개발 기업분석</title><link href="https://ax-lab-j.github.io/corporate-analysis/kb-kookmin-bank-ai-platform-analysis/" rel="alternate" type="text/html" title="KB국민은행 AI·플랫폼개발 기업분석" /><published>2026-09-06T00:00:00+09:00</published><updated>2026-09-06T00:00:00+09:00</updated><id>https://ax-lab-j.github.io/corporate-analysis/kb-kookmin-bank-ai-platform-analysis</id><content type="html" xml:base="https://ax-lab-j.github.io/corporate-analysis/kb-kookmin-bank-ai-platform-analysis/"><![CDATA[<h1 id="1-지원-직무에서-확인되는-업무의-전체-범위">1. 지원 직무에서 확인되는 업무의 전체 범위</h1>
+
+<p>실제 JD상 AI·플랫폼개발 직무는 다음 네 영역을 포괄한다.</p>
+
+<h2 id="11-금융-플랫폼-개발-및-운영">1.1 금융 플랫폼 개발 및 운영</h2>
+
+<ul>
+  <li>KB스타뱅킹, 인터넷뱅킹 등 금융 플랫폼 개발 및 운영</li>
+  <li>Web·App 기반 비대면 플랫폼 및 뱅킹 서비스 개발</li>
+  <li>고객 수요 기반 금융·비금융 생활 콘텐츠 개발</li>
+  <li>KB금융그룹 서비스 연계</li>
+  <li>비대면 상품 및 자산관리 서비스 개발</li>
+</ul>
+
+<h2 id="12-고객-상담-서비스-개발-및-운영">1.2 고객 상담 서비스 개발 및 운영</h2>
+
+<ul>
+  <li>챗봇</li>
+  <li>콜봇</li>
+  <li>AI Agent</li>
+  <li>고객 상담 플랫폼</li>
+  <li>디지털 상담 서비스</li>
+</ul>
+
+<h2 id="13-제휴-플랫폼-연계-금융서비스">1.3 제휴 플랫폼 연계 금융서비스</h2>
+
+<ul>
+  <li>외부 플랫폼과 연결되는 금융서비스</li>
+  <li>간편결제 서비스 개발 및 운영</li>
+</ul>
+
+<h2 id="14-금융-특화-ai-서비스-및-플랫폼">1.4 금융 특화 AI 서비스 및 플랫폼</h2>
+
+<ul>
+  <li>인공지능 및 빅데이터 기반 서비스 개발</li>
+  <li>행내 업무 특성을 고려한 데이터 기반 학습과 커스터마이징</li>
+  <li>클라우드 기반 풀스택 AI 플랫폼 설계 및 개발</li>
+</ul>
+
+<p>여기서 중요한 사실은 직무명이 ‘AI 개발’이 아니라 <strong>‘AI·플랫폼개발’</strong>이라는 점이다.</p>
+
+<p>연구 모델 하나를 만드는 역할보다 다음 전체 흐름에 관여할 가능성이 높다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>고객·현업 문제 발견
+→ 금융 업무와 데이터 이해
+→ AI 또는 디지털 방식 선택
+→ Web/App/API/데이터 시스템과 연결
+→ 보안·권한·정책 적용
+→ 사용자 검증
+→ 실제 서비스 운영
+→ 품질 모니터링과 개선
+</code></pre></div></div>
+
+<p>따라서 이 직무가 요구하는 인재를 단순한 LLM 연구자나 백엔드 개발자로 한정하면 JD의 상당 부분을 놓치게 된다.</p>
+
+<h1 id="2-자기소개서-네-문항의-정확한-구조">2. 자기소개서 네 문항의 정확한 구조</h1>
+
+<h2 id="1번">1번</h2>
+
+<blockquote>
+  <p>KB국민은행 AI·플랫폼개발부문에 지원한 이유와 본인이 실현하고 싶은 목표를 구체적으로 기술해 주시기 바랍니다.</p>
+</blockquote>
+
+<p><strong>800자</strong></p>
+
+<p>이 문항은 두 질문으로 구성된다.</p>
+
+<ol>
+  <li>왜 금융 AI인가가 아니라 왜 KB국민은행 AI·플랫폼개발인가?</li>
+  <li>KB에서 무엇을 만들어 어떤 상태를 실현하려는가?</li>
+</ol>
+
+<p>‘지원 이유’만 설명하고 입사 후 목표를 일반적인 포부로 끝내면 문항의 절반만 답하게 된다.</p>
+
+<h2 id="2번">2번</h2>
+
+<blockquote>
+  <p>AI 또는 디지털 기술을 활용하여 문제를 해결한 경험을 소개하고, 해결 과정에서 본인이 수행한 역할 및 주요 기술적 판단을 설명해 주시기 바랍니다.</p>
+</blockquote>
+
+<p><strong>800자</strong></p>
+
+<p>단순 프로젝트 소개가 아니라 다음을 요구한다.</p>
+
+<ul>
+  <li>해결해야 했던 문제가 무엇이었는가?</li>
+  <li>본인이 실제로 담당한 범위는 무엇인가?</li>
+  <li>여러 방법 중 무엇을 선택했는가?</li>
+  <li>그 판단의 기준과 결과는 무엇인가?</li>
+</ul>
+
+<p>따라서 DataScout에서 고정 SQL과 동적 SQL을 분리한 이유, Agent 흐름을 설계한 기준, 실제 현업 데이터 조회 시간을 줄인 결과가 핵심이 된다.</p>
+
+<h2 id="3번">3번</h2>
+
+<blockquote>
+  <p>본인의 삶과 행동에 중요한 기준이 되어 온 가치관 또는 행동원칙을 소개해 주시기 바랍니다. 해당 기준이 금융인에게 요구되는 신뢰와 책임의 자세와 어떻게 연결되는지, 이를 실천한 경험을 중심으로 작성해 주시기 바랍니다.</p>
+</blockquote>
+
+<p><strong>800자</strong></p>
+
+<p>이 문항은 신뢰와 책임을 말로 정의하는 문제가 아니다.</p>
+
+<ul>
+  <li>자신이 어떤 기준으로 행동하는지</li>
+  <li>결과가 다른 사람에게 넘어간 뒤에도 책임지는지</li>
+  <li>불리하거나 번거로운 상황에서도 같은 기준을 지켰는지</li>
+</ul>
+
+<p>를 보는 문항이다.</p>
+
+<p>DataScout를 PoC로 끝내지 않고 FastAPI로 연계하고, 인수인계하고, 전시 시연까지 이어지도록 대응한 과정이 적합하다.</p>
+
+<h2 id="4번">4번</h2>
+
+<blockquote>
+  <p>ICT 관련 수행 프로젝트 중 가장 도전적이었던 경험을 소개하고, 그 과정에서 배우고 성장한 점을 기술해 주시기 바랍니다.</p>
+</blockquote>
+
+<p><strong>800자</strong></p>
+
+<p>프로젝트 규모보다 무엇이 기존 역량을 넘어서는 도전이었는지를 설명해야 한다. 졸업프로젝트에서 사용자 반응을 통해 기술 중심 설계의 한계를 발견하고, SQL·RAG·복합 라우팅과 사용자 개입 구조를 다시 설계한 경험이 적합하다.</p>
+
+<p>이 문항은 코딩테스트 합격자의 포트폴리오 제출과도 연결되므로, 기술 구조와 개인 기여도를 부풀리면 이후 검증에서 문제가 생길 수 있다.</p>
+
+<h1 id="3-kb국민은행의-공식-미션과-비전">3. KB국민은행의 공식 미션과 비전</h1>
+
+<p>KB국민은행은 미션을 고객의 행복과 더 나은 사회를 만드는 금융으로 제시한다. 비전은 다음과 같다.</p>
+
+<blockquote>
+  <p>“최고의 인재와 담대한 혁신으로 가장 신뢰받는 평생금융파트너”</p>
+</blockquote>
+
+<p>핵심가치는 다음 다섯 가지다.</p>
+
+<ul>
+  <li>고객중심</li>
+  <li>전문성</li>
+  <li>혁신주도</li>
+  <li>신뢰정직</li>
+  <li>동반성장</li>
+</ul>
+
+<p><a href="https://omoney.kbstar.com/quics?page=C016909">KB국민은행 미션·비전·핵심가치</a></p>
+
+<h2 id="31-최고의-인재에-대한-설명">3.1 ‘최고의 인재’에 대한 설명</h2>
+
+<p>공식 설명에서 최고의 인재는 특정 업무만 수행하는 사람이 아니라 다양한 금융업무를 수행할 수 있는 멀티플레이어에 가깝다.</p>
+
+<p>AI·플랫폼개발에 대입하면 한 기술만 깊이 아는 것으로는 부족하다.</p>
+
+<ul>
+  <li>금융 업무</li>
+  <li>데이터</li>
+  <li>AI</li>
+  <li>서비스 개발</li>
+  <li>고객 경험</li>
+  <li>보안과 내부통제</li>
+  <li>운영과 품질</li>
+</ul>
+
+<p>을 연결할 수 있어야 한다.</p>
+
+<p>이는 JD가 금융 플랫폼, 상담, 결제, 빅데이터, AI 모델, 클라우드 플랫폼을 한 직군 안에 포함한 이유와도 연결된다.</p>
+
+<h2 id="32-담대한-혁신에-대한-설명">3.2 ‘담대한 혁신’에 대한 설명</h2>
+
+<p>기존 금융의 틀에서 점진적으로 개선하는 수준보다 크고 도전적인 목표를 세우고 기존 방식을 바꾸는 태도다.</p>
+
+<p>다만 KB의 다른 자료까지 함께 보면 ‘담대함’은 통제를 무시하는 속도를 의미하지 않는다. 규정·고객 권리·보안·품질을 기술 구조에 반영한 상태에서 적용 범위를 넓히는 방향으로 나타난다.</p>
+
+<h2 id="33-가장-신뢰받는의-의미">3.3 ‘가장 신뢰받는’의 의미</h2>
+
+<p>신뢰는 추상적인 이미지나 도덕성으로만 설명되지 않는다.</p>
+
+<ul>
+  <li>고객 입장에서 판단</li>
+  <li>맞춤형 서비스</li>
+  <li>정확하고 차별화된 상품과 서비스</li>
+  <li>고객정보 및 재산 보호</li>
+  <li>수준 높은 금융 전문성</li>
+</ul>
+
+<p>이 반복해서 등장한다.</p>
+
+<p>즉, 신뢰는 혁신과 별도로 지켜야 할 가치가 아니라 <strong>고객이 서비스의 정확성·설명·안전성을 경험한 결과</strong>에 가깝다.</p>
+
+<h2 id="34-평생금융파트너의-의미">3.4 ‘평생금융파트너’의 의미</h2>
+
+<p>고객의 생애 단계에 따라 달라지는 금융 수요를 지속해서 충족하는 관계다.</p>
+
+<p>이를 AI 관점에서 해석하면 한 번의 질의에 답하는 챗봇보다 다음 능력이 더 중요해진다.</p>
+
+<ul>
+  <li>고객 상황을 이해하는 것</li>
+  <li>필요한 정보를 찾아주는 것</li>
+  <li>여러 상품과 서비스를 연결하는 것</li>
+  <li>고객이 판단할 수 있도록 설명하는 것</li>
+  <li>필요할 때 사람에게 넘기는 것</li>
+  <li>관계가 이어지도록 경험을 축적하는 것</li>
+</ul>
+
+<p>다만 KB가 현재 하나의 Agent에서 이 전부를 구현했다고 말할 수는 없다. 이는 비전과 플랫폼 방향을 연결한 <strong>향후 가능성에 대한 해석</strong>이다.</p>
+
+<h1 id="4-kb국민은행의-공식-인재상">4. KB국민은행의 공식 인재상</h1>
+
+<p>KB국민은행이 제시하는 전체 인재상은 다음과 같다.</p>
+
+<blockquote>
+  <p>“창의적인 사고와 행동으로 변화를 선도하며 고객가치를 향상시키는 프로금융인”</p>
+</blockquote>
+
+<p>세부 항목은 네 가지다. <a href="https://omoney.kbstar.com/quics?page=C017618">KB국민은행 인재상</a></p>
+
+<h2 id="41-고객우선주의">4.1 고객우선주의</h2>
+
+<p>KB는 고객 지향적 사고, 적극적인 서비스 개선, 전문성을 통한 고객가치 창출을 요구한다.</p>
+
+<p>여기서 고객우선주의는 고객이 요구한 기능을 그대로 만드는 태도와 다르다. 고객이 실제로 겪는 불편과 판단의 어려움을 발견하고, 전문성을 이용해 더 나은 해결방식을 만드는 태도에 가깝다.</p>
+
+<p>AI·플랫폼개발에서는 다음과 같이 평가될 가능성이 높다.</p>
+
+<ul>
+  <li>사용자가 진짜 어려워하는 지점을 발견했는가?</li>
+  <li>AI를 사용하는 것 자체보다 문제 해결을 우선했는가?</li>
+  <li>기술적 성능이 실제 이용 경험으로 연결됐는가?</li>
+  <li>고객의 금융 판단을 더 정확하고 이해하기 쉽게 만들었는가?</li>
+</ul>
+
+<h2 id="42-자율과-책임">4.2 자율과 책임</h2>
+
+<p>공식 설명에는 두 가지 행동이 명시돼 있다.</p>
+
+<ul>
+  <li>위임된 권한에 따라 스스로 판단</li>
+  <li>결과와 성과에 책임</li>
+</ul>
+
+<p>이는 단순히 주도적으로 일하라는 의미보다 구체적이다.</p>
+
+<p>권한을 받았을 때 지시를 기다리지 않고 판단하되, 판단 이후의 결과를 다른 사람이나 환경의 탓으로 돌리지 않는 사람을 요구한다.</p>
+
+<p>AI Agent 관점에서는 더 직접적인 연결이 생긴다.</p>
+
+<ul>
+  <li>Agent가 자율적으로 처리할 수 있는 범위</li>
+  <li>사람의 확인이 필요한 범위</li>
+  <li>오류가 발생했을 때 추적할 수 있는 구조</li>
+  <li>운영 이후 품질을 확인하는 책임</li>
+  <li>업무 담당자에게 안전하게 넘기는 과정</li>
+</ul>
+
+<p>즉, KB가 사람에게 요구하는 자율과 책임이 AI 시스템에서는 <strong>통제된 자율성</strong>으로 반복된다.</p>
+
+<h2 id="43-적극적-사고와-행동">4.3 적극적 사고와 행동</h2>
+
+<ul>
+  <li>혁신적인 사고로 변화 주도</li>
+  <li>최고 전문가로 성장하기 위한 지속적인 자기개발</li>
+</ul>
+
+<p>아이디어를 내는 것만으로는 부족하다. 직접 구현하고, 실패와 피드백을 받아들이며, 필요한 기술을 새로 학습하는 행동이 포함된다.</p>
+
+<h2 id="44-다양한-가치의-존중">4.4 다양한 가치의 존중</h2>
+
+<ul>
+  <li>서로 다른 생각과 가치를 포용하는 개방적 사고</li>
+  <li>미래가치에 대한 확신과 지속적인 가치 창출</li>
+</ul>
+
+<p>AI·플랫폼개발은 기술자 혼자 완성할 수 없다.</p>
+
+<ul>
+  <li>영업점 직원은 업무 편의성과 상담 품질을 본다.</li>
+  <li>고객은 편리함과 설명 가능성을 본다.</li>
+  <li>개발자는 안정성과 유지보수성을 본다.</li>
+  <li>보안부서는 정보보호를 본다.</li>
+  <li>준법·소비자보호 부서는 권리침해 가능성을 본다.</li>
+  <li>경영진은 실제 사업성과와 확장성을 본다.</li>
+</ul>
+
+<p>다양한 가치의 존중은 좋은 협업 태도 정도가 아니라, <strong>서로 다른 성공 기준을 하나의 시스템에 반영하는 능력</strong>으로 읽을 수 있다.</p>
+
+<h1 id="5-kb의-인사-원칙에서-보이는-조직의-결">5. KB의 인사 원칙에서 보이는 조직의 결</h1>
+
+<p>KB는 인사 원칙에서 다음을 제시한다.</p>
+
+<h2 id="성과주의-문화">성과주의 문화</h2>
+
+<ul>
+  <li>책임과 권한의 명확화</li>
+  <li>투명하고 공정한 평가</li>
+  <li>능력에 따른 보임</li>
+  <li>성과에 따른 보상</li>
+</ul>
+
+<h2 id="직원-가치의-극대화">직원 가치의 극대화</h2>
+
+<ul>
+  <li>적성과 능력에 따른 성장 기회</li>
+  <li>지속적인 경력개발 지원</li>
+  <li>직원의 경쟁력 향상</li>
+</ul>
+
+<h2 id="조직과-개인의-조화">조직과 개인의 조화</h2>
+
+<ul>
+  <li>경쟁과 협력의 가치를 함께 인정</li>
+  <li>개인성과와 집단성과의 균형</li>
+  <li>직원의 성장 욕구와 조직의 필요를 조화</li>
+</ul>
+
+<p>이 원칙은 이후에 확인되는 AI Academy와 KB AI Lab의 운영 방식과 이어진다. 직원에게 AI를 사용하라고 선언하는 데서 끝내지 않고, 교육하고 프로젝트를 수행하게 하며 실제 업무 적용까지 연결한다.</p>
+
+<p>인재상 페이지가 오랫동안 유지된 문구일 가능성은 있다. 그러나 2026년 실제 AI 인재 육성 방식이 해당 인재상의 자율·성장·성과 원칙과 일치한다는 점에서 현재 지원자 분석에도 사용할 수 있다.</p>
+
+<h1 id="6-2026년-경영-방향-확장과-전환">6. 2026년 경영 방향: ‘확장과 전환’</h1>
+
+<p>이환주 은행장은 2026년 경영 키워드로 <strong>‘확장과 전환’</strong>을 제시했다. <a href="https://omoney.kbstar.com/quics?articleClass=&amp;articleId=142533&amp;bbsMode=view&amp;boardId=647&amp;compId=b031438&amp;page=C017648&amp;searchCondition=title&amp;searchStr=&amp;viewPage=1">KB국민은행 2026년 신년사</a></p>
+
+<p>여기서 확장은 고객 수나 시장 규모를 단순히 늘리는 의미에 그치지 않는다. 전략의 방향, 구성원의 사고, 행동방식을 바꾸는 전환과 함께 제시됐다.</p>
+
+<p>구체적인 우선과제는 다음과 같다.</p>
+
+<ul>
+  <li>고객 신뢰 강화</li>
+  <li>사회적 가치 강화</li>
+  <li>영업 방식의 전환</li>
+  <li>차별화된 역량 구축</li>
+  <li>실행력 강화</li>
+  <li>소비자 권익 보호</li>
+  <li>고객 데이터 보호</li>
+  <li>내부통제 강화</li>
+  <li>AI Agent를 통한 차별화된 금융 경험 제공</li>
+  <li>고객과 함께 성장하는 평생금융파트너</li>
+</ul>
+
+<p>여기서 AI Agent는 독립적인 IT 과제가 아니다. 영업방식 전환, 고객 경험, 신뢰, 평생 관계를 실현하기 위한 수단으로 배치돼 있다.</p>
+
+<p>따라서 지원동기에서 “KB가 AI Agent를 많이 도입하고 있어 지원했다”고 쓰면 경영 방향의 절반만 본 것이다. KB가 Agent를 통해 궁극적으로 바꾸려는 대상은 <strong>은행이 고객을 이해하고 상담하고 서비스를 제공하는 방식</strong>이다.</p>
+
+<h1 id="7-kb의-ai-윤리기준">7. KB의 AI 윤리기준</h1>
+
+<p>KB국민은행은 다음 일곱 가지 AI 윤리원칙을 공개하고 있다. <a href="https://omoney.kbstar.com/quics?page=C112554">KB국민은행 AI 윤리기준</a></p>
+
+<h2 id="71-공정과-포용">7.1 공정과 포용</h2>
+
+<p>AI의 혜택과 성과에서 특정 고객이 소외되지 않도록 해야 한다.</p>
+
+<h2 id="72-참여와-협력">7.2 참여와 협력</h2>
+
+<p>AI가 미치는 영향과 효과를 지속해서 검증하고, 고객을 포함한 여러 이해관계자가 검증 과정에 참여하도록 한다.</p>
+
+<h2 id="73-디지털-역량">7.3 디지털 역량</h2>
+
+<p>AI 기반 금융 혁신이 지속되도록 직원과 고객을 포함한 구성원의 디지털 활용 역량을 높인다.</p>
+
+<h2 id="74-데이터-관리">7.4 데이터 관리</h2>
+
+<p>고객 데이터 수집과 운영 과정에서 개인정보와 프라이버시를 보호하고, 확보한 데이터를 엄격하게 관리한다.</p>
+
+<h2 id="75-투명한-활용">7.5 투명한 활용</h2>
+
+<p>AI 사용 사실과 목적을 밝히고, 활용 기술의 수준과 의사결정 과정을 가능한 범위에서 고객에게 제시한다.</p>
+
+<h2 id="76-통제-가능성">7.6 통제 가능성</h2>
+
+<p>고객 권리나 안전을 침해할 가능성이 생기면 AI를 즉시 통제하고 적절히 조치할 수 있어야 한다.</p>
+
+<h2 id="77-안전과-책임">7.7 안전과 책임</h2>
+
+<p>AI의 도입 목적, 안전, 보안을 고려하고 결과와 영향에 책임져야 한다.</p>
+
+<p>이 기준에서 특히 주목할 부분은 ‘정확한 AI’를 선언하는 것으로 끝나지 않는다는 점이다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>도입 목적
+→ 고객과 이해관계자의 참여
+→ 데이터 관리
+→ 의사결정의 투명성
+→ 지속적인 효과 검증
+→ 문제 발생 시 통제
+→ 결과에 대한 책임
+</code></pre></div></div>
+
+<p>이는 모델 성능 기준이라기보다 AI 서비스 운영 원칙에 가깝다.</p>
+
+<h1 id="8-kb-ai-거버넌스의-실제-구조">8. KB AI 거버넌스의 실제 구조</h1>
+
+<p>KB국민은행은 2022년부터 준비한 AI 거버넌스를 2025년 3월 공식 발표했다. <a href="https://omoney.kbstar.com/quics?articleId=138550&amp;bbsMode=view&amp;boardId=647&amp;compId=b031438&amp;page=C017648&amp;searchCondition=title&amp;viewPage=1">KB국민은행 AI 거버넌스 발표</a></p>
+
+<p>네 가지 핵심 요소는 다음과 같다.</p>
+
+<h2 id="81-ai-윤리기준과-조직문화">8.1 AI 윤리기준과 조직문화</h2>
+
+<ul>
+  <li>전체 임직원 대상 정기 AI 윤리교육</li>
+  <li>AI 개발자 대상 별도 개발 가이드 교육</li>
+  <li>기술 활용자의 책임을 조직문화에 포함</li>
+</ul>
+
+<h2 id="82-위험평가-프레임워크">8.2 위험평가 프레임워크</h2>
+
+<p>AI 서비스를 다음 네 등급으로 분류한다.</p>
+
+<ul>
+  <li>허용불가</li>
+  <li>고위험</li>
+  <li>중위험</li>
+  <li>저위험</li>
+</ul>
+
+<p>기본권을 침해하거나 금융시장 건전성을 해칠 가능성이 있는 서비스는 도입하지 않는다. 위험이 높을수록 강화된 관리기준을 적용한다.</p>
+
+<h2 id="83-생애주기별-위험관리">8.3 생애주기별 위험관리</h2>
+
+<p>기획부터 사후관리까지 다음 검토를 수행한다.</p>
+
+<ul>
+  <li>잠재 위험요소 검토</li>
+  <li>데이터 신뢰성과 편향 점검</li>
+  <li>모델 성능 및 공정성 평가</li>
+  <li>정기 모니터링</li>
+  <li>운영 이후 개선</li>
+</ul>
+
+<h2 id="84-금융소비자-보호">8.4 금융소비자 보호</h2>
+
+<p>고객 대상 AI 서비스에 다음 기준을 반영한다.</p>
+
+<ul>
+  <li>AI 활용 사실 고지</li>
+  <li>AI 서비스 이용을 거부할 권리</li>
+  <li>설명 의무</li>
+  <li>민원 및 피해구제 절차</li>
+</ul>
+
+<p>고위험 서비스 승인과 AI 위험관리 정책을 담당하는 최고 의사결정기구로 AI윤리위원회도 설치했다.</p>
+
+<p>이 구조의 의미는 “보안이 중요하다”는 당연한 말보다 구체적이다. <strong>모든 AI를 동일하게 막지 않고 위험 수준을 분류해 적용 가능한 범위를 결정한다.</strong></p>
+
+<p>그러므로 거버넌스는 금지 체계만이 아니라, 어떤 AI를 어느 조건에서 실제로 사용할 수 있는지를 판단하는 <strong>배포 기준</strong>이기도 하다.</p>
+
+<h1 id="9-직원용-금융상담-agent">9. 직원용 금융상담 Agent</h1>
+
+<p>KB국민은행은 2025년 7월 직원용 생성형 AI 상담 챗봇의 운영을 시작했다. <a href="https://omoney.kbstar.com/quics?articleId=139931&amp;bbsMode=view&amp;boardId=647&amp;compId=b031438&amp;page=C017648&amp;searchCondition=title&amp;searchStr=AI&amp;viewPage=1">KB국민은행 직원용 생성형 AI 상담 챗봇</a></p>
+
+<p>확인된 기능은 다음과 같다.</p>
+
+<ul>
+  <li>은행 업무규정 탐색</li>
+  <li>업무지침 탐색</li>
+  <li>상품 내용 탐색</li>
+  <li>서비스 관련 정보 제공</li>
+  <li>고객 상담 과정에서 직원의 정보 검색 지원</li>
+</ul>
+
+<p>기존 머신러닝 기반 챗봇에 생성형 AI를 결합해 질의 이해와 상담 활용도를 높였다고 설명한다. KB는 데이터와 품질을 계속 고도화한 뒤 고객 대상 AI 상담으로 확대하겠다는 계획도 밝혔다.</p>
+
+<p>2026년 보도에서는 수신·가계여신 등 자주 묻는 질문을 기준으로 직원의 정보탐색 시간이 평균 <strong>70.2% 감소했다는 KB 자체 분석</strong>이 소개됐다. 이는 제3자의 독립 실험 결과가 아니라 KB의 자체 측정치라는 점을 함께 기억해야 한다. <a href="https://v.daum.net/v/20260722181647259">금융권 AX 관련 보도</a></p>
+
+<p>중요한 흐름은 다음과 같다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>곧바로 고객에게 자율형 AI 제공
+        ↓
+직원이 사용하는 상담 Agent부터 운영
+        ↓
+현업 질의와 답변 품질 검증
+        ↓
+데이터와 서비스 품질 고도화
+        ↓
+대고객 서비스로 적용 범위 확대
+</code></pre></div></div>
+
+<p>이 흐름은 공식적으로 ‘고객 서비스 전 단계의 실험장’이라고 표현되지는 않았다. 그러나 직원 대상 운영 후 품질을 높여 고객 대상으로 확대하겠다는 발표를 보면, <strong>내부 Agent가 위험이 제한된 검증 환경 역할을 한다</strong>는 해석은 충분히 가능하다.</p>
+
+<h1 id="10-kb-genai-portal">10. KB GenAI Portal</h1>
+
+<p>2025년 KB금융은 그룹 공동 생성형 AI 플랫폼인 KB GenAI Portal을 공개했다. 공개 시점은 자료에 따라 4월 또는 5월로 표현되는 차이가 있어, 자소서에는 월을 특정하지 않고 <strong>2025년 그룹 공동 플랫폼을 구축했다</strong>고 쓰는 편이 안전하다.</p>
+
+<p>공개 당시 확인된 참여 범위는 KB금융지주와 다음 8개 계열사다.</p>
+
+<ul>
+  <li>KB국민은행</li>
+  <li>KB증권</li>
+  <li>KB손해보험</li>
+  <li>KB국민카드</li>
+  <li>KB라이프생명</li>
+  <li>KB자산운용</li>
+  <li>KB캐피탈</li>
+  <li>KB저축은행</li>
+</ul>
+
+<p>플랫폼은 영업현장과 고객 요구에 대응하는 AI Agent를 개발하고 활용하는 공통 기반으로 설명됐다. 사용자의 개발 역량에 따라 노코드 영역부터 전문개발 영역까지 지원하는 방향도 제시됐다. <a href="https://www.etnews.com/20250515000101">KB GenAI Portal 관련 보도</a></p>
+
+<p>이를 단순 사내 ChatGPT로 이해하면 부족하다. 구조상 의미는 다음과 같다.</p>
+
+<ul>
+  <li>여러 계열사가 각각 별도의 기반을 중복 구축하는 비용을 줄인다.</li>
+  <li>현업 사용자가 업무 Agent 아이디어를 직접 시험할 수 있다.</li>
+  <li>전문개발자는 복잡한 업무 시스템과 연결된 Agent를 구축할 수 있다.</li>
+  <li>검증된 기능과 개발 경험을 다른 부서와 계열사로 확산할 수 있다.</li>
+  <li>모델이 바뀌어도 금융 데이터, 업무 연결, 평가, 권한 체계를 공통 자산으로 유지할 수 있다.</li>
+</ul>
+
+<p>마지막 항목은 플랫폼 구조를 바탕으로 한 해석이며, KB가 해당 문장을 공식적으로 발표한 것은 아니다.</p>
+
+<h1 id="11-agent-확대-수치는-시점과-범위를-구분해야-한다">11. Agent 확대 수치는 시점과 범위를 구분해야 한다</h1>
+
+<p>KB의 Agent 관련 숫자는 발표 시점에 따라 달라진다.</p>
+
+<h2 id="2025년-5월-공개-당시">2025년 5월 공개 당시</h2>
+
+<ul>
+  <li>향후 3년간</li>
+  <li>WM·개인금융·기업금융 등 17개 업무영역</li>
+  <li>약 90개 Agent의 단계적 도입 계획</li>
+</ul>
+
+<h2 id="2025년-하반기-보도">2025년 하반기 보도</h2>
+
+<ul>
+  <li>약 40개 업무영역에서</li>
+  <li>270여 개 Agent 과제를 도출해 개발 추진</li>
+  <li>PB·RM 상담 영역에서 적용 직원의 57%가 사용</li>
+</ul>
+
+<p><a href="https://www.hankyung.com/article/2025100196261">PB·RM Agent 현장 활용 보도</a></p>
+
+<h2 id="2026년-발표와-보도">2026년 발표와 보도</h2>
+
+<ul>
+  <li>59개 업무영역</li>
+  <li>약 300개 Agent 과제 추진 또는 도입 목표</li>
+</ul>
+
+<p>여기서 ‘과제 발굴’, ‘개발 추진’, ‘개발 완료’, ‘현장 운영’을 같은 의미로 사용하면 안 된다. 300개 모두가 이미 운영 중이라고 쓰면 사실을 과장할 가능성이 있다.</p>
+
+<p>그러나 시점별 숫자 변화에서 확인할 수 있는 것은 있다.</p>
+
+<p><strong>초기 17개 영역·90개 수준의 계획이 40개 영역·270개 과제를 거쳐 59개 영역·300개 규모로 확대됐다.</strong></p>
+
+<p>즉, 일부 대표 Agent만 만드는 전략에서 업무영역 전반에 Agent를 반복 생산하는 전략으로 범위가 커지고 있다.</p>
+
+<h1 id="12-pbrm-agent">12. PB·RM Agent</h1>
+
+<p>KB는 고객 자산관리와 기업금융 현장에서 PB·RM을 지원하는 Agent를 운영하고 있다.</p>
+
+<p>확인된 지원 업무는 다음과 같다.</p>
+
+<h2 id="pb-agent">PB Agent</h2>
+
+<ul>
+  <li>고객 분석</li>
+  <li>시장 및 투자정보 탐색</li>
+  <li>포트폴리오 제안 준비</li>
+  <li>상담자료 작성 지원</li>
+</ul>
+
+<h2 id="rm-agent">RM Agent</h2>
+
+<ul>
+  <li>기업 분석</li>
+  <li>제안서 작성</li>
+  <li>여신 실행 관련 업무 지원</li>
+  <li>기업고객 상담 준비</li>
+</ul>
+
+<p>현장 적용 후 두 달 만에 직원 활용률이 57%에 이르렀다는 수치가 보도됐다. 이 수치도 전체 은행 직원의 57%가 아니라 <strong>해당 Agent가 적용된 PB·RM 등 대상 직원 중 실제 사용 비율</strong>로 해석해야 한다.</p>
+
+<p>여기서 Agent의 역할은 PB나 RM의 최종 금융 판단을 대체하는 것으로 설명되지 않는다. 정보를 찾고 정리하며 상담을 준비하는 시간을 줄이는 쪽에 가깝다.</p>
+
+<p>따라서 생산성 향상은 다음과 같은 관계로 읽어야 한다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>정보 탐색과 자료 작성 자동화
+→ 상담 준비시간 단축
+→ 고객 상황을 이해하고 설명할 시간 확보
+→ 상담 품질의 편차 감소
+→ 고객에게 제공되는 전문성 강화
+</code></pre></div></div>
+
+<p>이 가운데 상담 품질 향상과 현장 만족도는 KB 측 발표에 포함돼 있지만, 고객 만족이나 장기성과가 독립적으로 검증된 단계라고 단정할 수는 없다.</p>
+
+<h1 id="13-kb-davis와-data-agent">13. KB DAVIS와 Data Agent</h1>
+
+<p>KB DAVIS는 자연어 질문을 바탕으로 다음 흐름을 지원하는 Data Agent 사례로 소개됐다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>자연어 질문
+→ 필요한 데이터 탐색
+→ 분석
+→ 시각화
+→ 보고서 생성
+</code></pre></div></div>
+
+<p>이는 KB의 Agent 활용범위가 문서검색이나 상담에 한정되지 않는다는 증거다.</p>
+
+<ul>
+  <li>정형 데이터</li>
+  <li>비정형 업무지식</li>
+  <li>고객 상담</li>
+  <li>영업 지원</li>
+  <li>개발 업무</li>
+</ul>
+
+<p>가 서로 다른 Agent 대상으로 편입되고 있다.</p>
+
+<p>DataScout와 직접 연결되는 지점도 분명하다. 두 시스템 모두 사용자가 SQL이나 내부 데이터 구조를 직접 알지 못해도 자연어로 필요한 정보를 얻도록 한다.</p>
+
+<p>다만 KB DAVIS가 DataScout와 같은 SQL 생성 방식이나 LangGraph를 사용한다고 확인된 사실은 없다. 연결해야 하는 것은 기술스택의 동일성이 아니라 <strong>데이터 접근 장벽을 낮추는 문제 구조의 동일성</strong>이다.</p>
+
+<h1 id="14-kb-ai-dev-center">14. KB AI Dev Center</h1>
+
+<p>KB국민은행은 2026년 7월 AI Dev Center를 출범시켰다. <a href="https://omoney.kbstar.com/quics?articleClass=&amp;articleId=145268&amp;bbsMode=view&amp;boardId=647&amp;compId=b031438&amp;page=C017648&amp;searchCondition=title&amp;searchStr=AI&amp;viewPage=1">KB AI Dev Center 공식 발표</a></p>
+
+<p>공식 발표에서 확인된 범위는 다음과 같다.</p>
+
+<ul>
+  <li>자연어 요구사항 분석</li>
+  <li>서비스 설계 지원</li>
+  <li>코드 생성</li>
+  <li>프로토타입 제작</li>
+  <li>빌드</li>
+  <li>테스트</li>
+  <li>보안 및 오류 검증</li>
+  <li>글로벌 AI 기술의 신속한 적용 테스트</li>
+  <li>금융환경 적합성 평가</li>
+</ul>
+
+<p>외부의 최신 AI 코딩 기술을 실무 개발에 빠르게 연결하기 위한 패스트트랙도 운영한다. 공식 발표에는 Claude Code가 구체적인 사례로 등장한다.</p>
+
+<p>동시에 KB가 자체 개발한 Harness를 적용해 다음 항목을 개발 전 과정에 자동 반영한다고 설명한다.</p>
+
+<ul>
+  <li>은행 개발표준</li>
+  <li>보안정책</li>
+  <li>요구사항</li>
+  <li>코드 생성 기준</li>
+  <li>빌드 및 테스트 기준</li>
+  <li>실시간 품질 검증</li>
+</ul>
+
+<p>여기서 중요한 선택은 외부 모델과 도구를 사용하는 것 자체가 아니다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>외부의 빠르게 발전하는 AI 기술
++
+KB가 보유한 개발표준·보안정책·검증체계
+=
+금융서비스에 실제 적용 가능한 개발환경
+</code></pre></div></div>
+
+<p>이 사례는 KB가 반드시 독자 Foundation Model을 보유하는 것을 핵심 경쟁력으로 삼는다고 보기 어렵게 한다. 적어도 공개자료에서 더 강하게 드러나는 역량은 <strong>외부의 우수한 모델을 신속하게 평가하고, KB의 기준 안에서 사용할 수 있게 만드는 플랫폼 및 통합 역량</strong>이다.</p>
+
+<p>이 해석은 “KB는 자체 모델을 개발하지 않는다”는 의미가 아니다. 독자 모델 보유 여부와 별개로, 현재 공개된 행동에서는 모델 자체보다 업무 시스템·표준·보안·검증을 연결하는 역량이 강조된다는 뜻이다.</p>
+
+<h1 id="15-ai-connect와-조직-전체-확산">15. AI Connect와 조직 전체 확산</h1>
+
+<p>KB국민은행은 마이크로소프트와 AI Connect 2026을 진행했고, KB금융그룹 임직원이 실제 업무 적용 사례와 AI Agent 제작 경험을 공유했다. <a href="https://omoney.kbstar.com/quics?articleClass=&amp;articleId=145067&amp;bbsMode=view&amp;boardId=647&amp;compId=b031438&amp;page=C017648&amp;searchCondition=title&amp;searchStr=AI&amp;viewPage=1">KB AI Connect 2026</a></p>
+
+<p>행사의 방향은 최신 AI 기술을 소개하는 데 머무르지 않았다.</p>
+
+<ul>
+  <li>현업 부서가 직접 경험한 Agent 제작 사례</li>
+  <li>업무 현장에서 축적한 활용 노하우</li>
+  <li>임직원 간 사례 공유</li>
+  <li>일부 전문가에 한정되지 않는 AI 활용문화</li>
+</ul>
+
+<p>가 강조됐다.</p>
+
+<p>이것은 GenAI Portal이 기술 플랫폼이고, AI Connect가 활용 사례를 전파하는 문화적 장치라는 관계로 볼 수 있다.</p>
+
+<h1 id="16-kb-ai-academy와-kb-ai-lab">16. KB AI Academy와 KB AI Lab</h1>
+
+<p>KB금융은 AI 교육체계인 KB AI Academy를 운영하고 있으며, 최고 과정인 AI Expert 이수자를 대상으로 프로젝트형 프로그램인 KB AI Lab을 출범시켰다.</p>
+
+<p>KB AI Lab은 다음 구조로 알려졌다.</p>
+
+<ul>
+  <li>약 2주의 심화교육</li>
+  <li>약 10주의 실제 프로젝트</li>
+  <li>참가자가 현업 문제를 직접 발굴</li>
+  <li>실제 업무에 적용 가능한 수준의 AI 서비스 구현</li>
+  <li>향후 그룹 전 계열사로 확대</li>
+</ul>
+
+<p><a href="https://www.newspim.com/news/view/20260715000222">KB AI Lab 관련 보도</a></p>
+
+<p>이 프로그램에서 중요한 것은 교육 이후 시험이나 발표로 끝나지 않는다는 점이다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>직원 교육
+→ 현업 문제 직접 발견
+→ 실제 서비스 개발
+→ 업무 적용 가능성 검증
+→ 원소속 부서에서 개선·확산
+→ 다른 계열사로 확대
+</code></pre></div></div>
+
+<p>이 구조를 인재상과 연결하면 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>KB 인재상</th>
+      <th>AI Lab에서 나타나는 행동</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>자율</td>
+      <td>참가자가 현업 문제를 직접 발굴</td>
+    </tr>
+    <tr>
+      <td>책임</td>
+      <td>실제 업무에 적용할 수 있는 수준까지 구현</td>
+    </tr>
+    <tr>
+      <td>적극적 행동</td>
+      <td>교육에서 멈추지 않고 프로젝트 수행</td>
+    </tr>
+    <tr>
+      <td>전문성</td>
+      <td>심화교육과 실제 개발을 결합</td>
+    </tr>
+    <tr>
+      <td>다양한 가치 존중</td>
+      <td>현업과 AI·데이터 조직의 협업</td>
+    </tr>
+    <tr>
+      <td>고객가치</td>
+      <td>업무 문제 해결 결과를 서비스 품질로 연결</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>KB가 AI 인재를 중앙 AI 부서에만 모으려는 것이 아니라, <strong>현업 안에 AI를 이해하고 구현할 수 있는 사람을 분산시키려는 방향</strong>이 여기서 확인된다.</p>
+
+<h1 id="17-kb-its-your-life와-외부-인재-육성">17. KB IT’s Your Life와 외부 인재 육성</h1>
+
+<p>KB국민은행은 외부 청년을 대상으로 하는 IT’s Your Life 프로그램에서도 AI와 서비스 개발을 결합한 교육을 운영했다.</p>
+
+<p>확인된 교육 범위에는 다음이 포함된다.</p>
+
+<ul>
+  <li>Java</li>
+  <li>Spring</li>
+  <li>Vue</li>
+  <li>SQL과 데이터베이스</li>
+  <li>AI 코딩 도구</li>
+  <li>OpenAI API</li>
+  <li>Spring AI</li>
+  <li>해커톤</li>
+  <li>코딩테스트</li>
+  <li>프로젝트 멘토링</li>
+  <li>자기주도 학습 지원</li>
+</ul>
+
+<p>우수 수료생에게 채용 우대도 제공한다. <a href="https://omoney.kbstar.com/quics?articleId=142473&amp;bbsMode=view&amp;boardId=647&amp;page=C017648">KB IT’s Your Life 공식 발표</a></p>
+
+<p>관련 AI 해커톤 주제도 살펴볼 가치가 있다.</p>
+
+<ul>
+  <li>청년층을 위한 스마트 금융비서</li>
+  <li>디지털 취약계층 지원</li>
+  <li>소상공인 지원</li>
+</ul>
+
+<p><a href="https://omoney.kbstar.com/quics?articleClass=&amp;articleId=141047&amp;bbsMode=view&amp;boardId=647&amp;compId=b031438&amp;page=C017648&amp;searchCondition=title&amp;searchStr=&amp;viewPage=1">KB Future Finance AI Challenge</a></p>
+
+<p>여기서 기술은 그 자체로 평가 대상이 아니다. 금융생활, 정보 접근성, 디지털 포용, 소상공인 문제와 결합된다.</p>
+
+<p>따라서 KB가 원하는 AI 인재를 “최신 기술을 많이 아는 사람”으로만 읽기는 어렵다. <strong>기술을 금융과 사회의 구체적인 문제에 연결해 끝까지 서비스로 구현하는 사람</strong>에 가깝다.</p>
+
+<h1 id="18-그룹-데이터와-사회적-가치의-연결">18. 그룹 데이터와 사회적 가치의 연결</h1>
+
+<p>KB가 공개한 AI·데이터 활용 사례에는 KB국민상권활성화지수가 포함된다.</p>
+
+<p>이 사례에는 KB국민은행과 KB국민카드가 가진 다음 데이터가 활용된다.</p>
+
+<ul>
+  <li>금융 데이터</li>
+  <li>매출 관련 데이터</li>
+  <li>상권별 개업·폐업 데이터</li>
+  <li>지역경제 변화 정보</li>
+</ul>
+
+<p>그 결과는 단순 내부 영업자료를 넘어 소상공인의 의사결정과 지역정책 지원에 활용할 수 있는 데이터 자산으로 설명된다.</p>
+
+<p>이는 핵심가치의 ‘동반성장’이 기부나 봉사만을 뜻하지 않는다는 단서다. 금융회사가 가진 데이터와 분석역량을 사회 구성원의 의사결정 기반으로 제공하는 것도 동반성장의 방식이 될 수 있다.</p>
+
+<p>네 프로젝트와 연결하면 다음 공통점이 생긴다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>존재하지만 접근하기 어려운 데이터
+→ 전문지식 없이도 사용할 수 있는 인터페이스
+→ 업무·생활의 실제 판단에 활용
+→ 특정 전문가에게 집중된 정보 접근성 완화
+</code></pre></div></div>
+
+<p>이 관점은 지원동기의 목표를 단순 업무 자동화에서 <strong>금융 전문성과 데이터의 접근성을 높이는 플랫폼</strong>으로 확장할 수 있게 한다.</p>
+
+<h1 id="19-경쟁은행-비교로-폐기해야-할-주장">19. 경쟁은행 비교로 폐기해야 할 주장</h1>
+
+<p>신한·하나·우리금융도 고객, 신뢰, 전문성, 혁신, 공동성장과 같은 가치를 강조한다.</p>
+
+<ul>
+  <li><a href="https://www.hanafn.com/hfm/mnu/info/about/hanaValueList.do">하나금융 핵심가치</a></li>
+  <li><a href="https://www.shinhangroup.com/kr/about/group/mission">신한금융 미션과 핵심가치</a></li>
+</ul>
+
+<p>AI 측면에서도 경쟁은행은 다음을 추진한다.</p>
+
+<ul>
+  <li>AI 거버넌스</li>
+  <li>직원용 생성형 AI</li>
+  <li>상담 Agent</li>
+  <li>부서별 업무 Agent</li>
+  <li>데이터 분석 Agent</li>
+  <li>내부통제 및 HITL</li>
+  <li>AI 인재 육성</li>
+</ul>
+
+<p>2026년 보도에서는 신한은행의 ‘1부서 2에이전트’ 사업처럼 현업별 Agent를 발굴하는 사례도 확인된다. 따라서 다음 주장은 폐기해야 한다.</p>
+
+<ul>
+  <li>KB만 AI 거버넌스를 가지고 있다.</li>
+  <li>KB만 현업 주도 Agent를 만든다.</li>
+  <li>KB만 고객중심과 신뢰를 강조한다.</li>
+  <li>KB만 AI를 업무 전반에 확대한다.</li>
+  <li>KB만 외부 생성형 AI 기술을 활용한다.</li>
+</ul>
+
+<p>지원동기에서는 ‘업계 최초’나 ‘유일’을 무리하게 주장할 필요가 없다.</p>
+
+<p>더 정확한 표현은 다음과 같다.</p>
+
+<blockquote>
+  <p>KB의 공개된 행동에서 공통 플랫폼, 위험등급별 거버넌스, 현업의 Agent 제작, 직원 대상 실증, 고객 확장, 개발 전 과정의 AI 전환이 하나의 구조로 가장 일관되게 연결돼 있음을 확인했다.</p>
+</blockquote>
+
+<p>이는 경쟁사에 같은 요소가 없다는 주장이 아니다. <strong>지원자가 KB의 여러 선택을 하나의 전략 구조로 해석했다는 주장</strong>이다.</p>
+
+<h1 id="20-지금까지-확인된-kb의-ai-적용-범위">20. 지금까지 확인된 KB의 AI 적용 범위</h1>
+
+<p>현재 공개자료에서 확인되는 Agent와 AI 적용 범위를 한데 모으면 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>대상</th>
+      <th>역할</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>직원 금융상담 Agent</td>
+      <td>규정·지침·상품·서비스 정보 탐색</td>
+    </tr>
+    <tr>
+      <td>PB Agent</td>
+      <td>고객·시장 분석과 상담 준비</td>
+    </tr>
+    <tr>
+      <td>RM Agent</td>
+      <td>기업 분석·제안서·여신 관련 업무 지원</td>
+    </tr>
+    <tr>
+      <td>KB DAVIS</td>
+      <td>자연어 기반 데이터 탐색·분석·시각화</td>
+    </tr>
+    <tr>
+      <td>AI Dev Center</td>
+      <td>기획·설계·코딩·빌드·테스트·검증</td>
+    </tr>
+    <tr>
+      <td>그룹 공통 GenAI Portal</td>
+      <td>여러 업무 Agent를 만드는 공통 기반</td>
+    </tr>
+    <tr>
+      <td>AI 투자·자산관리 서비스</td>
+      <td>고객 성향과 시장 상황 기반 투자 지원</td>
+    </tr>
+    <tr>
+      <td>AI 화상상담</td>
+      <td>상담 지원과 금융소비자 보호 강화</td>
+    </tr>
+    <tr>
+      <td>상권활성화지수</td>
+      <td>그룹 데이터를 소상공인·지역경제 판단에 활용</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>이것을 고객용 챗봇 목록으로 보면 각각 독립된 서비스다.</p>
+
+<p>그러나 은행의 가치생산 과정을 기준으로 재배열하면 다음과 같은 범위를 갖는다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>데이터를 찾고 분석하는 방식
+→ 직원을 교육하는 방식
+→ 금융 전문가가 상담을 준비하는 방식
+→ 개발자가 서비스를 만드는 방식
+→ 고객에게 서비스를 제공하는 방식
+→ 개발 및 운영 위험을 관리하는 방식
+</code></pre></div></div>
+
+<p>이 때문에 “KB는 AI를 하나의 상품이 아니라 은행의 Operating Model을 바꾸는 기반으로 본다”는 해석이 성립한다.</p>
+
+<h1 id="21-첫-번째-심층-인사이트-kb는-agent를-만드는-회사가-아니라-agent를-반복-생산하는-구조를-만들고-있다">21. 첫 번째 심층 인사이트: KB는 Agent를 만드는 회사가 아니라 Agent를 반복 생산하는 구조를 만들고 있다</h1>
+
+<p>개별 사실은 다음과 같다.</p>
+
+<ul>
+  <li>그룹 공통 GenAI Portal 구축</li>
+  <li>노코드부터 전문개발까지 지원</li>
+  <li>현업이 과제를 직접 발굴</li>
+  <li>AI Lab에서 실제 서비스를 구현</li>
+  <li>업무영역별 수백 개 Agent 과제 추진</li>
+  <li>AI Connect로 현장 경험 확산</li>
+  <li>위험등급과 생애주기별 거버넌스 적용</li>
+  <li>AI Dev Center에서 개발표준과 보안정책 자동 반영</li>
+</ul>
+
+<p>이 사실들을 연결하면 KB가 중요하게 보는 것은 특정 Agent 하나의 성공만이 아니다.</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    A[현업 문제 발견] --&gt; B[공통 플랫폼에서 개발]
+    B --&gt; C[위험·품질 검증]
+    C --&gt; D[직원 업무에서 실증]
+    D --&gt; E[성과와 피드백 수집]
+    E --&gt; F[서비스 고도화]
+    F --&gt; G[고객·다른 부서·계열사로 확장]
+    G --&gt; A
+</code></pre>
+
+<p>우리가 현재 가장 강하게 볼 수 있는 KB의 전략은 <strong>Agent 개발의 반복비용을 낮추는 것</strong>이다.</p>
+
+<p>공통 플랫폼은 매번 인프라를 처음부터 만들 필요를 줄인다.</p>
+
+<p>거버넌스는 매번 안전기준을 새로 협의할 필요를 줄인다.</p>
+
+<p>AI Lab은 현업과 기술 사이를 번역할 사람을 늘린다.</p>
+
+<p>직원 대상 서비스는 고객에게 바로 노출하기 전에 품질을 검증할 공간을 제공한다.</p>
+
+<p>AI Dev Center는 개발표준과 보안을 코드 작성 과정에 자동 반영한다.</p>
+
+<p>따라서 플랫폼의 가치는 기능 개수보다 <strong>두 번째, 세 번째 Agent를 더 빠르고 안전하게 만들 수 있게 하는 능력</strong>에 있다.</p>
+
+<h1 id="22-두-번째-심층-인사이트-신뢰는-제약이-아니라-반복-확장의-조건이다">22. 두 번째 심층 인사이트: 신뢰는 제약이 아니라 반복 확장의 조건이다</h1>
+
+<p>기존 가설은 다음과 같았다.</p>
+
+<blockquote>
+  <p>“KB에게 통제는 AI 혁신의 브레이크가 아니라 가속장치다.”</p>
+</blockquote>
+
+<p>방향은 여전히 유효하지만 표현을 정교하게 바꿔야 한다. 통제와 거버넌스 자체는 KB만의 고유한 요소가 아니기 때문이다.</p>
+
+<p>더 깊은 해석은 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>KB는 위험을 모두 제거한 뒤 AI를 도입하려는 것이 아니라, 위험의 종류와 수준을 분류하고 그에 맞는 통제를 표준화함으로써 도입 가능한 AI의 범위를 넓히고 있다.</strong></p>
+</blockquote>
+
+<p>근거는 다음과 같다.</p>
+
+<ul>
+  <li>허용불가·고위험·중위험·저위험으로 서비스 분류</li>
+  <li>기획부터 사후관리까지 생애주기 관리</li>
+  <li>AI 사용 고지와 거부권, 설명, 피해구제 절차</li>
+  <li>AI Dev Center의 표준·보안 자동 반영</li>
+  <li>직원 대상 서비스에서 품질을 높인 뒤 고객 대상으로 확대</li>
+</ul>
+
+<p>즉, 신뢰는 AI를 적게 사용하기 위한 명분이 아니다. <strong>어떤 조건에서 더 넓게 사용할 수 있는지 정의하는 배포 구조</strong>다.</p>
+
+<p>지원동기에서 ‘신뢰할 수 있는 AI’를 막연하게 말하기보다 다음 수준으로 내려가야 한다.</p>
+
+<ul>
+  <li>자율 처리와 사람 확인의 경계를 설계한다.</li>
+  <li>결과의 근거를 남긴다.</li>
+  <li>사용자 권한에 따라 접근을 통제한다.</li>
+  <li>운영 이후 품질을 지속해서 측정한다.</li>
+  <li>문제가 발생하면 즉시 멈추고 수정할 수 있게 한다.</li>
+</ul>
+
+<h1 id="23-세-번째-심층-인사이트-kb가-확산시키려는-것은-ai-기능보다-현업의-문제해결-권한이다">23. 세 번째 심층 인사이트: KB가 확산시키려는 것은 AI 기능보다 ‘현업의 문제해결 권한’이다</h1>
+
+<p>GenAI Portal, AI Academy, AI Lab, AI Connect를 함께 보면 기술 보급 이상의 변화가 보인다.</p>
+
+<p>중앙 AI 조직이 현업의 모든 요구를 받아 대신 개발하는 방식은 확장에 한계가 있다. 업무를 가장 잘 아는 사람과 Agent를 만드는 사람이 분리되기 때문이다.</p>
+
+<p>KB는 다음 방향으로 이동하고 있다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>중앙조직
+: 공통 플랫폼·데이터·보안·평가·정책 제공
+
+현업조직
+: 문제 발견·업무지식 제공·Agent 활용·효과 검증
+
+전문개발자
+: 복잡한 시스템 연결·품질·운영·재사용 구조 설계
+</code></pre></div></div>
+
+<p>여기서 AI·플랫폼개발자는 모든 업무 Agent를 혼자 제작하는 사람이 아니다.</p>
+
+<p><strong>현업의 업무지식이 안전하게 AI 서비스로 전환될 수 있도록 공통 구조를 만드는 사람</strong>이다.</p>
+
+<p>이는 채용 인재상의 ‘자율과 책임’과도 일치한다.</p>
+
+<ul>
+  <li>현업에는 문제를 발견하고 구현할 자율성을 준다.</li>
+  <li>플랫폼에는 권한·품질·보안 기준을 둔다.</li>
+  <li>최종 결과에 대해서는 사람이 책임진다.</li>
+</ul>
+
+<p>이를 한 문장으로 표현하면 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>KB는 자율의 범위를 현장으로 넓히면서, 책임은 플랫폼에 구조화하고 있다.</strong></p>
+</blockquote>
+
+<p>이 문장은 공식 슬로건이 아니라 현재까지 가장 강한 분석 문장이다.</p>
+
+<h1 id="24-네-번째-심층-인사이트-kb의-핵심-ai-자산은-모델보다-금융-context를-실행-가능한-흐름으로-바꾸는-능력에-있다">24. 네 번째 심층 인사이트: KB의 핵심 AI 자산은 모델보다 ‘금융 Context를 실행 가능한 흐름으로 바꾸는 능력’에 있다</h1>
+
+<p>Foundation Model은 경쟁은행과 핀테크도 사용할 수 있다. Claude Code 같은 외부 기술 역시 KB만 독점할 수 없다.</p>
+
+<p>KB가 자체적으로 축적할 수 있는 자산은 다른 곳에 있다.</p>
+
+<ul>
+  <li>고객 및 거래 데이터</li>
+  <li>상품 정보</li>
+  <li>상담지식</li>
+  <li>업무규정</li>
+  <li>금융 프로세스</li>
+  <li>직원의 질의와 피드백</li>
+  <li>서비스별 위험 기준</li>
+  <li>시스템 권한</li>
+  <li>Agent 평가 결과</li>
+  <li>은행과 계열사 간 업무 연결</li>
+  <li>고객 접점에서 축적되는 이용 경험</li>
+</ul>
+
+<p>외부 모델이 바뀌더라도 이 자산들은 남는다.</p>
+
+<p>따라서 KB의 AI 경쟁력을 다음처럼 해석할 수 있다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>좋은 Foundation Model
+        +
+KB의 데이터와 금융지식
+        +
+실제 업무 Workflow
+        +
+기존 금융 시스템과 Tool
+        +
+권한·검증·감사·사람의 승인
+        =
+KB에서만 작동하는 금융 AI
+</code></pre></div></div>
+
+<p>이 관점에서 AI·플랫폼개발자는 모델 사용자보다 <strong>금융 Context 설계자</strong>에 가깝다.</p>
+
+<ul>
+  <li>어떤 데이터가 필요한지</li>
+  <li>어떤 규정이 적용되는지</li>
+  <li>어떤 Tool을 호출해야 하는지</li>
+  <li>어느 단계에서 사람이 승인해야 하는지</li>
+  <li>무엇을 성과로 측정해야 하는지</li>
+</ul>
+
+<p>를 설계한다.</p>
+
+<h1 id="25-다섯-번째-심층-인사이트-직원용-agent는-비용절감-도구이자-고객서비스의-학습-기반이다">25. 다섯 번째 심층 인사이트: 직원용 Agent는 비용절감 도구이자 고객서비스의 학습 기반이다</h1>
+
+<p>직원용 금융상담 Agent, PB·RM Agent의 직접적인 효과는 탐색 및 준비시간 감소다. 그러나 지원동기에서 효율성만 강조하면 은행이 사람을 줄이기 위해 AI를 도입한다는 인상을 줄 수 있다.</p>
+
+<p>KB의 공식 설명에서는 반복 업무를 AI가 지원하고 직원은 고객 상담과 판단에 더 집중하는 방향이 나타난다.</p>
+
+<p>따라서 생산성의 최종 목적은 다음과 같이 봐야 한다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AI가 정보를 찾는다
+→ 직원이 검증한다
+→ 직원에게 고객을 이해할 시간이 생긴다
+→ 상담의 정확성과 설명 수준이 높아진다
+→ 고객이 더 나은 판단을 내린다
+</code></pre></div></div>
+
+<p>여기에 한 단계 더 깊은 의미가 있다.</p>
+
+<p>직원이 Agent를 사용하면서 남기는 질의와 피드백은 다음을 드러낸다.</p>
+
+<ul>
+  <li>어떤 규정이 자주 검색되는가?</li>
+  <li>어떤 상품 설명이 어려운가?</li>
+  <li>어떤 답변에서 오류가 발생하는가?</li>
+  <li>어떤 업무에 정보 단절이 존재하는가?</li>
+  <li>어느 지점에서 사람의 확인이 필요한가?</li>
+</ul>
+
+<p>따라서 내부 Agent는 업무를 자동화하는 도구인 동시에, <strong>은행의 지식과 업무를 학습 가능한 형태로 정리하는 장치</strong>라고 볼 수 있다.</p>
+
+<h1 id="26-여섯-번째-심층-인사이트-고객중심은-ai의-성과지표를-바꾼다">26. 여섯 번째 심층 인사이트: 고객중심은 AI의 성과지표를 바꾼다</h1>
+
+<p>기술 프로젝트에서는 보통 다음 수치를 성과로 사용한다.</p>
+
+<ul>
+  <li>정확도</li>
+  <li>응답시간</li>
+  <li>처리량</li>
+  <li>비용</li>
+  <li>사용자 수</li>
+</ul>
+
+<p>KB의 고객중심과 평생금융파트너라는 목표까지 고려하면 이것만으로는 부족하다.</p>
+
+<p>금융 AI에서 최종적으로 확인해야 할 것은 다음이다.</p>
+
+<ul>
+  <li>직원이 고객 상황을 이해하는 시간이 늘었는가?</li>
+  <li>고객이 설명을 더 쉽게 이해했는가?</li>
+  <li>상담 품질의 직원별 편차가 줄었는가?</li>
+  <li>필요한 금융서비스에 대한 접근성이 좋아졌는가?</li>
+  <li>잘못된 정보나 불완전판매 위험이 감소했는가?</li>
+  <li>AI가 어려운 상황을 적절히 사람에게 넘겼는가?</li>
+  <li>고객이 결과에 이의를 제기하거나 설명을 요청할 수 있는가?</li>
+</ul>
+
+<p>따라서 네 프로젝트의 <code class="language-plaintext highlighter-rouge">1분 → 18초</code>, <code class="language-plaintext highlighter-rouge">80초 → 13초</code>도 단순 속도 자랑으로 사용하면 안 된다.</p>
+
+<p>이 숫자가 증명하는 것은 <strong>전문 데이터와 정보에 접근하기 위해 소모되던 마찰을 줄였다는 사실</strong>이다. 금융에서는 그 절감 시간을 고객의 상황을 이해하고 설명하며 판단하는 시간으로 돌려주는 것이 최종 목표가 된다.</p>
+
+<h1 id="27-일곱-번째-심층-인사이트-kb가-말하는-평생금융파트너는-전문성의-분배-문제다">27. 일곱 번째 심층 인사이트: KB가 말하는 평생금융파트너는 ‘전문성의 분배’ 문제다</h1>
+
+<p>금융 지식과 데이터가 많아도 고객이나 직원이 필요한 순간에 사용할 수 없다면 가치가 제한된다.</p>
+
+<p>PB·RM Agent, 금융상담 Agent, DAVIS, 그룹 공통 플랫폼은 서로 다른 대상을 지원하지만 공통적으로 다음 문제를 해결한다.</p>
+
+<blockquote>
+  <p>필요한 지식은 존재하지만, 이를 찾고 해석하려면 특정 전문가의 경험과 많은 시간이 필요하다.</p>
+</blockquote>
+
+<p>AI는 금융전문가를 대체하는 방식보다 다음 형태로 더 현실적인 가치를 만든다.</p>
+
+<ul>
+  <li>전문지식에 접근하는 시간을 줄인다.</li>
+  <li>필요한 근거를 함께 제시한다.</li>
+  <li>상담 준비 수준의 편차를 낮춘다.</li>
+  <li>고객과 직원이 더 일관된 정보에 접근하게 한다.</li>
+  <li>복잡한 업무를 단계별 흐름으로 제공한다.</li>
+  <li>고위험 판단은 전문가에게 연결한다.</li>
+</ul>
+
+<p>따라서 KB에서 실현할 목표는 ‘누구나 금융전문가가 되게 하겠다’보다 다음과 같이 표현하는 것이 정확하다.</p>
+
+<blockquote>
+  <p><strong>KB가 축적한 금융 전문성과 데이터를 직원과 고객이 필요한 순간에 정확히 사용할 수 있는 실행 가능한 흐름으로 만들겠다.</strong></p>
+</blockquote>
+
+<h1 id="28-네-경험을-관통하는-문제의식">28. 네 경험을 관통하는 문제의식</h1>
+
+<h2 id="ax-컨설팅과-datascout">AX 컨설팅과 DataScout</h2>
+
+<p>표면적 경험:</p>
+
+<ul>
+  <li>물류 현장 업무 분석</li>
+  <li>AI Agent 적용 기회 발굴</li>
+  <li>세 차례 PoC 제안</li>
+  <li>자연어 기반 Text-to-SQL Agent 구현</li>
+  <li>LangGraph 사용</li>
+  <li>고정 SQL과 동적 SQL 분리</li>
+  <li>FastAPI 기반 시스템 연계</li>
+  <li>조회시간 약 1분에서 18초로 단축</li>
+  <li>인수인계와 전시 시연 지원</li>
+</ul>
+
+<p>그 아래 있는 문제:</p>
+
+<ul>
+  <li>데이터는 존재하지만 현업이 직접 사용하기 어려웠다.</li>
+  <li>정보를 얻으려면 데이터 구조나 SQL을 아는 사람에게 의존해야 했다.</li>
+  <li>자연어로 질문할 수 있게 만드는 것만으로는 안정성이 부족했다.</li>
+  <li>반복적이고 예측 가능한 요청과 유연한 분석 요청을 구분해야 했다.</li>
+  <li>시연 성공보다 기존 시스템에 연결되고 다른 사람이 운영할 수 있는지가 중요했다.</li>
+</ul>
+
+<h2 id="졸업프로젝트">졸업프로젝트</h2>
+
+<p>표면적 경험:</p>
+
+<ul>
+  <li>2인 팀 리더</li>
+  <li>시간표 작성 워크플로</li>
+  <li>학사행정 RAG</li>
+  <li>SQL·RAG·Both 라우팅</li>
+  <li>사용자 개입 구조</li>
+  <li>사용자 피드백에 따른 재설계</li>
+  <li>시간표 작성 약 6.8분</li>
+  <li>검색시간 약 80초에서 13초로 단축</li>
+</ul>
+
+<p>그 아래 있는 문제:</p>
+
+<ul>
+  <li>학사정보와 조건이 여러 곳에 흩어져 있었다.</li>
+  <li>사용자는 정보를 찾는 것과 실제 시간표를 만드는 작업을 따로 수행해야 했다.</li>
+  <li>기술적으로 작동하는 시스템과 사용자가 편하게 신뢰하는 시스템은 달랐다.</li>
+  <li>사용자 피드백을 받자 최초 설계를 고집하지 않고 흐름을 수정했다.</li>
+  <li>SQL과 문서검색을 질의 특성에 따라 구분하고 필요한 경우 결합했다.</li>
+</ul>
+
+<h2 id="두-경험의-공통-구조">두 경험의 공통 구조</h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>전문지식과 데이터는 존재함
+→ 사용자가 직접 접근하기 어려움
+→ 반복적인 탐색과 절차에 시간 소모
+→ 질의 종류에 따라 적합한 Tool을 선택
+→ AI 결과만 제공하지 않고 실행 흐름까지 연결
+→ 사용자 피드백과 운영 조건으로 수정
+→ 다른 사람이 실제로 사용할 수 있는 상태까지 완성
+</code></pre></div></div>
+
+<p>따라서 네 정체성은 ‘여러 Agent를 만들어 본 사람’보다 다음에 가깝다.</p>
+
+<blockquote>
+  <p><strong>접근하기 어려운 도메인 지식과 데이터를 사용자가 실행할 수 있는 흐름으로 전환해 온 개발자</strong></p>
+</blockquote>
+
+<h1 id="29-네-경험과-kb-인재상의-정확한-접점">29. 네 경험과 KB 인재상의 정확한 접점</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>KB가 원하는 행동</th>
+      <th>네 경험에서 확인되는 증거</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>고객우선주의</td>
+      <td>사용자와 현업의 정보 접근 문제에서 출발</td>
+    </tr>
+    <tr>
+      <td>적극적 서비스 개선</td>
+      <td>피드백을 받고 졸업프로젝트 흐름 재설계</td>
+    </tr>
+    <tr>
+      <td>자율적 판단</td>
+      <td>고정·동적 SQL 분리, SQL·RAG·Both 라우팅 결정</td>
+    </tr>
+    <tr>
+      <td>결과에 대한 책임</td>
+      <td>API 연결, 인수인계, 후속 시연 지원</td>
+    </tr>
+    <tr>
+      <td>적극적 사고와 행동</td>
+      <td>AX 컨설팅에서 문제 발굴 후 실제 Agent 구현</td>
+    </tr>
+    <tr>
+      <td>전문성 개발</td>
+      <td>필요한 기술을 프로젝트 과정에서 학습하고 결합</td>
+    </tr>
+    <tr>
+      <td>다양한 가치 존중</td>
+      <td>현업 요구와 기술적 안정성, 사용자 편의의 균형</td>
+    </tr>
+    <tr>
+      <td>미래가치 창출</td>
+      <td>일회성 데모가 아닌 운영과 재사용 가능성을 고려</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="30-지금까지의-인사이트를-결합한-why-kb-구조">30. 지금까지의 인사이트를 결합한 Why KB 구조</h1>
+
+<p>현재 가장 설득력 있는 지원 논리는 다음 순서다.</p>
+
+<h2 id="301-내가-지속해서-해결한-문제">30.1 내가 지속해서 해결한 문제</h2>
+
+<p>도메인 데이터와 지식이 존재해도 복잡한 시스템과 전문성 때문에 실제 사용자가 필요한 순간에 활용하지 못하는 문제를 해결해 왔다.</p>
+
+<h2 id="302-내가-선호하는-해결방식">30.2 내가 선호하는 해결방식</h2>
+
+<p>단순한 답변형 챗봇이 아니라 데이터, Tool, 업무 흐름, 사용자 확인을 연결하고 실제 현업에서 검증 가능한 Agent를 구축했다.</p>
+
+<h2 id="303-kb에서-발견한-전략">30.3 KB에서 발견한 전략</h2>
+
+<p>KB는 공통 GenAI 플랫폼과 거버넌스를 기반으로 현업이 업무 Agent를 발굴하고, 직원 업무에서 검증하며, 성과가 확인된 기능을 고객과 그룹으로 확장하는 구조를 만들고 있다.</p>
+
+<h2 id="304-왜-이-구조가-나와-맞는가">30.4 왜 이 구조가 나와 맞는가</h2>
+
+<p>네 강점은 모델 하나를 만드는 데 한정되지 않는다. 현업 문제를 발견하고, 적절한 기술 구조를 선택하고, 기존 시스템에 연결하고, 사용자 반응에 따라 고치고, 실제 운영 주체에게 넘긴 경험에 있다.</p>
+
+<h2 id="305-kb에서-실현할-목표">30.5 KB에서 실현할 목표</h2>
+
+<p>KB의 금융지식과 데이터를 직원과 고객이 필요한 순간에 정확히 사용할 수 있는 Agent 흐름으로 만들고, 한 번의 PoC가 다른 업무에서도 반복 활용될 수 있도록 공통 플랫폼의 품질과 재사용성을 높이는 것이다.</p>
+
+<h1 id="31-현재-가장-강한-core-thesis">31. 현재 가장 강한 Core Thesis</h1>
+
+<p>처음에는 다음 두 문장을 별도 후보로 보았다.</p>
+
+<ol>
+  <li>통제는 AI 혁신의 브레이크가 아니라 가속장치다.</li>
+  <li>AI는 KB에게 혁신의 대상이 아니라 혁신의 방식이다.</li>
+</ol>
+
+<p>조사를 더 진행한 현재는 두 문장을 다음처럼 결합하는 편이 강하다.</p>
+
+<blockquote>
+  <p><strong>KB국민은행은 AI 서비스 하나의 성공보다, 현업이 업무 Agent를 만들고 직원 업무에서 효과와 위험을 검증한 뒤 고객과 그룹으로 반복 확장할 수 있는 구조를 구축하고 있다. 이때 거버넌스는 혁신을 제한하는 규칙이 아니라 더 많은 Agent를 안전하게 운영하기 위한 공통 기반으로 기능한다.</strong></p>
+</blockquote>
+
+<p>여기에 인재상까지 결합하면 한 단계 더 깊어진다.</p>
+
+<blockquote>
+  <p><strong>사람에게는 문제를 발견하고 실행할 자율성을 부여하고, 플랫폼에는 품질·권한·보안·검증 기준을 내재화해 결과에 대한 책임을 남긴다. KB의 ‘자율과 책임’은 인재상에만 머무르지 않고 AI를 개발하고 확산하는 방식에도 반복되고 있다.</strong></p>
+</blockquote>
+
+<p>이것이 현재까지 확인한 자료에서 가장 깊고, 네 경험과도 가장 잘 연결되는 인사이트다.</p>
+
+<h1 id="32-지원동기에서-사용할-수-있는-목표의-방향">32. 지원동기에서 사용할 수 있는 목표의 방향</h1>
+
+<p>아직 800자 최종 문장으로 압축하지 않은 상태에서, 목표는 세 층으로 구성하는 것이 좋다.</p>
+
+<h2 id="직접-목표">직접 목표</h2>
+
+<p>현장의 반복적인 정보탐색과 업무 절차를 금융 특화 Agent로 전환한다.</p>
+
+<h2 id="플랫폼-목표">플랫폼 목표</h2>
+
+<p>업무별 Agent를 매번 처음부터 만들지 않도록 데이터 연결, Tool 사용, 평가, 권한, 사람의 승인 구조를 재사용 가능한 기반으로 만든다.</p>
+
+<h2 id="고객가치-목표">고객가치 목표</h2>
+
+<p>직원이 반복적인 탐색과 자료 작성에 쓰던 시간을 줄여 고객 상황을 이해하고 설명하는 데 더 집중하게 하고, 고객은 필요한 금융정보와 서비스에 더 정확하고 쉽게 접근하게 한다.</p>]]></content><author><name>JIBAEK JANG</name><email>jjb6904@mail.hongik.ac.kr</email></author><category term="Corporate-Analysis" /><category term="KB국민은행" /><category term="AI" /><category term="AI-Agent" /><category term="금융플랫폼" /><category term="기업분석" /><summary type="html"><![CDATA[1. 지원 직무에서 확인되는 업무의 전체 범위]]></summary></entry></feed>
