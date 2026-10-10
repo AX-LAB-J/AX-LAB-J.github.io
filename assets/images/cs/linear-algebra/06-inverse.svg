@@ -1,0 +1,9 @@
+<svg viewBox="-15 -5 690 240" width="690" height="240" xmlns="http://www.w3.org/2000/svg"><style>
+text{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;fill:#1f2937;white-space:pre}
+.t{font-size:14px}.ts{font-size:12px;fill:#4b5563}.th{font-size:14px;font-weight:600;fill:#111827}
+.arr{stroke:#6b7280;stroke-width:1.5;fill:none}
+.c-gray{fill:#e5e7eb}.c-teal{fill:#99f6e4}.c-coral{fill:#fecaca}.c-blue{fill:#bfdbfe}.c-amber{fill:#fde68a}
+g.c-blue rect{fill:#dbeafe;stroke:#3b82f6}g.c-coral rect{fill:#fee2e2;stroke:#ef4444}
+g.c-gray rect{fill:#f3f4f6;stroke:#9ca3af}g.c-teal rect{fill:#ccfbf1;stroke:#14b8a6}g.c-amber rect{fill:#fef3c7;stroke:#f59e0b}
+g[class^=c-] text{fill:#111827}
+</style><defs><marker id="m6b7280" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#6b7280"/></marker></defs><rect x="-15" y="-5" width="690" height="240" rx="10" fill="#ffffff"/><g class="c-blue"><rect x="30" y="80" width="130" height="60" rx="10"/><text class="th" x="60" y="108">x = (1, 1)</text><text class="ts" x="60" y="128">원래 벡터</text></g><g class="c-coral"><rect x="470" y="80" width="140" height="60" rx="10"/><text class="th" x="495" y="108">Ax = (3, 1)</text><text class="ts" x="495" y="128">변형된 벡터</text></g><path class="arr" d="M160,95 C260,30 370,30 470,95" fill="none" marker-end="url(#m6b7280)"/><text class="th" x="240" y="40">A = [2 1; 0 1] 곱하기</text><path class="arr" d="M470,125 C370,190 260,190 160,125" fill="none" marker-end="url(#m6b7280)"/><text class="th" x="215" y="200">A⁻¹ = [0.5 −0.5; 0 1] 곱하기</text></svg>

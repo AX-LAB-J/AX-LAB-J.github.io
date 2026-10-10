@@ -1,0 +1,9 @@
+<svg viewBox="-15 -5 730 250" width="730" height="250" xmlns="http://www.w3.org/2000/svg"><style>
+text{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;fill:#1f2937;white-space:pre}
+.t{font-size:14px}.ts{font-size:12px;fill:#4b5563}.th{font-size:14px;font-weight:600;fill:#111827}
+.arr{stroke:#6b7280;stroke-width:1.5;fill:none}
+.c-gray{fill:#e5e7eb}.c-teal{fill:#99f6e4}.c-coral{fill:#fecaca}.c-blue{fill:#bfdbfe}.c-amber{fill:#fde68a}
+g.c-blue rect{fill:#dbeafe;stroke:#3b82f6}g.c-coral rect{fill:#fee2e2;stroke:#ef4444}
+g.c-gray rect{fill:#f3f4f6;stroke:#9ca3af}g.c-teal rect{fill:#ccfbf1;stroke:#14b8a6}g.c-amber rect{fill:#fef3c7;stroke:#f59e0b}
+g[class^=c-] text{fill:#111827}
+</style><defs></defs><rect x="-15" y="-5" width="730" height="250" rx="10" fill="#ffffff"/><text class="th" x="20" y="28">A = (중요한 조각 × 3) + (덜 중요한 조각 × 1)</text><g class="c-gray"><rect x="20" y="60" width="120" height="100" rx="8"/><text class="th" x="48" y="100">2    1</text><text class="th" x="48" y="135">1    2</text></g><text class="ts" x="65" y="185">A</text><text class="th" x="155" y="115">=</text><g class="c-teal"><rect x="180" y="60" width="140" height="100" rx="8"/><text class="th" x="200" y="100">1.5   1.5</text><text class="th" x="200" y="135">1.5   1.5</text></g><text class="ts" x="180" y="185">σ₁=3 조각 (방향 (1,1))</text><text class="th" x="335" y="115">+</text><g class="c-amber"><rect x="360" y="60" width="150" height="100" rx="8"/><text class="th" x="378" y="100">0.5  −0.5</text><text class="th" x="378" y="135">−0.5   0.5</text></g><text class="ts" x="360" y="185">σ₂=1 조각 (방향 (1,−1))</text><text class="ts" x="530" y="90">각 조각은</text><text class="ts" x="530" y="110">모든 행이 같은 모양</text><text class="ts" x="530" y="130">→ 랭크 1</text><text class="ts" x="20" y="215">초록 조각만 남기면 [1.5 1.5; 1.5 1.5] ≈ A : 이게 랭크 1 근사</text></svg>

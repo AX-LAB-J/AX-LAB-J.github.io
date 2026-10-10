@@ -1,0 +1,907 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko-KR" class="no-js">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>3. 고유값과 SVD - AX LAB</title>
+<meta name="description" content="복잡해 보이는 행렬도 좋은 축으로 보면 ‘쪼개고, 늘리고, 합치기’일 뿐이다. 무거운 조각만 남기면 적은 숫자로 거의 같은 행렬을 만들 수 있고, 이것이 LoRA의 원리다.">
+
+
+  <meta name="author" content="JIBAEK JANG">
+  
+  <meta property="article:author" content="JIBAEK JANG">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="AX LAB">
+<meta property="og:title" content="3. 고유값과 SVD">
+<meta property="og:url" content="https://ax-lab-j.github.io/cs/linear-algebra-03-eigen-svd-lora/">
+
+
+  <meta property="og:description" content="복잡해 보이는 행렬도 좋은 축으로 보면 ‘쪼개고, 늘리고, 합치기’일 뿐이다. 무거운 조각만 남기면 적은 숫자로 거의 같은 행렬을 만들 수 있고, 이것이 LoRA의 원리다.">
+
+
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2026-10-10T15:02:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://ax-lab-j.github.io/cs/linear-algebra-03-eigen-svd-lora/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="AX LAB Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/">
+          AX LAB
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/project/"
+                
+                
+              >Project</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/study/"
+                
+                
+              >Study</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/insight-report/"
+                
+                
+              >Insight Report</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/corporate-analysis/"
+                
+                
+              >Corporate Analysis</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://ax-lab-j.github.io/" itemprop="url">JIBAEK JANG</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Bridging Industry and AI</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:jjb6904@mail.hongik.ac.kr" rel="me" class="u-email">
+            <meta itemprop="email" content="jjb6904@mail.hongik.ac.kr" />
+            <i class="fas fa-fw fa-square-envelope" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="3. 고유값과 SVD">
+    <meta itemprop="description" content="복잡해 보이는 행렬도 좋은 축으로 보면 ‘쪼개고, 늘리고, 합치기’일 뿐이다. 무거운 조각만 남기면 적은 숫자로 거의 같은 행렬을 만들 수 있고, 이것이 LoRA의 원리다.">
+    <meta itemprop="datePublished" content="2026-10-10T15:02:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://ax-lab-j.github.io/cs/linear-algebra-03-eigen-svd-lora/" itemprop="url">3. 고유값과 SVD
+</a>
+          </h1>
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc" aria-label="Table of contents">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#1-고유값과-고유벡터-방향이-바뀌지-않는-벡터">1. 고유값과 고유벡터: 방향이 바뀌지 않는 벡터</a><ul><li><a href="#왜-중요한가-행렬의-뼈대-방향">왜 중요한가: 행렬의 뼈대 방향</a></li><li><a href="#고유값-찾는-법">고유값 찾는 법</a></li><li><a href="#랭크와의-연결">랭크와의 연결</a></li><li><a href="#llm과의-연결">LLM과의 연결</a></li></ul></li><li><a href="#2-svd-어떤-행렬이든-세-동작으로-쪼갠다">2. SVD: 어떤 행렬이든 세 동작으로 쪼갠다</a><ul><li><a href="#2-1-좋은-축">2-1. 좋은 축</a></li><li><a href="#2-2-특이값-각-축에서-늘리는-배율">2-2. 특이값: 각 축에서 늘리는 배율</a></li><li><a href="#2-3-u-σ-vᵀ-쪼개고-늘리고-합치기">2-3. U, Σ, Vᵀ: 쪼개고, 늘리고, 합치기</a></li></ul></li><li><a href="#3-랭크-1-조각들의-합">3. 랭크 1 조각들의 합</a></li><li><a href="#4-저랭크-근사-무거운-조각만-남기기">4. 저랭크 근사: 무거운 조각만 남기기</a><ul><li><a href="#왜-하는가-큰-행렬에서의-이득">왜 하는가: 큰 행렬에서의 이득</a></li></ul></li><li><a href="#5-lora-변화량은-원래-몇-조각이면-충분하다">5. LoRA: 변화량은 원래 몇 조각이면 충분하다</a></li><li><a href="#정리">정리</a></li></ul>
+            </nav>
+          </aside>
+        
+        <p>선형대수 시리즈의 마지막 3편이다. 행렬의 뼈대를 드러내는 <strong>고유값</strong>과, 모든 행렬을 단순한 동작으로 쪼개는 <strong>SVD(특이값 분해)</strong>를 다루고, 이것이 LLM 파인튜닝 기법인 <strong>LoRA</strong>로 어떻게 이어지는지 본다.</p>
+
+<ul>
+  <li><a href="/cs/linear-algebra-01-vectors-basis-dot-product/">1편: 벡터, 기저, 내적</a></li>
+  <li><a href="/cs/linear-algebra-02-matrix-rank-inverse/">2편: 행렬, 랭크, 행렬식, 역행렬</a></li>
+  <li>3편: 고유값과 SVD (이 글)</li>
+</ul>
+
+<p>이 글의 예시는 처음부터 끝까지 <strong>A = [2 1; 1 2]</strong> 하나만 쓴다. 같은 행렬을 여러 각도에서 보면 개념들이 하나로 이어진다.</p>
+
+<h2 id="1-고유값과-고유벡터-방향이-바뀌지-않는-벡터">1. 고유값과 고유벡터: 방향이 바뀌지 않는 벡터</h2>
+
+<p>행렬을 곱하면 대부분의 벡터는 방향이 틀어진다. 그런데 어떤 특별한 벡터는 <strong>방향은 그대로이고 길이만 변한다.</strong> 이 벡터가 <strong>고유벡터</strong>이고, 늘어나는 배율이 <strong>고유값 λ(람다)</strong>다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Av = λv
+</code></pre></div></div>
+
+<p><img src="/assets/images/cs/linear-algebra/07-eigen.svg" alt="행렬 A를 곱해도 방향이 유지되는 고유벡터와 방향이 바뀌는 일반 벡터를 비교한 그림" /></p>
+
+<p>A = [2 1; 1 2]에 여러 벡터를 넣어 보면:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A(1, 1)  = (2+1, 1+2) = (3, 3)  = 3 × (1, 1)     방향 그대로, 3배  → λ = 3
+A(1, −1) = (2−1, 1−2) = (1, −1) = 1 × (1, −1)    방향 그대로, 1배  → λ = 1
+A(1, 0)  = (2, 1)                                방향이 틀어짐 → 고유벡터 아님
+</code></pre></div></div>
+
+<h3 id="왜-중요한가-행렬의-뼈대-방향">왜 중요한가: 행렬의 뼈대 방향</h3>
+
+<p>A는 겉으로 보면 섞고 비트는 복잡한 변환이다. 그런데 고유벡터 방향으로 보면 <strong>“(1,1) 방향으로 3배, (1,−1) 방향으로 1배”</strong>가 전부다. 고유벡터를 기저로 쓰면 행렬이 그냥 늘리기만 하는 단순한 변환이 된다. 1편의 <strong>기저 변환</strong>이 여기서 다시 등장한다.</p>
+
+<h3 id="고유값-찾는-법">고유값 찾는 법</h3>
+
+<p><strong>대각행렬이면 바로 보인다.</strong> A = [3 0; 0 2]에 기저를 넣으면:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A(1,0) = (3·1 + 0·0, 0·1 + 2·0) = (3, 0) = 3·(1,0)   → λ = 3
+A(0,1) = (3·0 + 0·1, 0·0 + 2·1) = (0, 2) = 2·(0,1)   → λ = 2
+</code></pre></div></div>
+
+<p>x축으로 3배, y축으로 2배 늘리기만 하는 행렬이니 <strong>대각선 숫자가 곧 고유값</strong>이다.</p>
+
+<p><strong>대각행렬이 아니면</strong> 다음 순서로 푼다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Av = λv</code>를 옮기면 <code class="language-plaintext highlighter-rouge">(A − λI)v = 0</code>이다. 0이 아닌 v가 0으로 가려면 (A − λI)가 <strong>공간을 찌그러뜨려야</strong> 한다. 2편에서 본 것처럼 찌그러짐의 판별은 행렬식이다. 따라서:</p>
+
+<blockquote>
+  <p><strong>고유값: det(A − λI) = 0을 푼다 → 고유벡터: 그 λ를 넣고 (A − λI)v = 0을 푼다</strong></p>
+</blockquote>
+
+<p>A = [2 1; 1 2]에 적용하면:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1단계. 고유값
+A − λI = [2−λ  1 ; 1  2−λ]
+det = (2−λ)(2−λ) − 1·1 = 0
+(2−λ)² = 1  →  2−λ = ±1  →  λ = 1 또는 3
+
+2단계. λ = 3일 때 고유벡터
+(A − 3I)v = [−1  1; 1  −1][x; y] = [0; 0]
+→ −x + y = 0  →  x = y  →  v = (1, 1)
+</code></pre></div></div>
+
+<p>λ = 1도 같은 방식으로 풀면 x = −y, 즉 (1, −1)이 나온다. 그림의 초록·파랑 벡터와 같다.</p>
+
+<h3 id="랭크와의-연결">랭크와의 연결</h3>
+
+<p><strong>고유값이 0이면</strong> 그 방향은 0배, 즉 납작해진다. 2편의 M = [1 2; 2 4]는 (2, −1) 방향의 고유값이 0이다. M(2,−1) = (0,0)이었던 것, 그래서 역행렬이 없었던 것이 바로 이 때문이다.</p>
+
+<h3 id="llm과의-연결">LLM과의 연결</h3>
+
+<p>고유값이 큰 방향은 데이터나 변환에서 <strong>가장 중요한 방향</strong>이다. 임베딩을 2D로 시각화할 때 쓰는 PCA가 이 원리를 쓴다. 그리고 이 아이디어를 <strong>모든 행렬</strong>로 넓힌 것이 다음의 SVD다.</p>
+
+<h2 id="2-svd-어떤-행렬이든-세-동작으로-쪼갠다">2. SVD: 어떤 행렬이든 세 동작으로 쪼갠다</h2>
+
+<p>SVD가 던지는 질문은 이것이다.</p>
+
+<blockquote>
+  <p><strong>“이 복잡한 변환을 아주 단순한 동작들로 쪼갤 수 없을까?”</strong></p>
+</blockquote>
+
+<p>답은 <strong>어떤 행렬이든</strong> 다음처럼 쪼갤 수 있다는 것이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A = U Σ Vᵀ
+</code></pre></div></div>
+
+<p><img src="/assets/images/cs/linear-algebra/08-svd.svg" alt="SVD가 원을 회전, 늘리기, 회전의 세 단계를 거쳐 타원으로 바꾸는 그림" /></p>
+
+<p>그림처럼 원(모든 방향의 길이 1짜리 벡터)에 행렬을 곱하면 타원이 된다. SVD는 이 과정을 세 단계로 나눠 보여준다.</p>
+
+<h3 id="2-1-좋은-축">2-1. 좋은 축</h3>
+
+<p>A = [2 1; 1 2]에서 (1,1)과 (1,−1)은 <strong>A가 비틀지 않고 늘리기만 하는 방향</strong>이었다. 보통 축 (1,0)으로 보면 A는 “늘리면서 비틀기”라 복잡하지만, 이 대각선 축으로 보면 “한쪽 3배, 다른 쪽 1배”로 단순해진다. 그래서 <strong>좋은 축</strong>이다.</p>
+
+<p>일반 행렬에서 좋은 축은 <strong>서로 직각인 입력 축들이, 변환 후에도 서로 직각인 출력 축으로 가는 방향</strong>이다. A처럼 대칭인 행렬은 입력 축과 출력 축이 같아서 고유벡터와 일치하지만, 일반 행렬에서는 입력의 좋은 축과 출력의 좋은 축이 다르다. 고유값 분해는 정사각행렬 중에서도 일부에만 가능하지만, SVD는 4096×128 같은 <strong>직사각형 행렬에서도 항상</strong> 이런 축을 찾아준다. 그래서 실전에서 훨씬 많이 쓰인다.</p>
+
+<h3 id="2-2-특이값-각-축에서-늘리는-배율">2-2. 특이값: 각 축에서 늘리는 배율</h3>
+
+<p>좋은 축마다 늘리는 배율이 있다. 이것이 <strong>특이값(singular value)</strong>이다. 큰 것부터 σ₁ ≥ σ₂ ≥ … 순서로 쓰고, 항상 0 이상이다. A의 특이값은 <strong>σ₁ = 3, σ₂ = 1</strong>이다. 그림에서 타원의 긴 축 길이가 σ₁, 짧은 축 길이가 σ₂다.</p>
+
+<p>특이값의 본질적인 의미는 <strong>각 방향의 중요도</strong>다. 3배로 늘어나는 방향은 결과를 크게 좌우하고, 만약 0.01배인 방향이 있다면 그 방향은 결과에 거의 영향을 주지 않는다. 특이값은 <strong>“이 방향이 얼마나 중요한가”의 점수</strong>다.</p>
+
+<h3 id="2-3-u-σ-vᵀ-쪼개고-늘리고-합치기">2-3. U, Σ, Vᵀ: 쪼개고, 늘리고, 합치기</h3>
+
+<p>세 행렬로 나누는 이유는 복잡한 변환을 <strong>이해할 수 있는 단순한 동작 세 개</strong>로 보기 위해서다. A에 (1, 0)을 곱하는 과정을 좋은 축의 관점에서 다시 해 보자.</p>
+
+<p><img src="/assets/images/cs/linear-algebra/09-components.svg" alt="벡터 (1,0)을 대각선 두 방향 성분으로 쪼갠 뒤 각각 3배와 1배를 해서 (2,1)이 되는 그림" /></p>
+
+<p><strong>① 성분 뽑기 (Vᵀ의 역할)</strong></p>
+
+<p>입력 (1, 0)을 좋은 축 방향의 조각들로 나눈다. 1편에서 v = (3, 2)를 다른 기저로 재서 (2.5, −0.5)를 얻었던 것과 똑같은 일이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1, 0) = 0.5·(1, 1) + 0.5·(1, −1)
+</code></pre></div></div>
+
+<p>확인: 0.5·(1,1) + 0.5·(1,−1) = (0.5+0.5, 0.5−0.5) = (1, 0) ✓</p>
+
+<p>즉 “(1,1) 방향으로 0.5만큼, (1,−1) 방향으로 0.5만큼”이다. 각 축 방향과 얼마나 겹치는지 재는 것이므로 계산은 <strong>내적</strong>으로 한다. 이 숫자들을 구하는 것이 Vᵀ의 역할이다.</p>
+
+<p><strong>② 늘리기 (Σ의 역할)</strong></p>
+
+<p>각 조각을 그 축의 특이값만큼 늘린다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1, 1) 쪽:   0.5 × 3 = 1.5
+(1, −1) 쪽:  0.5 × 1 = 0.5
+</code></pre></div></div>
+
+<p><strong>③ 다시 합치기 (U의 역할)</strong></p>
+
+<p>늘린 조각들을 출력 공간의 방향으로 다시 배치해서 하나로 합친다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.5·(1, 1) + 0.5·(1, −1) = (1.5+0.5, 1.5−0.5) = (2, 1)
+</code></pre></div></div>
+
+<p>A(1,0)을 직접 계산한 값 <code class="language-plaintext highlighter-rouge">(2·1 + 1·0, 1·1 + 2·0) = (2, 1)</code>과 <strong>똑같다</strong> ✓</p>
+
+<p>그래서 <code class="language-plaintext highlighter-rouge">A = U Σ Vᵀ</code>는 <strong>“쪼개고(Vᵀ) → 늘리고(Σ) → 합친다(U)”</strong>를 식으로 쓴 것이다.</p>
+
+<ul>
+  <li>Vᵀ와 U는 방향만 바꾸고 길이는 바꾸지 않는다(회전 또는 뒤집기).</li>
+  <li><strong>실제 크기 변화는 전부 Σ에 있다.</strong> 행렬의 핵심 정보가 특이값에 모인다는 뜻이다.</li>
+</ul>
+
+<p>A는 대칭행렬이라 U와 V가 같지만, 일반 행렬은 입력의 좋은 축(V)과 출력의 좋은 축(U)이 달라서 둘을 따로 쓴다.</p>
+
+<h2 id="3-랭크-1-조각들의-합">3. 랭크 1 조각들의 합</h2>
+
+<p>위 과정을 다시 보면 A는 사실 <strong>서로 독립된 두 작업</strong>을 합친 것이다.</p>
+
+<ul>
+  <li>작업 1: (1,1) 성분을 뽑아 <strong>3배</strong> 해서 (1,1) 방향으로 내보내기</li>
+  <li>작업 2: (1,−1) 성분을 뽑아 <strong>1배</strong> 해서 (1,−1) 방향으로 내보내기</li>
+</ul>
+
+<p>각 작업을 행렬로 쓰면 다음과 같다.</p>
+
+<p><img src="/assets/images/cs/linear-algebra/10-rank1-sum.svg" alt="행렬 [2 1; 1 2]를 무게 3인 조각과 무게 1인 조각, 두 랭크 1 행렬의 합으로 분해한 그림" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>작업 1 = 3 × [0.5  0.5; 0.5  0.5]  = [1.5  1.5; 1.5  1.5]
+작업 2 = 1 × [0.5 −0.5; −0.5 0.5]  = [0.5 −0.5; −0.5 0.5]
+합                                  = [2 1; 1 2] = A ✓
+</code></pre></div></div>
+
+<p>각 작업 행렬은 결과를 <strong>한 방향으로만</strong> 내보낸다. 모든 행이 같은 모양(비율)이고, 출력이 직선 하나뿐이니 <strong>랭크 1</strong>이다. 그래서 “A는 랭크 1 조각들의 합”이고, 각 조각 앞의 숫자(3, 1)가 특이값, 즉 그 조각의 <strong>무게</strong>다.</p>
+
+<p>이것을 기호로 쓴 것이 다음 공식이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A = σ₁u₁v₁ᵀ + σ₂u₂v₂ᵀ + σ₃u₃v₃ᵀ + …
+</code></pre></div></div>
+
+<ul>
+  <li><strong>vᵢ</strong>: 어느 방향의 성분을 뽑을지 (입력의 좋은 축)</li>
+  <li><strong>σᵢ</strong>: 몇 배 할지 (특이값, 조각의 무게)</li>
+  <li><strong>uᵢ</strong>: 어느 방향으로 내보낼지 (출력의 좋은 축)</li>
+</ul>
+
+<p>uᵢvᵢᵀ는 “세로벡터 × 가로벡터”로 만든 행렬이라 항상 랭크 1이다. 예를 들어 u₁ = v₁ = (1,1)/√2이면 u₁v₁ᵀ = [0.5 0.5; 0.5 0.5]로, 위의 작업 1 행렬과 같다.</p>
+
+<h2 id="4-저랭크-근사-무거운-조각만-남기기">4. 저랭크 근사: 무거운 조각만 남기기</h2>
+
+<p>조각마다 무게가 다르니 <strong>가벼운 조각을 버려도 결과는 크게 변하지 않는다.</strong></p>
+
+<p>A에서 무게 1짜리 조각을 버리고 무게 3짜리만 남기면:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A ≈ [1.5 1.5; 1.5 1.5]     (원래 A = [2 1; 1 2])
+</code></pre></div></div>
+
+<p>꽤 비슷하다. 조각 하나만 남겼으니 <strong>랭크 1 근사</strong>다. 일반적으로 특이값이 큰 앞쪽 r개 조각만 남기는 것을 <strong>랭크 r 근사(저랭크 근사)</strong>라고 한다. 앞의 SVD 그림으로 보면, σ₂가 아주 작을 때 타원이 거의 선이 되는 것과 같다. 짧은 축을 무시해도 모양이 크게 달라지지 않는다.</p>
+
+<h3 id="왜-하는가-큰-행렬에서의-이득">왜 하는가: 큰 행렬에서의 이득</h3>
+
+<p>2×2에서는 이득이 작지만, 큰 행렬에서는 엄청나다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4096×4096 행렬           = 숫자 약 1,680만 개
+조각 하나 = u(4096) + v(4096) + σ(1) ≈ 8,200개
+8조각                     ≈ 6.5만 개
+</code></pre></div></div>
+
+<p>특이값이 앞의 8개만 크고 나머지가 거의 0이라면, <strong>8조각만 저장해도 거의 같은 행렬</strong>이다. 메모리와 계산을 약 256분의 1로 줄이면서 핵심 정보는 지킬 수 있다. 사진 압축도 같은 원리다. 사진을 행렬로 보고 특이값 상위 몇십 개만 남겨도 알아볼 만한 사진이 된다.</p>
+
+<p>즉 저랭크 근사를 하는 이유는 <strong>메모리와 계산을 크게 줄이면서 중요한 정보는 지키기 위해서</strong>다.</p>
+
+<h2 id="5-lora-변화량은-원래-몇-조각이면-충분하다">5. LoRA: 변화량은 원래 몇 조각이면 충분하다</h2>
+
+<p>LLM 파인튜닝은 가중치 행렬 W를 <code class="language-plaintext highlighter-rouge">W + ΔW</code>로 바꾸는 것이다. W가 4096×4096이면 ΔW도 약 1,680만 개의 숫자다. 이런 행렬이 모델 안에 수백 개 있으니 전부 학습하려면 비용이 매우 크다.</p>
+
+<p>LoRA(Hu et al., 2021)는 <strong>파인튜닝으로 생기는 변화량 ΔW는 본질적으로 랭크가 낮다</strong>, 즉 특이값이 앞의 몇 개만 크고 나머지는 거의 0이라고 보고, 처음부터 ΔW를 저랭크 형태로만 학습한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ΔW = B · A
+B: 4096 × 8,   A: 8 × 4096   →  ΔW의 랭크는 최대 8
+
+학습할 숫자: 4096·8 + 8·4096 ≈ 6.5만 개   (원래 약 1,680만 개)
+</code></pre></div></div>
+
+<p>2편의 크기 규칙으로 보면 (4096×8) × (8×4096) = (4096×4096)이라 원래 가중치와 같은 크기가 나온다. 하지만 중간에 8차원을 거치므로 랭크는 최대 8이다. 학습할 숫자는 <strong>약 256분의 1</strong>로 줄어들고, 성능은 전체 파인튜닝과 거의 비슷하다.</p>
+
+<p>결국 LoRA는 “<strong>r개의 랭크 1 조각만으로 변화량을 표현한다</strong>“는, 이 글에서 본 저랭크 근사의 아이디어를 학습 단계에 그대로 적용한 것이다.</p>
+
+<h2 id="정리">정리</h2>
+
+<ul>
+  <li><strong>고유벡터</strong>는 행렬을 곱해도 방향이 바뀌지 않는 벡터이고, <strong>고유값</strong>은 그 방향의 배율이다. <code class="language-plaintext highlighter-rouge">det(A − λI) = 0</code>으로 구한다.</li>
+  <li><strong>SVD</strong>는 어떤 행렬이든 <strong>“좋은 축으로 쪼개고(Vᵀ) → 축마다 특이값만큼 늘리고(Σ) → 합친다(U)”</strong>로 분해한다.</li>
+  <li><strong>특이값</strong>은 각 방향의 중요도이며, 행렬의 실제 크기 변화는 모두 특이값에 담긴다.</li>
+  <li>행렬은 <strong>랭크 1 조각들의 합</strong> <code class="language-plaintext highlighter-rouge">σ₁u₁v₁ᵀ + σ₂u₂v₂ᵀ + …</code>이고, 특이값이 작은 조각을 버리면 <strong>저랭크 근사</strong>가 된다.</li>
+  <li><strong>LoRA</strong>는 파인튜닝 변화량을 처음부터 저랭크 행렬로만 학습해서, 학습할 숫자를 수백 분의 1로 줄인다.</li>
+</ul>
+
+<p>이것으로 선형대수 단원을 마친다. 행렬미분은 역전파와 함께 미적분·최적화 단원에서 다루고, 다음 단원은 언어모델의 손실함수를 이해하기 위한 <strong>확률과 정보이론</strong>이다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+    
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#linear-algebra" class="page__taxonomy-item p-category" rel="tag">Linear-Algebra</a>
+    
+    </span>
+  </p>
+
+
+  
+
+  
+    
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#cs" class="page__taxonomy-item p-category" rel="tag">CS</a>
+    
+    </span>
+  </p>
+
+
+  
+
+
+        
+
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2026-10-10T15:02:00+09:00">October 10, 2026</time></p>
+
+
+      </footer>
+
+      
+<section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=3%5C.+%EA%B3%A0%EC%9C%A0%EA%B0%92%EA%B3%BC+SVD%20https%3A%2F%2Fax-lab-j.github.io%2Fcs%2Flinear-algebra-03-eigen-svd-lora%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fax-lab-j.github.io%2Fcs%2Flinear-algebra-03-eigen-svd-lora%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://ax-lab-j.github.io/cs/linear-algebra-03-eigen-svd-lora/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=3%5C.+%EA%B3%A0%EC%9C%A0%EA%B0%92%EA%B3%BC+SVD%20https%3A%2F%2Fax-lab-j.github.io%2Fcs%2Flinear-algebra-03-eigen-svd-lora%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+
+      
+
+  <nav class="pagination" aria-label="Post pagination">
+    
+      <a href="/cs/linear-algebra-02-matrix-rank-inverse/" class="pagination--pager" title="2. 행렬, 랭크, 행렬식, 역행렬">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/cs/linear-algebra-02-matrix-rank-inverse/" rel="permalink">2. 행렬, 랭크, 행렬식, 역행렬
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">행렬의 열은 기저가 도착하는 곳이다. 공간을 찌그러뜨리는 행렬은 정보를 잃고, 그래서 되돌릴 수 없다.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/cs/linear-algebra-01-vectors-basis-dot-product/" rel="permalink">1. 벡터, 기저, 내적
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">같은 벡터도 어떤 자(기저)로 재느냐에 따라 숫자가 달라진다. 내적은 두 벡터가 얼마나 같은 쪽을 보는지 알려준다.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/corporate-analysis/nh-nonghyup-bank-ai-planning-operations-analysis/" rel="permalink">NH농협은행 AI 기획/운영 기업분석
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          17 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">농협은행의 수익 구조와 Agentic AI 전략을 실제 도입 단계로 구분하고, AI 기획/운영 직무의 과제와 지원 인사이트를 분석한다.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/corporate-analysis/lg-cns-ai-ax-analysis/" rel="permalink">LG CNS AI(AX) 기업분석
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">LG CNS는 무엇으로 돈을 벌고, AI로 무엇을 바꾸고 있을까? 주요 사업부터 AI(AX) 직무와 인재상까지.
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2013 - 2026 <a href="https://ax-lab-j.github.io">AX LAB</a>. 제작 지원:  <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+<script>
+  document.querySelectorAll("a.experience-link[data-web-href]").forEach(function (link) {
+    link.setAttribute("href", link.getAttribute("data-web-href"));
+  });
+</script>
+
+
+
+  </body>
+</html>

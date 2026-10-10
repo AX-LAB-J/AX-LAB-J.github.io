@@ -1,0 +1,920 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko-KR" class="no-js">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>2. 행렬, 랭크, 행렬식, 역행렬 - AX LAB</title>
+<meta name="description" content="행렬의 열은 기저가 도착하는 곳이다. 공간을 찌그러뜨리는 행렬은 정보를 잃고, 그래서 되돌릴 수 없다.">
+
+
+  <meta name="author" content="JIBAEK JANG">
+  
+  <meta property="article:author" content="JIBAEK JANG">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="AX LAB">
+<meta property="og:title" content="2. 행렬, 랭크, 행렬식, 역행렬">
+<meta property="og:url" content="https://ax-lab-j.github.io/cs/linear-algebra-02-matrix-rank-inverse/">
+
+
+  <meta property="og:description" content="행렬의 열은 기저가 도착하는 곳이다. 공간을 찌그러뜨리는 행렬은 정보를 잃고, 그래서 되돌릴 수 없다.">
+
+
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2026-10-10T15:01:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://ax-lab-j.github.io/cs/linear-algebra-02-matrix-rank-inverse/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="AX LAB Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/">
+          AX LAB
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/project/"
+                
+                
+              >Project</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/study/"
+                
+                
+              >Study</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/insight-report/"
+                
+                
+              >Insight Report</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/corporate-analysis/"
+                
+                
+              >Corporate Analysis</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://ax-lab-j.github.io/" itemprop="url">JIBAEK JANG</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Bridging Industry and AI</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:jjb6904@mail.hongik.ac.kr" rel="me" class="u-email">
+            <meta itemprop="email" content="jjb6904@mail.hongik.ac.kr" />
+            <i class="fas fa-fw fa-square-envelope" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="2. 행렬, 랭크, 행렬식, 역행렬">
+    <meta itemprop="description" content="행렬의 열은 기저가 도착하는 곳이다. 공간을 찌그러뜨리는 행렬은 정보를 잃고, 그래서 되돌릴 수 없다.">
+    <meta itemprop="datePublished" content="2026-10-10T15:01:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://ax-lab-j.github.io/cs/linear-algebra-02-matrix-rank-inverse/" itemprop="url">2. 행렬, 랭크, 행렬식, 역행렬
+</a>
+          </h1>
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc" aria-label="Table of contents">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#1-행렬은-함수다">1. 행렬은 함수다</a><ul><li><a href="#열만-보면-변환이-다-보인다">열만 보면 변환이 다 보인다</a></li></ul></li><li><a href="#2-행렬-곱셈-계산법-내적을-여러-번-하기">2. 행렬 곱셈 계산법: 내적을 여러 번 하기</a><ul><li><a href="#행렬--벡터">행렬 × 벡터</a></li><li><a href="#행렬--행렬">행렬 × 행렬</a></li><li><a href="#크기-규칙">크기 규칙</a></li><li><a href="#예-90-회전-행렬">예: 90° 회전 행렬</a></li><li><a href="#llm과의-연결">LLM과의 연결</a></li></ul></li><li><a href="#3-선형독립과-랭크-변환-후-살아남는-차원">3. 선형독립과 랭크: 변환 후 살아남는 차원</a><ul><li><a href="#선형독립">선형독립</a></li><li><a href="#랭크">랭크</a></li><li><a href="#찌그러지면-서로-다른-입력이-같은-출력이-된다">찌그러지면 서로 다른 입력이 같은 출력이 된다</a></li></ul></li><li><a href="#4-행렬식-넓이가-몇-배가-되는가">4. 행렬식: 넓이가 몇 배가 되는가</a></li><li><a href="#5-역행렬-변환을-되감는-행렬">5. 역행렬: 변환을 되감는 행렬</a><ul><li><a href="#숫자로-먼저">숫자로 먼저</a></li><li><a href="#왕복해-보기">왕복해 보기</a></li><li><a href="#22-역행렬-공식">2×2 역행렬 공식</a></li><li><a href="#역행렬이-없는-경우">역행렬이 없는 경우</a></li><li><a href="#llm과의-연결-1">LLM과의 연결</a></li></ul></li><li><a href="#정리">정리</a></li></ul>
+            </nav>
+          </aside>
+        
+        <p>선형대수 시리즈 2편이다. 1편에서 벡터와 내적을 봤다면, 이번에는 그 벡터들이 사는 <strong>공간 전체를 바꾸는 행렬</strong>을 다룬다.</p>
+
+<ul>
+  <li><a href="/cs/linear-algebra-01-vectors-basis-dot-product/">1편: 벡터, 기저, 내적</a></li>
+  <li>2편: 행렬, 랭크, 행렬식, 역행렬 (이 글)</li>
+  <li><a href="/cs/linear-algebra-03-eigen-svd-lora/">3편: 고유값과 SVD</a></li>
+</ul>
+
+<h2 id="1-행렬은-함수다">1. 행렬은 함수다</h2>
+
+<p>행렬 A에 벡터 x를 곱하면 새 벡터 Ax가 나온다. 즉 행렬은 <strong>“벡터를 넣으면 벡터가 나오는 함수”</strong>다. 점 하나만 옮기는 게 아니라 공간 전체를 늘리고, 기울이고, 돌린다.</p>
+
+<p><img src="/assets/images/cs/linear-algebra/03-matrix-transform.svg" alt="행렬 A가 단위 정사각형을 평행사변형으로 변형하는 그림" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">A = [2 1; 0 1]</code>은 첫 행이 (2, 1), 둘째 행이 (0, 1)인 2×2 행렬이다. 이 A를 곱하면 회색 정사각형이 초록 평행사변형으로 변한다.</p>
+
+<h3 id="열만-보면-변환이-다-보인다">열만 보면 변환이 다 보인다</h3>
+
+<p>A의 1열은 (2, 0), 2열은 (1, 1)이다. 그림에서 e1=(1,0)은 (2,0)으로, e2=(0,1)은 (1,1)로 갔다.</p>
+
+<blockquote>
+  <p><strong>행렬의 각 열 = 기저 벡터가 도착하는 위치</strong></p>
+</blockquote>
+
+<p>기저만 어디로 가는지 알면 나머지 모든 벡터의 행방도 정해진다. 어떤 벡터든 기저의 조합으로 쓸 수 있으니, 도착한 기저들을 같은 비율로 조합하면 되기 때문이다. 예를 들어 x = (1, 1)이면:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Ax = 1·(2,0) + 1·(1,1) = (3, 1)
+</code></pre></div></div>
+
+<p>“x의 좌표만큼 A의 열들을 섞는다”고 보면 된다. 1편의 기저 개념이 여기서 그대로 쓰인다.</p>
+
+<h2 id="2-행렬-곱셈-계산법-내적을-여러-번-하기">2. 행렬 곱셈 계산법: 내적을 여러 번 하기</h2>
+
+<p>행렬 곱셈은 처음 보면 복잡하지만 핵심은 하나다. <strong>행렬 곱셈 = 내적을 여러 번 하는 것</strong>이다.</p>
+
+<h3 id="행렬--벡터">행렬 × 벡터</h3>
+
+<p><img src="/assets/images/cs/linear-algebra/04-matvec.svg" alt="행렬과 벡터의 곱셈을 행 단위 내적으로 보여주는 그림" /></p>
+
+<p>A의 <strong>각 행</strong>을 x와 내적하면 결과의 그 칸이 나온다. 그림에서 같은 색끼리 짝을 이룬다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[2 1] [1]   [2·1 + 1·1]   [3]
+[0 1] [1] = [0·1 + 1·1] = [1]
+</code></pre></div></div>
+
+<p>앞에서 “열을 섞어서” 구한 (3, 1)과 답이 같다. 두 관점은 같은 계산을 다르게 본 것이다.</p>
+
+<ul>
+  <li><strong>계산할 때</strong>는 행으로: 행 · 벡터 = 결과 한 칸</li>
+  <li><strong>의미를 볼 때</strong>는 열로: 기저가 어디로 가는지</li>
+</ul>
+
+<h3 id="행렬--행렬">행렬 × 행렬</h3>
+
+<p>B의 <strong>열 하나하나</strong>에 위 계산을 반복하면 된다. 결과의 (i행, j열) 칸은 <strong>A의 i행 · B의 j열</strong>이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A = [2 1]    B = [1 0]
+    [0 1]        [1 1]
+
+AB의 (1,1) = (2,1)·(1,1) = 2+1 = 3
+AB의 (1,2) = (2,1)·(0,1) = 0+1 = 1
+AB의 (2,1) = (0,1)·(1,1) = 0+1 = 1
+AB의 (2,2) = (0,1)·(0,1) = 0+1 = 1
+
+AB = [3 1]
+     [1 1]
+</code></pre></div></div>
+
+<p>행렬곱의 의미는 <strong>변환을 이어 붙이기</strong>다. BA는 “A로 변형한 다음 B로 변형”이다. 순서를 바꿔 BA를 계산하면 <code class="language-plaintext highlighter-rouge">[2 1; 2 2]</code>가 나온다. 그래서 <strong>AB ≠ BA</strong>다. 옷을 입고 신발을 신는 것과 신발을 신고 옷을 입는 것이 다른 것처럼, 변환도 순서가 중요하다.</p>
+
+<h3 id="크기-규칙">크기 규칙</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(m×n) × (n×p) = (m×p)
+</code></pre></div></div>
+
+<p>앞 행렬의 <strong>열 수</strong>와 뒤 행렬의 <strong>행 수</strong>가 같아야 곱할 수 있다. 행과 열을 내적하려면 두 벡터의 길이가 같아야 하기 때문이다.</p>
+
+<p>LLM에서 흔히 보는 예: 임베딩 <code class="language-plaintext highlighter-rouge">(1×4096)</code> × 가중치 <code class="language-plaintext highlighter-rouge">(4096×128)</code> = 결과 <code class="language-plaintext highlighter-rouge">(1×128)</code>. 4096차원 벡터가 128차원 벡터로 바뀐다.</p>
+
+<h3 id="예-90-회전-행렬">예: 90° 회전 행렬</h3>
+
+<p><code class="language-plaintext highlighter-rouge">R = [0 −1; 1 0]</code>에 기저를 넣어 보면:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R(1,0) = (0·1 + (−1)·0, 1·1 + 0·0) = (0, 1)
+R(0,1) = (0·0 + (−1)·1, 1·0 + 0·1) = (−1, 0)
+</code></pre></div></div>
+
+<p>오른쪽을 가리키던 e1이 위를, 위를 가리키던 e2가 왼쪽을 가리킨다. R은 <strong>공간 전체를 반시계 방향으로 90° 회전</strong>시키는 행렬이다.</p>
+
+<h3 id="llm과의-연결">LLM과의 연결</h3>
+
+<p>신경망의 한 층은 거의 다 <strong>“행렬 곱하기 + 비선형 함수”</strong>다. Transformer의 가중치 행렬들도 결국 임베딩 공간을 목적에 맞는 다른 공간으로 변형하는 함수다.</p>
+
+<h2 id="3-선형독립과-랭크-변환-후-살아남는-차원">3. 선형독립과 랭크: 변환 후 살아남는 차원</h2>
+
+<h3 id="선형독립">선형독립</h3>
+
+<p>벡터들 중 어느 하나도 나머지를 섞어서 만들 수 없으면 <strong>선형독립</strong>이다.</p>
+
+<p>(1, 2)와 (2, 4)는 <code class="language-plaintext highlighter-rouge">(2,4) = 2·(1,2)</code>라서 <strong>독립이 아니다</strong>. 두 개처럼 보이지만 실제로는 같은 방향 하나뿐이다.</p>
+
+<h3 id="랭크">랭크</h3>
+
+<p><strong>랭크(rank)는 행렬의 열 중 독립인 것의 개수</strong>, 다시 말해 <strong>변환 후에 살아남는 차원의 수</strong>다.</p>
+
+<p><img src="/assets/images/cs/linear-algebra/05-rank.svg" alt="랭크 2 행렬은 평면을 유지하고 랭크 1 행렬은 평면을 직선으로 찌그러뜨리는 그림" /></p>
+
+<ul>
+  <li>왼쪽 <code class="language-plaintext highlighter-rouge">A = [2 1; 0 1]</code>: 두 열 (2,0)과 (1,1)이 서로 다른 방향이다. 평면이 평면으로 간다. <strong>랭크 2</strong></li>
+  <li>오른쪽 <code class="language-plaintext highlighter-rouge">M = [1 2; 2 4]</code>: 두 열 (1,2)와 (2,4)가 같은 방향이다. 평면 전체가 직선 하나(y = 2x)로 찌그러진다. <strong>랭크 1</strong></li>
+</ul>
+
+<p>여기서 주의할 점은 <strong>열의 개수가 아니라 독립인 열의 개수</strong>가 랭크라는 것이다. 예를 들어 3×3 행렬의 세 열이 (1,0,0), (0,1,0), (1,1,0)이면 열은 3개지만 랭크는 <strong>2</strong>다. 세 번째 열이 <code class="language-plaintext highlighter-rouge">(1,1,0) = (1,0,0) + (0,1,0)</code>으로 앞의 두 열로 만들어지기 때문이다. 이 행렬은 3차원 공간을 z = 0인 평면(xy평면)으로 찌그러뜨린다.</p>
+
+<h3 id="찌그러지면-서로-다른-입력이-같은-출력이-된다">찌그러지면 서로 다른 입력이 같은 출력이 된다</h3>
+
+<p>랭크가 줄어든다는 게 실제로 어떤 일인지 M = [1 2; 2 4]에 직접 넣어서 보자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>M(2, −1):  1행 = 1·2 + 2·(−1) = 0
+           2행 = 2·2 + 4·(−1) = 0     →  (0, 0)
+M(0, 0)  = (0, 0)
+</code></pre></div></div>
+
+<p>(2, −1)이라는 0이 아닌 벡터와 원점이 <strong>둘 다 (0, 0)으로 간다</strong>. 더 와닿는 예도 있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>M(1, 0)  = (1·1 + 2·0,  2·1 + 4·0)  = (1, 2)
+M(3, −1) = (1·3 − 2,    2·3 − 4)    = (1, 2)
+</code></pre></div></div>
+
+<p>(1, 0)과 (3, −1)은 전혀 다른 점인데 둘 다 (1, 2)로 간다.</p>
+
+<p>그러면 누군가 “M을 곱했더니 (1, 2)가 나왔어, 원래 뭐였게?”라고 물었을 때 답할 수 없다. (1, 0)이었을 수도, (3, −1)이었을 수도 있다. <strong>정보가 사라진 것</strong>이다.</p>
+
+<p>왜 이런 일이 생길까? M의 두 열이 같은 방향이라 평면의 모든 점이 직선 y = 2x 위로 눌린다. 2차원이 1차원으로 줄면서 <strong>(2, −1) 방향의 정보가 통째로 0이 되는 것</strong>이다.</p>
+
+<h2 id="4-행렬식-넓이가-몇-배가-되는가">4. 행렬식: 넓이가 몇 배가 되는가</h2>
+
+<p>찌그러지는지를 숫자 하나로 판별하는 도구가 <strong>행렬식(determinant, det)</strong>이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[a b; c d]의 det = ad − bc
+</code></pre></div></div>
+
+<p>det의 의미는 <strong>변환 후 넓이가 몇 배가 되는가</strong>다.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">A = [2 1; 0 1]</code>: det = 2·1 − 1·0 = <strong>2</strong>. 정사각형(넓이 1)이 넓이 2인 평행사변형이 된다. 위 그림과 일치한다.</li>
+  <li><code class="language-plaintext highlighter-rouge">M = [1 2; 2 4]</code>: det = 1·4 − 2·2 = <strong>0</strong>. 넓이가 0, 즉 직선으로 납작해진다.</li>
+</ul>
+
+<blockquote>
+  <p><strong>det = 0 ⇔ 공간이 찌그러진다 ⇔ 랭크가 꽉 차지 않았다</strong></p>
+</blockquote>
+
+<h2 id="5-역행렬-변환을-되감는-행렬">5. 역행렬: 변환을 되감는 행렬</h2>
+
+<h3 id="숫자로-먼저">숫자로 먼저</h3>
+
+<p>3을 곱한 걸 되돌리려면 1/3을 곱하면 된다. <code class="language-plaintext highlighter-rouge">3 × 1/3 = 1</code>. 이 1/3이 3의 역수다.</p>
+
+<p>행렬도 똑같다. A로 변형한 것을 되돌리는 행렬이 <strong>역행렬 A⁻¹</strong>이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A⁻¹A = I   (I: 단위행렬, 아무것도 하지 않는 변환)
+</code></pre></div></div>
+
+<h3 id="왕복해-보기">왕복해 보기</h3>
+
+<p><img src="/assets/images/cs/linear-algebra/06-inverse.svg" alt="A로 변형한 벡터를 역행렬로 원래대로 되돌리는 왕복 그림" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A   = [2 1; 0 1]
+A(1,1)   = (2+1, 0+1)       = (3, 1)    ← 변형
+A⁻¹ = [0.5 −0.5; 0 1]
+A⁻¹(3,1) = (1.5−0.5, 0+1)   = (1, 1)    ← 원래대로
+</code></pre></div></div>
+
+<p>직관적인 예로, 90° 회전의 역행렬은 −90° 회전이고, x축 2배 늘리기의 역행렬은 x축 ½배 줄이기다.</p>
+
+<h3 id="22-역행렬-공식">2×2 역행렬 공식</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[a b; c d]⁻¹ = (1/det) · [d −b; −c a]
+</code></pre></div></div>
+
+<p>대각선은 자리를 바꾸고, 나머지는 부호를 바꾸고, det로 나눈다. A로 확인하면 det = 2이므로:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A⁻¹ = (1/2) · [1 −1; 0 2] = [0.5 −0.5; 0 1]
+</code></pre></div></div>
+
+<h3 id="역행렬이-없는-경우">역행렬이 없는 경우</h3>
+
+<p>공식에서 det로 나눈다. <strong>det = 0이면 0으로 나눌 수 없으니 역행렬이 없다.</strong></p>
+
+<p>이것이 앞에서 본 M = [1 2; 2 4]의 상황이다. 평면을 직선으로 찌그러뜨려서 여러 점이 한 점으로 모이니까 되감을 방법이 없다. 숫자 0에 역수가 없는 것과 같은 이치다.</p>
+
+<p>지금까지의 내용이 하나로 연결된다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>행렬</th>
+      <th>열의 방향</th>
+      <th>랭크</th>
+      <th>det</th>
+      <th>역행렬</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A = [2 1; 0 1]</td>
+      <td>서로 다름</td>
+      <td>2</td>
+      <td>2</td>
+      <td>있음</td>
+    </tr>
+    <tr>
+      <td>M = [1 2; 2 4]</td>
+      <td>같음</td>
+      <td>1</td>
+      <td>0</td>
+      <td>없음</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="llm과의-연결-1">LLM과의 연결</h3>
+
+<p>신경망은 정보를 잃지 않도록 이런 찌그러짐을 조심한다. 반대로 LoRA나 attention 헤드처럼 <strong>일부러 저차원으로 눌러서 핵심만 남기는 설계</strong>도 있다. 둘 다 “되돌릴 수 있는가 = 정보가 보존되는가”라는 같은 관점에서 이해할 수 있다.</p>
+
+<p>특히 LoRA의 아이디어는 랭크에서 출발한다. LLM의 가중치 행렬은 4096×4096처럼 거대하지만, 파인튜닝할 때 필요한 <strong>변화량은 실제로 몇 개의 방향에만 몰려 있다</strong>. 그래서 변화량을 랭크가 아주 낮은 행렬로만 학습한다. 이게 정확히 어떻게 가능한지는 3편의 SVD에서 다룬다.</p>
+
+<h2 id="정리">정리</h2>
+
+<ul>
+  <li><strong>행렬은 공간을 변형하는 함수</strong>이고, 행렬의 <strong>열은 기저가 도착하는 곳</strong>이다.</li>
+  <li><strong>행렬 곱셈</strong>은 “행 · 열 내적”의 반복이고, 행렬곱은 변환을 이어 붙이는 것이라 순서가 중요하다(AB ≠ BA).</li>
+  <li><strong>랭크</strong>는 독립인 열의 개수, 즉 변환 후 살아남는 차원 수다. 랭크가 줄면 서로 다른 입력이 같은 출력이 되어 정보가 사라진다.</li>
+  <li><strong>행렬식</strong>은 넓이 배율이고, det = 0이면 찌그러진다.</li>
+  <li><strong>역행렬</strong>은 변환을 되감는 행렬이고, det = 0이면 존재하지 않는다.</li>
+</ul>
+
+<p>다음 글에서는 행렬의 “뼈대 방향”인 <strong>고유벡터</strong>와, 모든 행렬을 단순한 동작으로 쪼개는 <strong>SVD</strong>를 다룬다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+    
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#linear-algebra" class="page__taxonomy-item p-category" rel="tag">Linear-Algebra</a>
+    
+    </span>
+  </p>
+
+
+  
+
+  
+    
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#cs" class="page__taxonomy-item p-category" rel="tag">CS</a>
+    
+    </span>
+  </p>
+
+
+  
+
+
+        
+
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2026-10-10T15:01:00+09:00">October 10, 2026</time></p>
+
+
+      </footer>
+
+      
+<section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=2%5C.+%ED%96%89%EB%A0%AC%2C+%EB%9E%AD%ED%81%AC%2C+%ED%96%89%EB%A0%AC%EC%8B%9D%2C+%EC%97%AD%ED%96%89%EB%A0%AC%20https%3A%2F%2Fax-lab-j.github.io%2Fcs%2Flinear-algebra-02-matrix-rank-inverse%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fax-lab-j.github.io%2Fcs%2Flinear-algebra-02-matrix-rank-inverse%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://ax-lab-j.github.io/cs/linear-algebra-02-matrix-rank-inverse/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=2%5C.+%ED%96%89%EB%A0%AC%2C+%EB%9E%AD%ED%81%AC%2C+%ED%96%89%EB%A0%AC%EC%8B%9D%2C+%EC%97%AD%ED%96%89%EB%A0%AC%20https%3A%2F%2Fax-lab-j.github.io%2Fcs%2Flinear-algebra-02-matrix-rank-inverse%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+
+      
+
+  <nav class="pagination" aria-label="Post pagination">
+    
+      <a href="/cs/linear-algebra-01-vectors-basis-dot-product/" class="pagination--pager" title="1. 벡터, 기저, 내적">이전</a>
+    
+    
+      <a href="/cs/linear-algebra-03-eigen-svd-lora/" class="pagination--pager" title="3. 고유값과 SVD">다음</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/cs/linear-algebra-03-eigen-svd-lora/" rel="permalink">3. 고유값과 SVD
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">복잡해 보이는 행렬도 좋은 축으로 보면 ‘쪼개고, 늘리고, 합치기’일 뿐이다. 무거운 조각만 남기면 적은 숫자로 거의 같은 행렬을 만들 수 있고, 이것이 LoRA의 원리다.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/cs/linear-algebra-01-vectors-basis-dot-product/" rel="permalink">1. 벡터, 기저, 내적
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">같은 벡터도 어떤 자(기저)로 재느냐에 따라 숫자가 달라진다. 내적은 두 벡터가 얼마나 같은 쪽을 보는지 알려준다.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/corporate-analysis/nh-nonghyup-bank-ai-planning-operations-analysis/" rel="permalink">NH농협은행 AI 기획/운영 기업분석
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          17 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">농협은행의 수익 구조와 Agentic AI 전략을 실제 도입 단계로 구분하고, AI 기획/운영 직무의 과제와 지원 인사이트를 분석한다.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/corporate-analysis/lg-cns-ai-ax-analysis/" rel="permalink">LG CNS AI(AX) 기업분석
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">LG CNS는 무엇으로 돈을 벌고, AI로 무엇을 바꾸고 있을까? 주요 사업부터 AI(AX) 직무와 인재상까지.
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2013 - 2026 <a href="https://ax-lab-j.github.io">AX LAB</a>. 제작 지원:  <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+<script>
+  document.querySelectorAll("a.experience-link[data-web-href]").forEach(function (link) {
+    link.setAttribute("href", link.getAttribute("data-web-href"));
+  });
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,815 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="ko-KR" class="no-js">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>1. 벡터, 기저, 내적 - AX LAB</title>
+<meta name="description" content="같은 벡터도 어떤 자(기저)로 재느냐에 따라 숫자가 달라진다. 내적은 두 벡터가 얼마나 같은 쪽을 보는지 알려준다.">
+
+
+  <meta name="author" content="JIBAEK JANG">
+  
+  <meta property="article:author" content="JIBAEK JANG">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="AX LAB">
+<meta property="og:title" content="1. 벡터, 기저, 내적">
+<meta property="og:url" content="https://ax-lab-j.github.io/cs/linear-algebra-01-vectors-basis-dot-product/">
+
+
+  <meta property="og:description" content="같은 벡터도 어떤 자(기저)로 재느냐에 따라 숫자가 달라진다. 내적은 두 벡터가 얼마나 같은 쪽을 보는지 알려준다.">
+
+
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2026-10-10T15:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://ax-lab-j.github.io/cs/linear-algebra-01-vectors-basis-dot-product/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="AX LAB Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/">
+          AX LAB
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/project/"
+                
+                
+              >Project</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/study/"
+                
+                
+              >Study</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/insight-report/"
+                
+                
+              >Insight Report</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/corporate-analysis/"
+                
+                
+              >Corporate Analysis</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://ax-lab-j.github.io/" itemprop="url">JIBAEK JANG</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Bridging Industry and AI</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:jjb6904@mail.hongik.ac.kr" rel="me" class="u-email">
+            <meta itemprop="email" content="jjb6904@mail.hongik.ac.kr" />
+            <i class="fas fa-fw fa-square-envelope" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="1. 벡터, 기저, 내적">
+    <meta itemprop="description" content="같은 벡터도 어떤 자(기저)로 재느냐에 따라 숫자가 달라진다. 내적은 두 벡터가 얼마나 같은 쪽을 보는지 알려준다.">
+    <meta itemprop="datePublished" content="2026-10-10T15:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://ax-lab-j.github.io/cs/linear-algebra-01-vectors-basis-dot-product/" itemprop="url">1. 벡터, 기저, 내적
+</a>
+          </h1>
+          
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc" aria-label="Table of contents">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#1-벡터공간-더하고-늘려도-같은-공간-안에-있다">1. 벡터공간: 더하고 늘려도 같은 공간 안에 있다</a></li><li><a href="#2-기저와-좌표-같은-벡터-다른-자">2. 기저와 좌표: 같은 벡터, 다른 자</a><ul><li><a href="#llm과의-연결-임베딩은-고차원-공간의-한-점">LLM과의 연결: 임베딩은 고차원 공간의 한 점</a></li></ul></li><li><a href="#3-내적-두-벡터가-얼마나-같은-쪽을-보는가">3. 내적: 두 벡터가 얼마나 같은 쪽을 보는가</a></li><li><a href="#4-노름-벡터의-길이">4. 노름: 벡터의 길이</a></li><li><a href="#5-코사인-유사도-길이를-빼고-방향만-비교하기">5. 코사인 유사도: 길이를 빼고 방향만 비교하기</a><ul><li><a href="#llm과의-연결-검색과-attention의-핵심-계산">LLM과의 연결: 검색과 attention의 핵심 계산</a></li></ul></li><li><a href="#정리">정리</a></li></ul>
+            </nav>
+          </aside>
+        
+        <p>LLM과 Agent를 제대로 이해하기 위한 기초 스터디의 첫 단원은 <strong>선형대수</strong>다. 이 글은 시리즈의 1편으로, 모든 내용의 출발점인 <strong>벡터, 기저, 내적</strong>을 다룬다.</p>
+
+<ul>
+  <li>1편: 벡터, 기저, 내적 (이 글)</li>
+  <li><a href="/cs/linear-algebra-02-matrix-rank-inverse/">2편: 행렬, 랭크, 행렬식, 역행렬</a></li>
+  <li><a href="/cs/linear-algebra-03-eigen-svd-lora/">3편: 고유값과 SVD</a></li>
+</ul>
+
+<h2 id="1-벡터공간-더하고-늘려도-같은-공간-안에-있다">1. 벡터공간: 더하고 늘려도 같은 공간 안에 있다</h2>
+
+<p><strong>벡터공간</strong>은 덧셈과 스칼라곱(숫자 곱하기)을 해도 그 공간 밖으로 나가지 않는 집합이다. 두 벡터를 더해도, 벡터를 2배·−1배 해도 여전히 같은 공간의 원소다.</p>
+
+<p>가장 익숙한 예는 ℝⁿ, 즉 숫자 n개를 나열한 벡터들의 공간이다. 이 규칙만 지키면 함수나 행렬도 벡터공간이 될 수 있다.</p>
+
+<p>벡터를 <strong>공간 속의 한 점(또는 원점에서 그 점으로 가는 화살표)</strong>으로 보는 관점이 이후 모든 내용의 기반이다.</p>
+
+<h2 id="2-기저와-좌표-같은-벡터-다른-자">2. 기저와 좌표: 같은 벡터, 다른 자</h2>
+
+<p><strong>기저(basis)</strong>는 공간의 모든 벡터를 유일하게 표현할 수 있는 최소한의 벡터 묶음이다. 기저 벡터의 개수가 그 공간의 <strong>차원</strong>이다.</p>
+
+<p>기저는 일종의 <strong>“자”</strong>라고 생각하면 쉽다. 좌표란 “각 자를 몇 칸씩 써서 그 점에 도달하는가”를 적은 숫자다. 그래서 <strong>벡터는 그대로인데 자를 바꾸면 좌표 숫자가 달라진다.</strong> 이걸 <strong>기저 변환</strong>이라고 한다.</p>
+
+<p><img src="/assets/images/cs/linear-algebra/01-basis-change.svg" alt="같은 벡터 v를 표준 기저와 45° 회전한 기저로 표현한 그림" /></p>
+
+<p>빨간 화살표 v는 두 그림에서 <strong>완전히 같은 화살표</strong>다. 바뀐 것은 자(기저)뿐이다.</p>
+
+<ul>
+  <li><strong>① 표준 기저</strong> e1=(1,0), e2=(0,1): 오른쪽으로 3칸, 위로 2칸 가면 v다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v = 3·e1 + 2·e2   →   좌표 (3, 2)
+</code></pre></div>    </div>
+  </li>
+  <li><strong>② 45° 돌린 기저</strong> b1=(1,1), b2=(−1,1): b1 방향으로 2.5칸, b2 반대 방향으로 0.5칸 가면 같은 v에 도착한다.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v = 2.5·b1 − 0.5·b2   →   좌표 (2.5, −0.5)
+</code></pre></div>    </div>
+    <p>확인: 2.5·(1,1) − 0.5·(−1,1) = (2.5+0.5, 2.5−0.5) = (3, 2) ✓</p>
+  </li>
+</ul>
+
+<p>이 “같은 대상을 다른 자로 다시 잰다”는 아이디어는 3편의 고유값과 SVD에서 그대로 다시 나온다.</p>
+
+<h3 id="llm과의-연결-임베딩은-고차원-공간의-한-점">LLM과의 연결: 임베딩은 고차원 공간의 한 점</h3>
+
+<p>LLM은 토큰(단어 조각)을 예를 들어 4096차원 벡터로 바꾼다. 이것이 <strong>임베딩</strong>이다. 4096차원이라는 건 <strong>“4096개의 자를 대고 잰 숫자 4096개”</strong>라는 뜻이다.</p>
+
+<p>모델은 이 공간에서 “의미가 비슷하면 가깝고, 관계는 방향으로 표현된다”는 구조를 학습한다. 유명한 예가 <code class="language-plaintext highlighter-rouge">king − man + woman ≈ queen</code>이다. 벡터끼리 빼고 더하는 연산이 의미를 갖는 것은 임베딩이 벡터공간이기 때문이다.</p>
+
+<p>나중에 Transformer를 공부할 때 임베딩에 행렬을 곱해 Query, Key를 만드는 과정이 나오는데, 그것도 결국 같은 단어를 <strong>목적에 맞는 새로운 자로 다시 재는 것</strong>이다. 이 부분은 Transformer 단원에서 수식과 함께 다시 다룬다.</p>
+
+<h2 id="3-내적-두-벡터가-얼마나-같은-쪽을-보는가">3. 내적: 두 벡터가 얼마나 같은 쪽을 보는가</h2>
+
+<p><strong>내적(dot product)</strong>은 같은 자리끼리 곱해서 모두 더한 값이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = (3, 1),  b = (2, 2)
+a·b = 3·2 + 1·2 = 8
+</code></pre></div></div>
+
+<p>계산은 단순하지만 의미가 중요하다. 내적은 <strong>두 벡터가 얼마나 같은 방향을 보는지</strong>를 숫자 하나로 알려준다.</p>
+
+<p><img src="/assets/images/cs/linear-algebra/02-dot-product.svg" alt="기준 벡터 a와 방향이 다른 세 벡터 b, c, d의 내적을 비교한 그림" /></p>
+
+<p>기준 벡터 a=(3,1)과 나머지 벡터를 내적해 보면 패턴이 보인다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>비교</th>
+      <th>계산</th>
+      <th>결과</th>
+      <th>의미</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>a·b</td>
+      <td>3·2 + 1·2</td>
+      <td><strong>8</strong></td>
+      <td>비슷한 방향 → 큰 양수</td>
+    </tr>
+    <tr>
+      <td>a·c</td>
+      <td>3·(−1) + 1·3</td>
+      <td><strong>0</strong></td>
+      <td>직각 → 0 (서로 무관)</td>
+    </tr>
+    <tr>
+      <td>a·d</td>
+      <td>3·(−3) + 1·(−1)</td>
+      <td><strong>−10</strong></td>
+      <td>반대 방향 → 음수</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>특히 <strong>내적이 0이면 두 벡터는 수직(직교)</strong>이다. 예를 들어 u=(1,2), w=(2,−1)은 1·2 + 2·(−1) = 0이므로 서로 수직이다.</p>
+
+<h2 id="4-노름-벡터의-길이">4. 노름: 벡터의 길이</h2>
+
+<p><strong>노름(norm)</strong>은 벡터의 길이다. 피타고라스 정리 그대로 계산한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>‖a‖ = √(3² + 1²) = √10 ≈ 3.16
+</code></pre></div></div>
+
+<p>사실 노름의 제곱은 자기 자신과의 내적이다. <code class="language-plaintext highlighter-rouge">‖a‖² = a·a = 3·3 + 1·1 = 10</code></p>
+
+<h2 id="5-코사인-유사도-길이를-빼고-방향만-비교하기">5. 코사인 유사도: 길이를 빼고 방향만 비교하기</h2>
+
+<p>내적은 방향뿐 아니라 <strong>길이에도 영향을 받는다</strong>. 같은 방향이라도 벡터가 길면 내적이 커진다. 그래서 길이로 나눠 <strong>방향만</strong> 비교한 값이 <strong>코사인 유사도</strong>다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cos θ = a·b / (‖a‖ ‖b‖)
+      = 8 / (3.16 × 2.83)
+      ≈ 0.89
+</code></pre></div></div>
+
+<p>값은 항상 −1(정반대)부터 1(완전히 같은 방향) 사이다. 위 그림에서 a와 d는 정확히 반대 방향이라 cos = −1이다.</p>
+
+<h3 id="llm과의-연결-검색과-attention의-핵심-계산">LLM과의 연결: 검색과 attention의 핵심 계산</h3>
+
+<ul>
+  <li><strong>RAG</strong>에서 “질문과 비슷한 문서 찾기”는 질문 임베딩과 문서 임베딩의 <strong>코사인 유사도</strong>를 계산해서 큰 것부터 고르는 것이다.</li>
+  <li>Transformer의 <strong>attention</strong>도 핵심은 “벡터끼리 <strong>내적</strong>해서 얼마나 관련 있는지 점수를 매기는 것”이다.</li>
+</ul>
+
+<p>즉 이 글에서 다룬 내적이 Transformer 수식의 절반이다.</p>
+
+<h2 id="정리">정리</h2>
+
+<ul>
+  <li><strong>벡터</strong>는 공간의 한 점(화살표)이고, <strong>기저</strong>는 그 점을 재는 자다. 자를 바꾸면 같은 벡터의 좌표가 달라진다(기저 변환).</li>
+  <li><strong>내적</strong>은 같은 자리끼리 곱해서 더한 값으로, 방향이 비슷하면 크고 직각이면 0, 반대면 음수다.</li>
+  <li><strong>노름</strong>은 벡터의 길이이고, <strong>코사인 유사도</strong>는 길이를 나눠 방향만 비교한 값이다.</li>
+  <li>임베딩, RAG 검색, attention 점수가 모두 이 개념 위에 서 있다.</li>
+</ul>
+
+<p>다음 글에서는 <strong>행렬이 공간 전체를 어떻게 바꾸는지</strong>, 그리고 그 변환이 언제 정보를 잃어버리는지를 다룬다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+    
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#linear-algebra" class="page__taxonomy-item p-category" rel="tag">Linear-Algebra</a>
+    
+    </span>
+  </p>
+
+
+  
+
+  
+    
+
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#cs" class="page__taxonomy-item p-category" rel="tag">CS</a>
+    
+    </span>
+  </p>
+
+
+  
+
+
+        
+
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2026-10-10T15:00:00+09:00">October 10, 2026</time></p>
+
+
+      </footer>
+
+      
+<section class="page__share">
+  <h4 class="page__share-title">공유하기</h4>
+
+  <a href="https://x.com/intent/tweet?text=1%5C.+%EB%B2%A1%ED%84%B0%2C+%EA%B8%B0%EC%A0%80%2C+%EB%82%B4%EC%A0%81%20https%3A%2F%2Fax-lab-j.github.io%2Fcs%2Flinear-algebra-01-vectors-basis-dot-product%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fax-lab-j.github.io%2Fcs%2Flinear-algebra-01-vectors-basis-dot-product%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://ax-lab-j.github.io/cs/linear-algebra-01-vectors-basis-dot-product/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=1%5C.+%EB%B2%A1%ED%84%B0%2C+%EA%B8%B0%EC%A0%80%2C+%EB%82%B4%EC%A0%81%20https%3A%2F%2Fax-lab-j.github.io%2Fcs%2Flinear-algebra-01-vectors-basis-dot-product%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+
+      
+
+  <nav class="pagination" aria-label="Post pagination">
+    
+      <a href="/corporate-analysis/nh-nonghyup-bank-ai-planning-operations-analysis/" class="pagination--pager" title="NH농협은행 AI 기획/운영 기업분석">이전</a>
+    
+    
+      <a href="/cs/linear-algebra-02-matrix-rank-inverse/" class="pagination--pager" title="2. 행렬, 랭크, 행렬식, 역행렬">다음</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+
+<div class="page__related">
+  
+  <h2 class="page__related-title">참고</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/cs/linear-algebra-03-eigen-svd-lora/" rel="permalink">3. 고유값과 SVD
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">복잡해 보이는 행렬도 좋은 축으로 보면 ‘쪼개고, 늘리고, 합치기’일 뿐이다. 무거운 조각만 남기면 적은 숫자로 거의 같은 행렬을 만들 수 있고, 이것이 LoRA의 원리다.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/cs/linear-algebra-02-matrix-rank-inverse/" rel="permalink">2. 행렬, 랭크, 행렬식, 역행렬
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">행렬의 열은 기저가 도착하는 곳이다. 공간을 찌그러뜨리는 행렬은 정보를 잃고, 그래서 되돌릴 수 없다.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/corporate-analysis/nh-nonghyup-bank-ai-planning-operations-analysis/" rel="permalink">NH농협은행 AI 기획/운영 기업분석
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          17 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">농협은행의 수익 구조와 Agentic AI 전략을 실제 도입 단계로 구분하고, AI 기획/운영 직무의 과제와 지원 인사이트를 분석한다.
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc p-name" itemprop="headline">
+      
+        <a class="u-url" href="/corporate-analysis/lg-cns-ai-ax-analysis/" rel="permalink">LG CNS AI(AX) 기업분석
+</a>
+      
+    </h2>
+    
+
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt p-summary" itemprop="description">LG CNS는 무엇으로 돈을 벌고, AI로 무엇을 바꾸고 있을까? 주요 사업부터 AI(AX) 직무와 인재상까지.
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2013 - 2026 <a href="https://ax-lab-j.github.io">AX LAB</a>. 제작 지원:  <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+<script>
+  document.querySelectorAll("a.experience-link[data-web-href]").forEach(function (link) {
+    link.setAttribute("href", link.getAttribute("data-web-href"));
+  });
+</script>
+
+
+
+  </body>
+</html>
